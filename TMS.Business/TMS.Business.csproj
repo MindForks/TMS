@@ -4,4 +4,9 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\TMS.EntitiesDTO\TMS.EntitiesDTO.csproj" />
+    <ProjectReference Include="..\TMS.Interfaces\TMS.Interfaces.csproj" />
+  </ItemGroup>
+
 </Project>
