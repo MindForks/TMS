@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TMS.Business\TMS.Business.csproj" />
+    <ProjectReference Include="..\TMS.Data\TMS.Data.csproj" />
+    <ProjectReference Include="..\TMS.Interfaces\TMS.Interfaces.csproj" />
+  </ItemGroup>
+
+</Project>
