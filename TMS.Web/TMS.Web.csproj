@@ -10,6 +10,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\TMS.Bootstrap\TMS.Bootstrap.csproj" />
     <ProjectReference Include="..\TMS.Business\TMS.Business.csproj" />
     <ProjectReference Include="..\TMS.EntitiesDTO\TMS.EntitiesDTO.csproj" />
     <ProjectReference Include="..\TMS.Interfaces\TMS.Interfaces.csproj" />

@@ -4,14 +4,21 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using TMS.Business;
 using TMS.Web.Models;
 
 namespace TMS.Web.Controllers
 {
     public class HomeController : Controller
     {
+        BookServicies bs;
+        public HomeController(BookServicies bs)
+        {
+            this.bs = bs;
+        }
         public IActionResult Index()
         {
+            bs.Create();
             return View();
         }
 

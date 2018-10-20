@@ -12,7 +12,9 @@ namespace TMS.Data
             ConnectionString = connectionString;
         }
 
-        public virtual DbSet<Book> Books { get; set; }
+        #region 
+        public DbSet<Book> Books { get; set; }
+        #endregion
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -21,6 +23,8 @@ namespace TMS.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            base.OnModelCreating(modelBuilder);
+
             modelBuilder.Entity<Book>()
                 .HasKey(k => k.Id);
         }
