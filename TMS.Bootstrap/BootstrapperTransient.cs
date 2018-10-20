@@ -2,7 +2,6 @@
 using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using TMS.Interfaces;
-using TMS.Business;
 using TMS.Data;
 
 namespace TMS.Bootstrap
@@ -20,8 +19,8 @@ namespace TMS.Bootstrap
             services.AddSingleton(typeof(string), connection);
             services.AddScoped<IUnitOfWork, UnitOfWork>();
 
-            #region register services 
-            services.AddScoped<BookServicies>();
+            #region register services as Transient
+
             #endregion
         }
     }
