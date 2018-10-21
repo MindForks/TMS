@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using TMS.Entities;
 
 namespace TMS.Data
 {
@@ -11,7 +12,8 @@ namespace TMS.Data
             ConnectionString = connectionString;
         }
 
-        #region DbSet
+        #region DbSets
+        public DbSet<NotificationType> NotificationTypes { get; }
         #endregion
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
@@ -22,6 +24,11 @@ namespace TMS.Data
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
+
+            modelBuilder.Entity<NotificationType>()
+                .HasKey(t => t.Id);
+            modelBuilder.Entity<NotificationType>()
+                .Property(t => t.Title).IsRequired();
         }
     }
 }

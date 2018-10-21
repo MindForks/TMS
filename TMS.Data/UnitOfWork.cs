@@ -1,4 +1,6 @@
 ﻿using TMS.Interfaces;
+using TMS.Entities;
+using TMS.Data.Repositories;
 
 namespace TMS.Data
 {
@@ -9,9 +11,11 @@ namespace TMS.Data
         public UnitOfWork(TMSDbContext dbContext)
         {
             _dbContext = dbContext;
+            NotificationTypes = new BasicRepository<NotificationType>(_dbContext);
         }
 
         #region Repositories
+        public IRepository<NotificationType> NotificationTypes { get;set;}
         #endregion
 
         public void Save()
