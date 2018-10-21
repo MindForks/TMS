@@ -1,12 +1,9 @@
-﻿using System.Threading.Tasks;
-using TMS.Entities;
-
-namespace TMS.Interfaces
+﻿namespace TMS.Interfaces
 {
    public interface IUnitOfWork
     {
-        IRepository<Book> Books { get; }
-
+        #region IRepositories
+        #endregion
         void Save();
     }
 }

@@ -1,5 +1,4 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using TMS.Entities;
 
 namespace TMS.Data
 {
@@ -12,7 +11,8 @@ namespace TMS.Data
             ConnectionString = connectionString;
         }
 
-        public virtual DbSet<Book> Books { get; set; }
+        #region DbSet
+        #endregion
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
@@ -21,8 +21,7 @@ namespace TMS.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Book>()
-                .HasKey(k => k.Id);
+            base.OnModelCreating(modelBuilder);
         }
     }
 }

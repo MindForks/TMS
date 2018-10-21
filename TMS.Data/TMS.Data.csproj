@@ -14,4 +14,8 @@
     <ProjectReference Include="..\TMS.Interfaces\TMS.Interfaces.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repositories\" />
+  </ItemGroup>
+
 </Project>

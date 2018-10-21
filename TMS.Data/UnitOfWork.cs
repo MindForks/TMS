@@ -1,5 +1,4 @@
-﻿using TMS.Entities;
-using TMS.Interfaces;
+﻿using TMS.Interfaces;
 
 namespace TMS.Data
 {
@@ -10,11 +9,9 @@ namespace TMS.Data
         public UnitOfWork(TMSDbContext dbContext)
         {
             _dbContext = dbContext;
-            Books = new BookRepository(dbContext);
         }
 
         #region Repositories
-        public IRepository<Book> Books { get; }
         #endregion
 
         public void Save()
