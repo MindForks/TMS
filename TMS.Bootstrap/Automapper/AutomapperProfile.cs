@@ -8,7 +8,9 @@ namespace TMS.Bootstrap.Automapper
     {
         public AutomapperProfile()
         {
+            #region MapSettings
             CreateMap<NotificationType, NotificationTypeDTO>();
+            #endregion
         }
     }
 }

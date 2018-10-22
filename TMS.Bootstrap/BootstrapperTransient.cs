@@ -3,7 +3,6 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.EntityFrameworkCore;
 using TMS.Interfaces;
 using TMS.Data;
-using AutoMapper;
 using TMS.Bootstrap.Automapper;
 
 namespace TMS.Bootstrap
@@ -20,16 +19,9 @@ namespace TMS.Bootstrap
              });
             services.AddSingleton(typeof(string), connection);
             services.AddScoped<IUnitOfWork, UnitOfWork>();
-
-            var config = new AutoMapper.MapperConfiguration(cfg =>
-            {
-                cfg.AddProfile(new AutomapperProfile());
-            });
-            var mapper = config.CreateMapper();
-            services.AddSingleton(mapper);
+            services.AddSingleton<Interfaces.IMapper, TMSAutoMapper>();
 
             #region register services as Transient
-
             #endregion
         }
     }
