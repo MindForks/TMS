@@ -2,18 +2,13 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
+    <UserSecretsId>aspnet-TMS.Web-4E76AE30-8281-4055-A516-2C92332FE156</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\TMS.Bootstrap\TMS.Bootstrap.csproj" />
-    <ProjectReference Include="..\TMS.Business\TMS.Business.csproj" />
-    <ProjectReference Include="..\TMS.EntitiesDTO\TMS.EntitiesDTO.csproj" />
-    <ProjectReference Include="..\TMS.Interfaces\TMS.Interfaces.csproj" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.5" PrivateAssets="All" />
   </ItemGroup>
 
 </Project>
