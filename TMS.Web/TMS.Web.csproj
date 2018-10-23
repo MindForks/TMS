@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <UserSecretsId>aspnet-TMS.Web-4E76AE30-8281-4055-A516-2C92332FE156</UserSecretsId>
+    <UserSecretsId>aspnet-TMS.Web-449D44CB-0599-48ED-840A-FC76DE7EBDF8</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
