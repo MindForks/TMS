@@ -1,12 +1,8 @@
-﻿using System;
-using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Identity.UI;
+﻿using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TMS.Web.Areas.Identity.Data;
-using TMS.Web.Data;
 using TMS.Web.Models;
 
 [assembly: HostingStartup(typeof(TMS.Web.Areas.Identity.IdentityHostingStartup))]
