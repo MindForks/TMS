@@ -13,9 +13,10 @@ for details on configuring this project to bundle and minify static web assets. 
 }*/
 
 /* Carousel */
-.carousel-caption p {
-    font-size: 20px;
+.carousel-caption p,h3 {
+    font-size: 25px;
     line-height: 1.4;
+    color:black;
 }
 .carousel-item {
     position: relative;
@@ -29,11 +30,13 @@ for details on configuring this project to bundle and minify static web assets. 
     background-size: cover;
 }
 
-.carousel-inner .carousel-item img {
-    width: 100%;
+.carousel-inner > .carousel-item > img {
     position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
+    width: 100%;
+    opacity:0.6;
+    //for vertically align img
+    //top: 50%;
+   // transform: translateY(-50%);
 }
 
 /* QR code generator */
