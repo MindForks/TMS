@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using TMS.Data;
 
 namespace TMS.Data.Migrations.TMSIdentityDb
 {
     [DbContext(typeof(TMSIdentityDbContext))]
-    partial class TMSIdentityDbContextModelSnapshot : ModelSnapshot
+    [Migration("20181027225204_Customize User")]
+    partial class CustomizeUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -1,10 +1,10 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using TMS.Web.Areas.Identity.Data;
+using TMS.EntitiesDTO;
 
 namespace TMS.Data
 {
-    public class TMSIdentityDbContext:IdentityDbContext<UserApp>
+    public class TMSIdentityDbContext:IdentityDbContext<UserAppDTO>
     {
         public TMSIdentityDbContext(DbContextOptions<TMSIdentityDbContext> options)
         : base(options)

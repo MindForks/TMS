@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TMS.Data;
-using TMS.Web.Areas.Identity.Data;
+using TMS.EntitiesDTO;
 
 [assembly: HostingStartup(typeof(TMS.Web.Areas.Identity.IdentityHostingStartup))]
 namespace TMS.Web.Areas.Identity
@@ -17,7 +17,7 @@ namespace TMS.Web.Areas.Identity
                 services.AddDbContext<TMSIdentityDbContext>(options =>
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("DefaultConnection")));
-                services.AddDefaultIdentity<UserApp>()
+                services.AddDefaultIdentity<UserAppDTO>()
                      .AddEntityFrameworkStores<TMSIdentityDbContext>();
             });
         }

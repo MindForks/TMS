@@ -1,13 +1,14 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace TMS.Web.Areas.Identity.Data
 {
     // Add profile data for application users by adding properties to the User class
-    public class User 
+    public class UserApp : IdentityUser
     {
-        /*[PersonalData]
+        [PersonalData]
         public string FirstName { get; set; }
         [PersonalData]
-        public string LastName { get; set; }*/
+        public string LastName { get; set; }
     }
 }

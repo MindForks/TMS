@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
+using TMS.EntitiesDTO;
 using TMS.Web.Areas.Identity.Data;
 
 namespace TMS.Web.Areas.Identity.Pages.Account
@@ -16,14 +17,14 @@ namespace TMS.Web.Areas.Identity.Pages.Account
     [AllowAnonymous]
     public class RegisterModel : PageModel
     {
-        private readonly SignInManager<UserApp> _signInManager;
-        private readonly UserManager<UserApp> _userManager;
+        private readonly SignInManager<UserAppDTO> _signInManager;
+        private readonly UserManager<UserAppDTO> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
         public RegisterModel(
-            UserManager<UserApp> userManager,
-            SignInManager<UserApp> signInManager,
+            UserManager<UserAppDTO> userManager,
+            SignInManager<UserAppDTO> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender)
         {
@@ -77,7 +78,8 @@ namespace TMS.Web.Areas.Identity.Pages.Account
             returnUrl = returnUrl ?? Url.Content("~/");
             if (ModelState.IsValid)
             {
-                var user = new UserApp {
+                var user = new UserAppDTO
+                {
                     FirstName = Input.FirstName,
                     LastName = Input.LastName,
                     UserName = Input.Email,

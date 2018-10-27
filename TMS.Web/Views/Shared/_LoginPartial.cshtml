@@ -1,8 +1,8 @@
 @using Microsoft.AspNetCore.Identity
-@using TMS.Web.Areas.Identity.Data
+@using TMS.EntitiesDTO
 
-@inject SignInManager<UserApp> SignInManager
-@inject UserManager<UserApp> UserManager
+@inject SignInManager<UserAppDTO> SignInManager
+@inject UserManager<UserAppDTO> UserManager
 
 @if (SignInManager.IsSignedIn(User))
 {
