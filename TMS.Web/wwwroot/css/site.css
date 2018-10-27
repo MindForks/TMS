@@ -18,9 +18,10 @@ body {
     line-height: 1.4;
     color:black;
 }
+#myCarousel{
+    top:-40px;
+}
 .carousel-item {
-    position: relative;
-    height: 100%;
     height: 100vh;
     min-height: 300px;
     background: no-repeat center center scroll;
@@ -31,27 +32,25 @@ body {
 }
 
 .carousel-inner > .carousel-item > img {
-    position: absolute;
     width: 100%;
-    opacity:0.6;
-    //for vertically align img
-    //top: 50%;
-   // transform: translateY(-50%);
+    opacity:0.8;
+    filter:blur(1px);
+    /*for vertically align img
+    top: 50%;
+    transform: translateY(-50%);*/
 }
 
 #register-form, #login-form {
-    padding-top: 70px;
+    padding-top: 30px;
+    margin-bottom:-70px;
 }
 
-/* QR code generator */
-/*#qrCode {
-    margin: 15px;
-}*/
 footer {
     padding-top:10px;
     position: absolute;
     bottom: 0;
     width: 100%;
+    margin-top:-50px;
 }
 /* Hide/rearrange for smaller screens */
 @media screen and (max-width: 767px) {

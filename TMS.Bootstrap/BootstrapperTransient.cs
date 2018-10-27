@@ -1,8 +1,8 @@
-﻿using Microsoft.Extensions.DependencyInjection;
+﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
-using Microsoft.EntityFrameworkCore;
-using TMS.Interfaces;
+using Microsoft.Extensions.DependencyInjection;
 using TMS.Data;
+using TMS.Interfaces;
 
 namespace TMS.Bootstrap
 {
@@ -16,8 +16,13 @@ namespace TMS.Bootstrap
              {
                  options.UseSqlServer(connection);
              });
+
             services.AddSingleton(typeof(string), connection);
             services.AddScoped<IUnitOfWork, UnitOfWork>();
+
+            services.AddDbContext<TMSIdentityDbContext>(options =>
+                   options.UseSqlServer(
+                       configuration.GetConnectionString("DefaultConnection")));
 
             #region register services as Transient
 

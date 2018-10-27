@@ -2,9 +2,9 @@
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
-namespace TMS.Web.Data.Migrations
+namespace TMS.Data.Migrations.TMSIdentityDb
 {
-    public partial class CreateIdentitySchema : Migration
+    public partial class IdentityUserSetup : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

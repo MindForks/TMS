@@ -2,8 +2,8 @@
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
+using TMS.Data;
 using TMS.Web.Areas.Identity.Data;
-using TMS.Web.Models;
 
 [assembly: HostingStartup(typeof(TMS.Web.Areas.Identity.IdentityHostingStartup))]
 namespace TMS.Web.Areas.Identity
@@ -12,13 +12,13 @@ namespace TMS.Web.Areas.Identity
     {
         public void Configure(IWebHostBuilder builder)
         {
-            builder.ConfigureServices((context, services) => {
-                services.AddDbContext<TMSWebContext>(options =>
+            builder.ConfigureServices((context, services) =>
+            {
+                services.AddDbContext<TMSIdentityDbContext>(options =>
                     options.UseSqlServer(
                         context.Configuration.GetConnectionString("DefaultConnection")));
-
                 services.AddDefaultIdentity<UserApp>()
-                    .AddEntityFrameworkStores<TMSWebContext>();
+                     .AddEntityFrameworkStores<TMSIdentityDbContext>();
             });
         }
     }

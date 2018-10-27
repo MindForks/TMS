@@ -12,7 +12,13 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Areas\Identity\Data\" />
     <Folder Include="Areas\Identity\Services\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\TMS.Bootstrap\TMS.Bootstrap.csproj" />
+    <ProjectReference Include="..\TMS.EntitiesDTO\TMS.EntitiesDTO.csproj" />
   </ItemGroup>
 
 </Project>
