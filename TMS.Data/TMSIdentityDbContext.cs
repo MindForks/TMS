@@ -11,8 +11,6 @@ namespace TMS.Data
         {
         }
 
-       // public DbSet<UserApp> UsersApp { get; }
-
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
             base.OnModelCreating(modelBuilder);
