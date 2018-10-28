@@ -40,9 +40,8 @@ body {
     transform: translateY(-50%);*/
 }
 
-#register-form, #login-form {
+#register-form, #login-form, #forgot-password {
     padding-top: 30px;
-    margin-bottom:-70px;
 }
 
 footer {

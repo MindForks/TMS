@@ -1,26 +1,24 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text.Encodings.Web;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Identity;
+﻿using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.UI.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using TMS.Web.Areas.Identity.Data;
+using System;
+using System.ComponentModel.DataAnnotations;
+using System.Text.Encodings.Web;
+using System.Threading.Tasks;
+using TMS.EntitiesDTO;
 
 namespace TMS.Web.Areas.Identity.Pages.Account.Manage
 {
     public partial class IndexModel : PageModel
     {
-        private readonly UserManager<UserApp> _userManager;
-        private readonly SignInManager<UserApp> _signInManager;
+        private readonly UserManager<UserAppDTO> _userManager;
+        private readonly SignInManager<UserAppDTO> _signInManager;
         private readonly IEmailSender _emailSender;
 
         public IndexModel(
-            UserManager<UserApp> userManager,
-            SignInManager<UserApp> signInManager,
+            UserManager<UserAppDTO> userManager,
+            SignInManager<UserAppDTO> signInManager,
             IEmailSender emailSender)
         {
             _userManager = userManager;
