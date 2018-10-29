@@ -11,11 +11,13 @@ namespace TMS.Data.Repositories
         where T : class
     {
         private readonly DbSet<T> db;
-
+        private readonly TMSDbContext context;
         public BasicRepository(TMSDbContext context)
         {
-            db = context.Set<T>();
+            this.context = context;
+            db = this.context.Set<T>();
         }
+
         public void Create(T item)
         {
             db.Add(item);
@@ -47,5 +49,31 @@ namespace TMS.Data.Repositories
         {
             db.Update(item);
         }
+
+        public void SaveChanges()
+        {
+            context.SaveChanges();
+        }
+
+        public void Dispose()
+        {
+            Dispose(true);
+            GC.SuppressFinalize(this);
+        }
+
+        private bool disposed = false;
+        protected virtual void Dispose(bool disposing)
+        {
+            if (!this.disposed)
+            {
+                if (disposing)
+                {
+                    context.Dispose();
+               }
+            }
+            this.disposed = true;
+        }
+
+      
     }
 }

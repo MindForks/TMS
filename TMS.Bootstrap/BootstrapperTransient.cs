@@ -4,6 +4,8 @@ using Microsoft.EntityFrameworkCore;
 using TMS.Interfaces;
 using TMS.Data;
 using TMS.Bootstrap.Automapper;
+using TMS.Entities;
+using TMS.Data.Repositories;
 
 namespace TMS.Bootstrap
 {
@@ -18,8 +20,11 @@ namespace TMS.Bootstrap
                  options.UseSqlServer(connection);
              });
             services.AddSingleton(typeof(string), connection);
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddSingleton<Interfaces.IMapper, TMSAutoMapper>();
+
+            #region register repositories as scoped
+            services.AddScoped<IRepository<NotificationType>, BasicRepository<NotificationType>>();
+            #endregion
 
             #region register services as Transient
             #endregion
