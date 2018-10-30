@@ -6,6 +6,7 @@ using TMS.Data;
 using TMS.Bootstrap.Automapper;
 using TMS.Entities;
 using TMS.Data.Repositories;
+using TMS.Business;
 
 namespace TMS.Bootstrap
 {
@@ -24,9 +25,12 @@ namespace TMS.Bootstrap
 
             #region register repositories as scoped
             services.AddScoped<IRepository<NotificationType>, BasicRepository<NotificationType>>();
+            services.AddScoped<IRepository<Label>, BasicRepository<Label>>();
+
             #endregion
 
             #region register services as Transient
+            services.AddTransient<LabelService>();
             #endregion
         }
     }

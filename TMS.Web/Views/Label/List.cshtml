@@ -1,0 +1,65 @@
+﻿@using TMS.EntitiesDTO
+@model IEnumerable<LabelDTO>
+@{
+    ViewData["Titile"] = "List all labels";
+}
+
+<h5>Labels</h5>
+<hr />
+<div>
+    <a asp-action="Create">Create new label</a>
+</div>
+@if (Model.Any())
+{
+<div class="table-responsive">
+    <table class="table table-dark">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Title)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Color)
+                </th>
+                <th>
+                    Actions
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <label>@item.Title</label>
+                    </td>
+                    <td>
+                        <label>@item.Color</label>
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                        <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                        <a href="#" data-toggle="modal" data-target="#deleteModal" data-arg-id="@item.Id">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+    }
+    else
+    {
+    <center>No labels found</center>
+    }
+
+        @section scripts {
+            <script>
+                $('#deleteModal').on('show.bs.modal', function (event) {
+                    var button = $(event.relatedTarget);
+                    var itemId = button.data('item-id');
+
+                    var input = $(this).find('#confirmItemId');
+                    input.attr("value", itemId);
+                })
+            </script>
+        }
