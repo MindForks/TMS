@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\TMS.EntitiesDTO\TMS.EntitiesDTO.csproj" />
+    <ProjectReference Include="..\TMS.Entities\TMS.Entities.csproj" />
     <ProjectReference Include="..\TMS.Interfaces\TMS.Interfaces.csproj" />
   </ItemGroup>
 
