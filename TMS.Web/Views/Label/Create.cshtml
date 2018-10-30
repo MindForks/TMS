@@ -4,11 +4,11 @@
     ViewData["Title"] = "Create label";
 }
 
-<h4>Create new label</h4>
+<h3>Create new label</h3>
 <hr />
-<hr />
+
 <div class="container">
-    <div class="row">
+    <div class="col-md-6">
             <form asp-action="Create">
                 @Html.Partial("FormFields", Model)
             </form>
