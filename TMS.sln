@@ -22,7 +22,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		.gitignore = .gitignore
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TMS.Web", "TMS.Web\TMS.Web.csproj", "{ABA0FE09-7B13-4D8F-A448-0C507A7B60D2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TMS.Web", "TMS.Web\TMS.Web.csproj", "{ABA0FE09-7B13-4D8F-A448-0C507A7B60D2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
