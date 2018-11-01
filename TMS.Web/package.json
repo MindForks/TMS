@@ -2,7 +2,12 @@
   "version": "1.0.0",
   "name": "asp.net",
   "private": true,
-  "devDependencies": {
-    "bootstrap-colorpicker"
-  },
+  "devDependencies": {},
+  "dependencies": {
+    "bootstrap": "3.3.7",
+    "bootstrap-colorpicker": "^2.5.2",
+    "jquery": "3.3.1",
+    "jquery-validation": "1.17.0",
+    "jquery-validation-unobtrusive": "3.2.9"
+  }
 }

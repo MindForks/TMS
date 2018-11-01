@@ -11,7 +11,7 @@
 <div class="container">
     <div class="col-md-6">
         <form asp-action="Create">
-            @Html.Partial("FormFields", Model)
+            @await Html.PartialAsync("FormFields", Model)
         </form>
     </div>
 </div>
@@ -21,12 +21,6 @@
     <a asp-action="List">Back to all</a>
 </div>
 
-<div id="cp2" class="input-group colorpicker-component">
-    <input type="text" value="#00AABB" class="form-control" />
-    <span class="input-group-addon"><i></i></span>
-</div>
-<script>
-    $(function () {
-        $('#cp2').colorpicker();
-    });
-</script>
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+}
