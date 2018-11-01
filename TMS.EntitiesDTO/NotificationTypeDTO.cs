@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TMS.EntitiesDTO
 {
-    class NotificationTypeDTO
+    public class NotificationTypeDTO
     {
         public int Id { get; set; }
         public string Title { get; set; }

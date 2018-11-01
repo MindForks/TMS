@@ -3,6 +3,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TMS.Data;
 using TMS.Interfaces;
+using TMS.Bootstrap.Automapper;
+using TMS.Entities;
+using TMS.Data.Repositories;
 
 namespace TMS.Bootstrap
 {
@@ -18,7 +21,8 @@ namespace TMS.Bootstrap
              });
 
             services.AddSingleton(typeof(string), connection);
-            services.AddScoped<IUnitOfWork, UnitOfWork>();
+            services.AddSingleton<Interfaces.IMapper, TMSAutoMapper>();
+
 
             services.AddDbContext<TMSIdentityDbContext>(options =>
                    options.UseSqlServer(
@@ -26,6 +30,12 @@ namespace TMS.Bootstrap
 
             #region register services as Transient
 
+            #region register repositories as scoped
+            services.AddScoped<IRepository<NotificationType>, BasicRepository<NotificationType>>();
+            #endregion
+
+
+            #region register services as Transient
             #endregion
         }
     }
