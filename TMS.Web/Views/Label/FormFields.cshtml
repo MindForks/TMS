@@ -1,7 +1,5 @@
 ﻿@model TMS.EntitiesDTO.LabelDTO
 
-<script src="~/lib/jquery/dist/jquery.min.js"></script>
-<script src="~/lib/bootstrap-colorpicker/dist/js/bootstrap-colorpicker.min.js"></script>
 
 <div asp-validation-summary="ModelOnly" class="text-danger"></div>
 <input asp-for="Id" type="hidden" />
@@ -14,7 +12,6 @@
 
 <div class="form-group">
     <label asp-for="Color" class="control-label"></label>
-
     <div id="cp2" class="input-group colorpicker-component">
         <input asp-for="Color" class="form-control" type="text" />
         <span asp-validation-for="Color" class="input-group-addon"></span>
@@ -26,6 +23,7 @@
 </div>
 <script>
     window.addEventListener("load", function () {
-        
+        $('#cp2').colorpicker();
     });
 </script>
+
