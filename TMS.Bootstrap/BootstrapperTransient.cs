@@ -29,7 +29,7 @@ namespace TMS.Bootstrap
                        configuration.GetConnectionString("DefaultConnection")));
 
             #region register services as Transient
-
+            #endregion
             #region register repositories as scoped
             services.AddScoped<IRepository<NotificationType>, BasicRepository<NotificationType>>();
             #endregion
