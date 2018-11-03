@@ -1,8 +1,7 @@
 ﻿using Microsoft.AspNetCore.Identity;
 
-namespace TMS.Web.Areas.Identity.Data
+namespace TMS.Entities
 {
-    // Add profile data for application users by adding properties to the User class
     public class UserApp : IdentityUser
     {
         [PersonalData]

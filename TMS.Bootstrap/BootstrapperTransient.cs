@@ -25,11 +25,11 @@ namespace TMS.Bootstrap
 
 
             services.AddDbContext<TMSIdentityDbContext>(options =>
-                   options.UseSqlServer(
-                       configuration.GetConnectionString("DefaultConnection")));
+                   options.UseSqlServer(connection));
 
             #region register services as Transient
             #endregion
+
             #region register repositories as scoped
             services.AddScoped<IRepository<NotificationType>, BasicRepository<NotificationType>>();
             #endregion

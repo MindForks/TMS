@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using TMS.Entities;
 using TMS.EntitiesDTO;
 
 namespace TMS.Data

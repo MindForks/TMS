@@ -2,7 +2,7 @@
 
 namespace TMS.EntitiesDTO
 {
-    public class UserAppDTO:IdentityUser
+    public class UserAppDTO : IdentityUser
     {
         [PersonalData]
         public string FirstName { get; set; }

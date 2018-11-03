@@ -3,6 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TMS.Data;
+using TMS.Entities;
 using TMS.EntitiesDTO;
 
 [assembly: HostingStartup(typeof(TMS.Web.Areas.Identity.IdentityHostingStartup))]
