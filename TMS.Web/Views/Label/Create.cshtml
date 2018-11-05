@@ -13,12 +13,13 @@
         <form asp-action="Create">
             @await Html.PartialAsync("FormFields", Model)
         </form>
+        <a asp-action="List">Back to all</a>
     </div>
 </div>
 <br />
 <br />
 <div>
-    <a asp-action="List">Back to all</a>
+    
 </div>
 
 @section Scripts {
