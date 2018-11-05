@@ -26,6 +26,8 @@ namespace TMS.Bootstrap
             #region register repositories as scoped
             services.AddScoped<IRepository<NotificationType>, BasicRepository<NotificationType>>();
             services.AddScoped<IRepository<Label>, BasicRepository<Label>>();
+            services.AddScoped<IRepository<Task>, BasicRepository<Task>>();
+            services.AddScoped<IRepository<UserApp>, BasicRepository<UserApp>>();
 
             #endregion
 
