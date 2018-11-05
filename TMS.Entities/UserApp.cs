@@ -3,13 +3,12 @@ using System.Collections.Generic;
 
 namespace TMS.Entities
 {
-    public class UserApp : IdentityUser<int>
+    public class UserApp : IdentityUser
     {
         public UserApp()
         {
             TaskUsers = new List<TaskUser>();
         }
-        public int Id { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
 

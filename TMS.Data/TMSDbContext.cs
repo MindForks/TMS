@@ -1,9 +1,11 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using TMS.Entities;
+using TMS.EntitiesDTO;
 
 namespace TMS.Data
 {
-    public class TMSDbContext : DbContext
+    public class TMSDbContext : IdentityDbContext<UserApp>
     {
         private string ConnectionString;
 
@@ -16,7 +18,6 @@ namespace TMS.Data
         public DbSet<NotificationType> NotificationTypes { get; }
         public DbSet<Label> Labels { get; }
         public DbSet<Task> Tasks { get; }
-        public DbSet<UserApp> Users { get; }
         #endregion DbSets
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)

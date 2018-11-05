@@ -6,7 +6,8 @@ using TMS.Interfaces;
 using TMS.Bootstrap.Automapper;
 using TMS.Entities;
 using TMS.Data.Repositories;
-using TMS.Business;
+using Microsoft.AspNetCore.Identity;
+using TMS.Business.Services;
 
 namespace TMS.Bootstrap
 {
@@ -16,29 +17,34 @@ namespace TMS.Bootstrap
         {
             var connection = configuration.GetConnectionString("DefaultConnection");
 
-             services.AddDbContext<TMSDbContext>(options =>
+            services.AddDbContext<TMSDbContext>(options =>
              {
                  options.UseSqlServer(connection);
              });
-
             services.AddSingleton(typeof(string), connection);
             services.AddSingleton<Interfaces.IMapper, TMSAutoMapper>();
-
-
-            services.AddDbContext<TMSIdentityDbContext>(options =>
-                   options.UseSqlServer(connection));
 
             #region Repositories
             services.AddScoped<IRepository<NotificationType>, BasicRepository<NotificationType>>();
             services.AddScoped<IRepository<Label>, BasicRepository<Label>>();
             services.AddScoped<IRepository<Task>, BasicRepository<Task>>();
             services.AddScoped<IRepository<UserApp>, BasicRepository<UserApp>>();
+            services.AddScoped<IRepositoryAsync<UserApp>, UserRepository>();
             #endregion Repositories
-
 
             #region Services
             services.AddTransient<LabelService>();
+            services.AddTransient<IdentityService>();
             #endregion Services
+        }
+        public static void AddIdentity(this IServiceCollection services)
+        {
+            services.AddIdentity<UserApp, IdentityRole>(opts =>
+            {
+                opts.Password.RequiredLength = 3;
+            })
+            .AddEntityFrameworkStores<TMSDbContext>()
+            .AddDefaultTokenProviders();
         }
     }
 }

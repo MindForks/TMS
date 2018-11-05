@@ -4,7 +4,7 @@ using TMS.EntitiesDTO;
 using TMS.Interfaces;
 using TMS.Entities;
 
-namespace TMS.Business
+namespace TMS.Business.Services
 {
     public class LabelService
     {

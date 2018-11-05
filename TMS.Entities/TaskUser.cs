@@ -6,7 +6,7 @@ namespace TMS.Entities
 {
    public class TaskUser
     {
-        public int UserId { get; set; }
+        public string UserId { get; set; }
         public UserApp User { get; set; }
 
         public int TaskId { get; set; }

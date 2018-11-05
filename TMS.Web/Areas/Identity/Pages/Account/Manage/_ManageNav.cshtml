@@ -1,5 +1,5 @@
-﻿@using TMS.EntitiesDTO
-@inject SignInManager<UserAppDTO> SignInManager
+﻿@using TMS.Entities
+@inject SignInManager<UserApp> SignInManager
 @{
     var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
 }
