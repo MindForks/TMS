@@ -13,8 +13,10 @@ namespace TMS.Data
         }
 
         #region DbSets
+
         public DbSet<NotificationType> NotificationTypes { get; }
-        #endregion
+
+        #endregion DbSets
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
