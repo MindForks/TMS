@@ -28,21 +28,17 @@ namespace TMS.Bootstrap
             services.AddDbContext<TMSIdentityDbContext>(options =>
                    options.UseSqlServer(connection));
 
-            #region register services as Transient
-            #endregion
-
-            #region register repositories as scoped
+            #region Repositories
             services.AddScoped<IRepository<NotificationType>, BasicRepository<NotificationType>>();
             services.AddScoped<IRepository<Label>, BasicRepository<Label>>();
             services.AddScoped<IRepository<Task>, BasicRepository<Task>>();
             services.AddScoped<IRepository<UserApp>, BasicRepository<UserApp>>();
+            #endregion Repositories
 
-            #endregion
 
-
-            #region register services as Transient
+            #region Services
             services.AddTransient<LabelService>();
-            #endregion
+            #endregion Services
         }
     }
 }
