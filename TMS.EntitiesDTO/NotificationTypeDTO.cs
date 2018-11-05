@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace TMS.EntitiesDTO
+﻿namespace TMS.EntitiesDTO
 {
     public class NotificationTypeDTO
     {

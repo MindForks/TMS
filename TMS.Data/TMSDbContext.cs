@@ -13,6 +13,7 @@ namespace TMS.Data
         }
 
         #region DbSets
+
         public DbSet<NotificationType> NotificationTypes { get; }
         public DbSet<Label> Labels { get; }
         public DbSet<Task> Tasks { get; }

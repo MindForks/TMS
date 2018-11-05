@@ -1,0 +1,72 @@
+﻿@using TMS.EntitiesDTO
+@inject SignInManager<UserAppDTO> SignInManager
+@{
+    var hasExternalLogins = (await SignInManager.GetExternalAuthenticationSchemesAsync()).Any();
+}
+
+
+<nav class="bg-light sidebar" role="navigation">
+
+    <ul class="nav-components">
+        <li class="sidebar-search">
+            <div class="input-group custom-search-form">
+                <input type="text" class="form-control" placeholder="Search...">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="button">
+                        <i class="fa fa-search"></i>
+                    </button>
+                </span>
+            </div>
+        </li>
+
+        <li>
+            <a href="#"><i class="fas fa-chart-line"></i> Dashboard</a>
+        </li>
+
+        <li>
+            <a href="#taskSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-tasks"></i> Task</a>
+            <ul class="collapse" id="taskSubmenu">
+                <li>
+                    <a href="#">Create</a>
+                </li>
+                <li>
+                    <a href="#">View All Task</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#labelSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-tags"></i> Label</a>
+            <ul class="collapse" id="labelSubmenu">
+                <li>
+                    <a href="#">Create</a>
+                </li>
+                <li>
+                    <a href="#">View All Labels</a>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#settingsSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle"><i class="fas fa-cog"></i> Settings</a>
+            <ul class="collapse" id="settingsSubmenu">
+                <li>
+                    <a href="#">Edit Profile</a>
+                </li>
+                <li>
+                    <a href="#">Change password</a>
+                </li>
+            </ul>
+        </li>
+    </ul>
+</nav>
+
+
+<!--<ul class="nav nav-pills nav-stacked">
+    <li class="@ManageNavPages.IndexNavClass(ViewContext)"><a asp-page="./Index">Profile</a></li>
+    <li class="@ManageNavPages.ChangePasswordNavClass(ViewContext)"><a id="change-password" asp-page="./ChangePassword">Password</a></li>
+    @if (hasExternalLogins)
+    {
+        <li class="@ManageNavPages.ExternalLoginsNavClass(ViewContext)"><a id="external-login" asp-page="./ExternalLogins">External logins</a></li>
+    }
+    <li class="@ManageNavPages.TwoFactorAuthenticationNavClass(ViewContext)"><a asp-page="./TwoFactorAuthentication">Two-factor authentication</a></li>
+    <li class="@ManageNavPages.PersonalDataNavClass(ViewContext)"><a asp-page="./PersonalData">Personal data</a></li>
+</ul>-->
