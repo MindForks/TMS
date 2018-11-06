@@ -28,13 +28,11 @@ namespace TMS.Bootstrap
             services.AddScoped<IRepository<NotificationType>, BasicRepository<NotificationType>>();
             services.AddScoped<IRepository<Label>, BasicRepository<Label>>();
             services.AddScoped<IRepository<Task>, BasicRepository<Task>>();
-            services.AddScoped<IRepository<UserApp>, BasicRepository<UserApp>>();
             services.AddScoped<IRepositoryAsync<UserApp>, UserRepository>();
             #endregion Repositories
 
             #region Services
             services.AddTransient<LabelService>();
-            services.AddTransient<IdentityService>();
             #endregion Services
         }
         public static void AddIdentity(this IServiceCollection services)
