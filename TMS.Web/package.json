@@ -8,6 +8,9 @@
     "bootstrap-colorpicker": "^2.5.2",
     "jquery": "3.3.1",
     "jquery-validation": "1.17.0",
-    "jquery-validation-unobtrusive": "3.2.9"
+    "jquery-validation-unobtrusive": "3.2.9",
+    "metismenu": "^3.0.3",
+    "popper.js": "^1.14.3",
+    "startbootstrap-sb-admin-2": "3.3.7"
   }
 }
