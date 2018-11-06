@@ -8,17 +8,17 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Threading.Tasks;
-using TMS.EntitiesDTO;
+using TMS.Entities;
 
 namespace TMS.Web.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
     public class LoginModel : PageModel
     {
-        private readonly SignInManager<UserAppDTO> _signInManager;
+        private readonly SignInManager<UserApp> _signInManager;
         private readonly ILogger<LoginModel> _logger;
 
-        public LoginModel(SignInManager<UserAppDTO> signInManager, ILogger<LoginModel> logger)
+        public LoginModel(SignInManager<UserApp> signInManager, ILogger<LoginModel> logger)
         {
             _signInManager = signInManager;
             _logger = logger;

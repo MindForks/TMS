@@ -1,9 +1,10 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore;
 using TMS.Entities;
 
 namespace TMS.Data
 {
-    public class TMSDbContext : DbContext
+    public class TMSDbContext : IdentityDbContext<UserApp>
     {
         private string ConnectionString;
 

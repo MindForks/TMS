@@ -17,15 +17,11 @@ namespace TMS.Bootstrap
 
              services.AddDbContext<TMSDbContext>(options =>
              {
-                 options.UseSqlServer(connection);
+                 options.UseMySql(connection);
              });
 
             services.AddSingleton(typeof(string), connection);
             services.AddSingleton<Interfaces.IMapper, TMSAutoMapper>();
-
-
-            services.AddDbContext<TMSIdentityDbContext>(options =>
-                   options.UseSqlServer(connection));
 
             #region register services as Transient
             #endregion

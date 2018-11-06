@@ -7,17 +7,17 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-using TMS.EntitiesDTO;
+using TMS.Entities;
 
 namespace TMS.Web.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
     public class LogoutModel : PageModel
     {
-        private readonly SignInManager<UserAppDTO> _signInManager;
+        private readonly SignInManager<UserApp> _signInManager;
         private readonly ILogger<LogoutModel> _logger;
 
-        public LogoutModel(SignInManager<UserAppDTO> signInManager, ILogger<LogoutModel> logger)
+        public LogoutModel(SignInManager<UserApp> signInManager, ILogger<LogoutModel> logger)
         {
             _signInManager = signInManager;
             _logger = logger;
