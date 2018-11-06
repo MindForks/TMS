@@ -13,14 +13,11 @@
         <form asp-action="Create">
             @await Html.PartialAsync("FormFields", Model)
         </form>
+        <br />
         <a asp-action="List">Back to all</a>
     </div>
 </div>
 <br />
-<br />
-<div>
-    
-</div>
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }

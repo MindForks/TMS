@@ -1,11 +1,13 @@
 ﻿@using TMS.EntitiesDTO
 @model IEnumerable<LabelDTO>
+
 @{
-    ViewData["Titile"] = "List all labels";
+    ViewData["Title"] = "List all labels";
 }
 
 <h3>Labels</h3>
 <hr />
+
 <div class="container">
     <div>
         <a asp-action="Create">Create new label</a>

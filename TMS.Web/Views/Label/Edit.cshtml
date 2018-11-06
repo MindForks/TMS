@@ -11,11 +11,9 @@
         <form asp-action="Edit">
             @await Html.PartialAsync("FormFields", Model)
         </form>
+        <br />
+        <a asp-action="List">Back to List</a>
     </div>
-</div>
-<br />
-<div>
-    <a asp-action="List">Back to List</a>
 </div>
 <br />
 @section Scripts {

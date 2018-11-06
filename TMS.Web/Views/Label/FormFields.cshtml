@@ -6,24 +6,22 @@
 
 <div class="form-group">
     <label asp-for="Title" class="control-label"></label>
-    <input asp-for="Title" class="form-control" type="text" />
+    <input asp-for="Title" class="form-control" type="text" autocomplete="off"/>
     <span asp-validation-for="Title"></span>
 </div>
 
 <div class="form-group">
     <label asp-for="Color" class="control-label"></label>
-    <div id="cp2" class="input-group colorpicker-component">
-        <input asp-for="Color" class="form-control" type="text" />
-        <span asp-validation-for="Color" class="input-group-addon"></span>
-    </div>
+    <input asp-for="Color" id="cp1" class="form-control" autocomplete="off" />
+    <span asp-validation-for="Color" class="input-group-addon"></span>
 </div>
-
 <div class="form-group">
     <input type="submit" value="Save" class="btn btn-default" />
 </div>
+
 <script>
     window.addEventListener("load", function () {
-        $('#cp2').colorpicker();
+        $('#cp1').colorpicker();
     });
 </script>
 
