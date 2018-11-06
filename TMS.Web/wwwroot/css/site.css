@@ -15,9 +15,6 @@ body {
     line-height: 1.4;
     color:black;
 }
-#myCarousel{
-    top:-40px;
-}
 .carousel-item {
     height: 100vh;
     min-height: 300px;
@@ -38,7 +35,7 @@ body {
 }
 
 #register-form, #login-form, #forgot-password {
-    padding-top: 30px;
+    padding-top: 70px;
 }
 
 footer {

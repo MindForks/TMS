@@ -10,7 +10,7 @@ using TMS.Data;
 namespace TMS.Data.Migrations.TMSIdentityDb
 {
     [DbContext(typeof(TMSIdentityDbContext))]
-    [Migration("20181027225204_Customize User")]
+    [Migration("20181105235415_CustomizeUser")]
     partial class CustomizeUser
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -135,7 +135,7 @@ namespace TMS.Data.Migrations.TMSIdentityDb
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("TMS.Web.Areas.Identity.Data.UserApp", b =>
+            modelBuilder.Entity("TMS.EntitiesDTO.UserAppDTO", b =>
                 {
                     b.Property<string>("Id")
                         .ValueGeneratedOnAdd();
@@ -200,7 +200,7 @@ namespace TMS.Data.Migrations.TMSIdentityDb
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserClaim<string>", b =>
                 {
-                    b.HasOne("TMS.Web.Areas.Identity.Data.UserApp")
+                    b.HasOne("TMS.EntitiesDTO.UserAppDTO")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -208,7 +208,7 @@ namespace TMS.Data.Migrations.TMSIdentityDb
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserLogin<string>", b =>
                 {
-                    b.HasOne("TMS.Web.Areas.Identity.Data.UserApp")
+                    b.HasOne("TMS.EntitiesDTO.UserAppDTO")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -221,7 +221,7 @@ namespace TMS.Data.Migrations.TMSIdentityDb
                         .HasForeignKey("RoleId")
                         .OnDelete(DeleteBehavior.Cascade);
 
-                    b.HasOne("TMS.Web.Areas.Identity.Data.UserApp")
+                    b.HasOne("TMS.EntitiesDTO.UserAppDTO")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
@@ -229,7 +229,7 @@ namespace TMS.Data.Migrations.TMSIdentityDb
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityUserToken<string>", b =>
                 {
-                    b.HasOne("TMS.Web.Areas.Identity.Data.UserApp")
+                    b.HasOne("TMS.EntitiesDTO.UserAppDTO")
                         .WithMany()
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
