@@ -1,12 +1,19 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using System.Collections.Generic;
 
 namespace TMS.Entities
 {
     public class UserApp : IdentityUser
     {
-        [PersonalData]
+        public UserApp()
+        {
+            TaskUsers = new List<TaskUser>();
+        }
         public string FirstName { get; set; }
-        [PersonalData]
         public string LastName { get; set; }
+
+        public ICollection<TaskUser> TaskUsers { get; set; }
+
+        
     }
 }
