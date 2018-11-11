@@ -123,6 +123,22 @@ namespace TMS.Data.Migrations
 
                     b.ToTable("AspNetUserTokens");
                 });
+            
+            modelBuilder.Entity("TMS.Entities.Label", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Color");
+
+                    b.Property<string>("Title");
+
+                    b.Property<int>("UserId");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Labels");
+                });
 
             modelBuilder.Entity("TMS.Entities.NotificationType", b =>
                 {
@@ -135,6 +151,61 @@ namespace TMS.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("NotificationTypes");
+                });
+
+            modelBuilder.Entity("TMS.Entities.Task", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<DateTime>("ClosingTime");
+
+                    b.Property<DateTime>("CreationTime");
+
+                    b.Property<string>("Description");
+
+                    b.Property<DateTime>("EndDate");
+
+                    b.Property<int>("StatusId");
+
+                    b.Property<string>("Title");
+
+                    b.Property<string>("Weight");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("StatusId");
+
+                    b.ToTable("Tasks");
+                });
+
+            modelBuilder.Entity("TMS.Entities.TaskStatus", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Title");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("TaskStatus");
+                });
+
+            modelBuilder.Entity("TMS.Entities.TaskUser", b =>
+                {
+                    b.Property<string>("UserId");
+
+                    b.Property<int>("TaskId");
+
+                    b.Property<int?>("TaskId1");
+
+                    b.HasKey("UserId", "TaskId");
+
+                    b.HasIndex("TaskId");
+
+                    b.HasIndex("TaskId1");
+
+                    b.ToTable("TaskUser");
                 });
 
             modelBuilder.Entity("TMS.Entities.UserApp", b =>
@@ -235,6 +306,32 @@ namespace TMS.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
+
+            modelBuilder.Entity("TMS.Entities.Task", b =>
+                {
+                    b.HasOne("TMS.Entities.TaskStatus", "Status")
+                        .WithMany()
+                        .HasForeignKey("StatusId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
+            modelBuilder.Entity("TMS.Entities.TaskUser", b =>
+                {
+                    b.HasOne("TMS.Entities.Task", "Task")
+                        .WithMany("Moderators")
+                        .HasForeignKey("TaskId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("TMS.Entities.Task")
+                        .WithMany("Viewers")
+                        .HasForeignKey("TaskId1");
+
+                    b.HasOne("TMS.Entities.UserApp", "User")
+                        .WithMany("TaskUsers")
+                        .HasForeignKey("UserId")
+                        .OnDelete(DeleteBehavior.Cascade);
+                });
+
 #pragma warning restore 612, 618
         }
     }

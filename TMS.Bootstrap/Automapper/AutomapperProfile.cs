@@ -10,7 +10,14 @@ namespace TMS.Bootstrap.Automapper
         {
             #region MapSettings
             CreateMap<NotificationType, NotificationTypeDTO>();
+            CreateMap<NotificationTypeDTO, NotificationType>();
+
+            CreateMap<Label, LabelDTO>();
+            CreateMap<LabelDTO, Label>();
+
             CreateMap<UserApp, UserAppDTO>();
+            CreateMap<UserAppDTO, UserApp>();
+
             #endregion
         }
     }
