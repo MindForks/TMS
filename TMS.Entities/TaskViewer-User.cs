@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TMS.Entities
 {
-   public class TaskUser
+    public class TaskViewer_User
     {
         public string UserId { get; set; }
         public UserApp User { get; set; }

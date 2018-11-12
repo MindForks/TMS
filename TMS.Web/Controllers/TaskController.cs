@@ -13,17 +13,31 @@ namespace TMS.Web.Controllers
     {
         private readonly TaskService _taskService;
         private readonly UserService _userService;
+        private readonly TaskStatusService _taskStatusService;
 
-        public TaskController(TaskService taskService, UserService userService)
+        public TaskController(TaskService taskService, UserService userService, TaskStatusService taskStatusService)
         {
             _taskService = taskService;
             _userService = userService;
+            _taskStatusService = taskStatusService;
         }
 
         [HttpGet]
-        public IActionResult List()
+        public async Task<IActionResult> List()
         {
             var tasks = _taskService.GetAll();
+            ViewData["Users"] = (await _userService.GetAllAsync())
+           .Select(user => new SelectListItem
+           {
+               Value = user.Id,
+               Text = user.UserName
+           });
+            ViewData["Statuses"] = _taskStatusService.GetAll()
+                .Select(taskStatus => new SelectListItem
+                {
+                    Value = taskStatus.Id.ToString(),
+                    Text = taskStatus.Title
+                });
             return View(tasks);
         }
 
@@ -32,7 +46,8 @@ namespace TMS.Web.Controllers
         {
             var task = new TaskDTO()
             {
-                CreationTime= DateTime.Now
+                CreationTime= DateTimeOffset.Now,
+                EndDate = DateTimeOffset.Now
             };
             ViewData["Users"] = (await _userService.GetAllAsync())
               .Select(user => new SelectListItem
@@ -40,6 +55,12 @@ namespace TMS.Web.Controllers
                   Value = user.Id,
                   Text = user.UserName
               });
+            ViewData["Statuses"] = _taskStatusService.GetAll()
+                .Select(taskStatus => new SelectListItem
+                {
+                    Value = taskStatus.Id.ToString(),
+                    Text = taskStatus.Title
+                });
 
             return View(task);
         }
@@ -53,9 +74,22 @@ namespace TMS.Web.Controllers
         }
 
         [HttpGet]
-        public IActionResult Edit(int id)
+        public async Task<IActionResult> Edit(int id)
         {
             var task = _taskService.GetById(id);
+            ViewData["Users"] = (await _userService.GetAllAsync())
+              .Select(user => new SelectListItem
+              {
+                  Value = user.Id,
+                  Text = user.UserName
+              });
+            ViewData["Statuses"] = _taskStatusService.GetAll()
+                .Select(taskStatus => new SelectListItem
+                {
+                    Value = taskStatus.Id.ToString(),
+                    Text = taskStatus.Title
+                });
+
             return View(task);
         }
 

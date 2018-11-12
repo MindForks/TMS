@@ -5,6 +5,7 @@
       "node_modules/jquery/dist/jquery.min.js",
       "node_modules/moment/min/moment.min.js",
       "node_modules/bootstrap/dist/js/bootstrap.min.js",
+      "node_modules/bootstrap-select/dist/js/bootstrap-select.min.js",
       "node_modules/startbootstrap-sb-admin-2/dist/js/sb-admin-2.js",
       "node_modules/jquery-validation/dist/jquery.validate.min.js",
       "node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js",
@@ -22,6 +23,7 @@
       "node_modules/bootstrap/dist/css/bootstrap.min.css",
       "node_modules/startbootstrap-sb-admin-2/dist/css/sb-admin-2.css",
       "node_modules/bootstrap-colorpicker/dist/css/bootstrap-colorpicker.min.css",
+      "node_modules/bootstrap-select/dist/css/bootstrap-select.min.css",
       "node_modules/metismenu/dist/metismenu.min.css",
       "node_modules/tempusdominus-bootstrap-4/build/css/tempusdominus-bootstrap-4.min.css"
     ],

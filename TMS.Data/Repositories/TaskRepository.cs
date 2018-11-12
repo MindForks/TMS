@@ -60,14 +60,39 @@ namespace TMS.Data.Repositories
 
         public void Update(Task item)
         {
-            db.Update(item); // toDO
+            db.Update(item); 
+
+            var ModeratorsDbSet = context.Set<TaskModerator_User>();
+            var ViewersDbSet = context.Set<TaskViewer_User>();
+
+            var newModerators = item.Moderators.ToArray();
+            var newViewers = item.Viewers.ToArray();
+
+            var toRemoveModerators = ModeratorsDbSet
+                .Where(id => id.TaskId == item.Id)
+                .Except(newModerators);
+            var toAddModerators = newModerators
+                .Except(ModeratorsDbSet);
+
+            var toRemoveViewers = ViewersDbSet
+                .Where(id => id.TaskId == item.Id)
+                .Except(newViewers);
+            var toAddViewers = newViewers
+                .Except(ViewersDbSet);
+
+            ModeratorsDbSet.RemoveRange(toRemoveModerators);
+            ModeratorsDbSet.AddRange(toAddModerators);
+
+            ViewersDbSet.RemoveRange(toRemoveViewers);
+            ViewersDbSet.AddRange(toAddViewers);
+
         }
 
         private IQueryable<Task> GetAllQuery()
         {
             return db
-                .Include(v => v.Moderators);
-               // .Include(v => v.Viewers);
+                .Include(v => v.Moderators)
+                .Include(v => v.Viewers);
 
         }
 

@@ -7,13 +7,14 @@ namespace TMS.Entities
     {
         public UserApp()
         {
-            TaskUsers = new List<TaskUser>();
+            TaskModerator_Users = new List<TaskModerator_User>();
+            TaskViewer_Users = new List<TaskViewer_User>();
         }
         public string FirstName { get; set; }
         public string LastName { get; set; }
 
-        public ICollection<TaskUser> TaskUsers { get; set; }
+        public ICollection<TaskModerator_User> TaskModerator_Users { get; set; }
+        public ICollection<TaskViewer_User> TaskViewer_Users { get; set; }
 
-        
     }
 }

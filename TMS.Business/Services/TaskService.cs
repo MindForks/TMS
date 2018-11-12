@@ -40,7 +40,7 @@ namespace TMS.Business.Services
 
             var itemEntity = _mapper.Map<TaskDTO, Task>(item);
             _repository.Create(itemEntity);
-         //   _repository.SaveChanges();
+            _repository.SaveChanges();
         }
 
         public void Update(TaskDTO item)
