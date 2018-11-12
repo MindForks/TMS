@@ -1,2 +1,0 @@
-1. Create Database TMS
-2. PM> Update-Database -Context TMSIdentityDbContext

@@ -6,19 +6,19 @@ using System;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
-using TMS.EntitiesDTO;
+using TMS.Entities;
 
 namespace TMS.Web.Areas.Identity.Pages.Account.Manage
 {
     public partial class IndexModel : PageModel
     {
-        private readonly UserManager<UserAppDTO> _userManager;
-        private readonly SignInManager<UserAppDTO> _signInManager;
+        private readonly UserManager<UserApp> _userManager;
+        private readonly SignInManager<UserApp> _signInManager;
         private readonly IEmailSender _emailSender;
 
         public IndexModel(
-            UserManager<UserAppDTO> userManager,
-            SignInManager<UserAppDTO> signInManager,
+            UserManager<UserApp> userManager,
+            SignInManager<UserApp> signInManager,
             IEmailSender emailSender)
         {
             _userManager = userManager;

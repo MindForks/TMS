@@ -19,10 +19,16 @@ namespace TMS.Bootstrap
 
             services.AddDbContext<TMSDbContext>(options =>
              {
-                 options.UseSqlServer(connection);
+                 options.UseMySql(connection);
              });
             services.AddSingleton(typeof(string), connection);
             services.AddSingleton<Interfaces.IMapper, TMSAutoMapper>();
+
+            #region register services as Transient
+            #endregion
+
+            #region register repositories as scoped
+            #endregion
 
             #region Repositories
             services.AddScoped<IRepository<NotificationType>, BasicRepository<NotificationType>>();
@@ -39,7 +45,8 @@ namespace TMS.Bootstrap
         {
             services.AddIdentity<UserApp, IdentityRole>(opts =>
             {
-                opts.Password.RequiredLength = 3;
+                opts.Password.RequiredLength = 6;
+                opts.Password.RequireNonAlphanumeric = false;
             })
             .AddEntityFrameworkStores<TMSDbContext>()
             .AddDefaultTokenProviders();

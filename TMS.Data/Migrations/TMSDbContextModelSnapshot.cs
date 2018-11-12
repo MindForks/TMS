@@ -123,7 +123,7 @@ namespace TMS.Data.Migrations
 
                     b.ToTable("AspNetUserTokens");
                 });
-
+            
             modelBuilder.Entity("TMS.Entities.Label", b =>
                 {
                     b.Property<int>("Id")
@@ -331,6 +331,7 @@ namespace TMS.Data.Migrations
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
+
 #pragma warning restore 612, 618
         }
     }

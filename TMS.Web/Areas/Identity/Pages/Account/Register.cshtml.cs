@@ -7,21 +7,21 @@ using Microsoft.Extensions.Logging;
 using System.ComponentModel.DataAnnotations;
 using System.Text.Encodings.Web;
 using System.Threading.Tasks;
-using TMS.EntitiesDTO;
+using TMS.Entities;
 
 namespace TMS.Web.Areas.Identity.Pages.Account
 {
     [AllowAnonymous]
     public class RegisterModel : PageModel
     {
-        private readonly SignInManager<UserAppDTO> _signInManager;
-        private readonly UserManager<UserAppDTO> _userManager;
+        private readonly SignInManager<UserApp> _signInManager;
+        private readonly UserManager<UserApp> _userManager;
         private readonly ILogger<RegisterModel> _logger;
         private readonly IEmailSender _emailSender;
 
         public RegisterModel(
-            UserManager<UserAppDTO> userManager,
-            SignInManager<UserAppDTO> signInManager,
+            UserManager<UserApp> userManager,
+            SignInManager<UserApp> signInManager,
             ILogger<RegisterModel> logger,
             IEmailSender emailSender)
         {
@@ -75,7 +75,7 @@ namespace TMS.Web.Areas.Identity.Pages.Account
             returnUrl = returnUrl ?? Url.Content("~/");
             if (ModelState.IsValid)
             {
-                var user = new UserAppDTO
+                var user = new UserApp
                 {
                     FirstName = Input.FirstName,
                     LastName = Input.LastName,
