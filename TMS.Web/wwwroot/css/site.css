@@ -96,7 +96,7 @@ a, a:hover, a:focus {
 }
 
 .sidebar ul.nav-components {
-    padding: 20px 0;
+    padding: 0 0 20px 0;
     list-style-type: none;
 }
 .sidebar ul li {
@@ -182,3 +182,10 @@ ul.collapse li a {
     top: 56px;
 }
 
+#welcome-user{
+    margin-top:7px;
+}
+
+.create-label{
+    margin-bottom: 15px;
+}
