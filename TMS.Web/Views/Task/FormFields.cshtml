@@ -1,0 +1,62 @@
+﻿@using TMS.EntitiesDTO;
+@model TaskDTO
+@{
+    var users = ((IEnumerable<SelectListItem>)ViewData["Users"]);
+}
+
+<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+<input asp-for="Id" type="hidden" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tempusdominus-bootstrap-4/5.0.0-alpha14/css/tempusdominus-bootstrap-4.min.css" />
+
+<div class="form-group">
+    <label asp-for="Title" class="control-label"></label>
+    <input asp-for="Title" class="form-control" type="text" autocomplete="off" />
+    <span asp-validation-for="Title"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Description" class="control-label"></label>
+    <textarea asp-for="Description" class="form-control" autocomplete="off"></textarea>
+    <span asp-validation-for="Description"></span>
+</div>
+<div class="form-group">
+    <label asp-for="Weight" class="control-label"></label>
+    <input asp-for="Weight" class="form-control" type="number" min="0" autocomplete="off" />
+    <span asp-validation-for="Weight"></span>
+</div>
+<div class="form-group">
+    <label asp-for="CreationTime" class="control-label"></label>
+    <div class="col-sm-6">
+        <div class="form-group">
+            <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+                <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" />
+                <input required hidden  asp-for="CreationTime" type="text"  />
+                <div class="input-group-append" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                    <div class="input-group-text"><i class="fa fa-calendar"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <span asp-validation-for="CreationTime" class="text-danger"></span>
+</div>
+    <div class="form-group">
+        <label asp-for="StatusId" class="control-label"></label>
+        <input asp-for="StatusId" class="form-control" type="text" autocomplete="off" />
+        <span asp-validation-for="StatusId"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="ModeratorIDs" class="control-label"></label>
+        <br />
+        <select required multiple asp-for="ModeratorIDs" asp-items="users" data-live-search="true" class="form-control selectpicker"></select>
+        <span asp-validation-for="ModeratorIDs" class="text-danger"></span>
+
+    </div>
+    <div class="form-group">
+        <input type="submit" value="Save" class="btn btn-default" />
+    </div>
+
+    <script>
+
+        window.addEventListener("load", function () {
+            $('#datetimepicker1').datetimepicker();
+        });
+    </script>

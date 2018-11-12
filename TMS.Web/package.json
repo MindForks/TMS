@@ -10,7 +10,9 @@
     "jquery-validation": "1.17.0",
     "jquery-validation-unobtrusive": "3.2.9",
     "metismenu": "^3.0.3",
-    "popper.js": "^1.14.3",
-    "startbootstrap-sb-admin-2": "3.3.7"
+    "moment-timezone": "^0.5.23",
+    "popper.js": "^1.14.5",
+    "startbootstrap-sb-admin-2": "3.3.7",
+    "tempusdominus-bootstrap-4": "^5.1.2",
   }
 }

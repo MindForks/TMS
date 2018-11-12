@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace TMS.EntitiesDTO
 {
@@ -9,8 +8,8 @@ namespace TMS.EntitiesDTO
     {
         public TaskDTO()
         {
-            Moderators = new List<UserAppDTO>();
-            Viewers = new List<UserAppDTO>();
+            ModeratorIDs = new List<string>();
+            ViewerIDs = new List<string>();
         }
 
         public int Id { get; set; }
@@ -32,13 +31,14 @@ namespace TMS.EntitiesDTO
         public DateTime ClosingTime { get; set; }
 
         [Display(Name = "Task moderators")]
-        [Required(ErrorMessage = "Content must be defined")]
-        public ICollection<UserAppDTO> Moderators { get; set; }
+        public ICollection<string> ModeratorIDs { get; set; }
 
         [Display(Name = "Task viewers")]
-        [Required(ErrorMessage = "Content must be defined")]
-        public ICollection<UserAppDTO> Viewers { get; set; }
+        public ICollection<string> ViewerIDs { get; set; }
 
-        public string Status { get; set; }
+        public TaskStatusDTO Status { get; set; }
+
+        [Display(Name = "Status")]
+        public int StatusId { get; set; }
     }
 }

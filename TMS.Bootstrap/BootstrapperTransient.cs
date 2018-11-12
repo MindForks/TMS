@@ -24,21 +24,18 @@ namespace TMS.Bootstrap
             services.AddSingleton(typeof(string), connection);
             services.AddSingleton<Interfaces.IMapper, TMSAutoMapper>();
 
-            #region register services as Transient
-            #endregion
-
-            #region register repositories as scoped
-            #endregion
 
             #region Repositories
             services.AddScoped<IRepository<NotificationType>, BasicRepository<NotificationType>>();
             services.AddScoped<IRepository<Label>, BasicRepository<Label>>();
-            services.AddScoped<IRepository<Task>, BasicRepository<Task>>();
+            services.AddScoped<IRepository<Task>, TaskRepository>();
             services.AddScoped<IRepositoryAsync<UserApp>, UserRepository>();
             #endregion Repositories
 
             #region Services
             services.AddTransient<LabelService>();
+            services.AddTransient<TaskService>();
+            services.AddTransient<UserService>();
             #endregion Services
         }
         public static void AddIdentity(this IServiceCollection services)
