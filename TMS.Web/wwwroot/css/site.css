@@ -71,10 +71,12 @@ a, a:hover, a:focus {
 }
 
 .sidebar {
-    
+    border-right: lightgray 1px solid;
     min-width: 250px;
     max-width: 250px;
-    min-height: 100vh;
+    height: -moz-calc(100% - 56px);
+    height: -webkit-calc(100% - 56px);
+    height: calc(100% - 56px);
     transition: all 0.3s;
 }
 .sidebar>a[data-toggle="collapse"] {
@@ -94,8 +96,7 @@ a, a:hover, a:focus {
 }
 
 .sidebar ul.nav-components {
-    margin-top: 56px;
-    padding: 20px 0;
+    padding: 0 0 20px 0;
     list-style-type: none;
 }
 .sidebar ul li {
@@ -174,3 +175,17 @@ ul.collapse li a {
     margin-left: -150px;
 }
 
+.body-profile {
+    border-top: lightgray 1px solid;
+    position: absolute;
+    left: 250px;
+    top: 56px;
+}
+
+#welcome-user{
+    margin-top:7px;
+}
+
+.create-label{
+    margin-bottom: 15px;
+}

@@ -3,14 +3,13 @@
 
 @{
     ViewData["Title"] = "List all labels";
+    Layout = "/Views/Shared/_LayoutPages.cshtml";
 }
 
-<h3>Labels</h3>
+<center><h3>Labels</h3></center>
 <hr />
-
-<div class="container">
-    <div>
-        <a asp-action="Create">Create new label</a>
+    <div class="create-label">
+        <a asp-action="Create" class="btn btn-info">Create new label</a>
     </div>
     @if (Model.Any())
     {
@@ -40,7 +39,7 @@
                                 <label>@item.Color</label>
                             </td>
                             <td>
-                                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a>
+                                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                                 <a href="#" data-toggle="modal" data-target="#deleteModal" data-item-id="@item.Id">Delete</a>
                             </td>
                         </tr>
@@ -53,7 +52,7 @@
     {
         <center>No labels found</center>
     }
-</div>
+
 <div id="deleteModal" class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -76,15 +75,15 @@
         </div>
     </div>
 </div>
-    @section scripts {
-        <script>
-            $('#deleteModal').on('show.bs.modal', function (event) {
-                var button = $(event.relatedTarget);
-                var itemId = button.data('item-id');
+@section scripts {
+    <script>
+        $('#deleteModal').on('show.bs.modal', function (event) {
+            var button = $(event.relatedTarget);
+            var itemId = button.data('item-id');
 
-                var input = $(this).find('#confirmItemId');
-                input.attr("value", itemId);
-            })
-        </script>
-    }
+            var input = $(this).find('#confirmItemId');
+            input.attr("value", itemId);
+        })
+    </script>
+}
 
