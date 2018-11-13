@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using TMS.Entities;
 using TMS.EntitiesDTO;
@@ -11,17 +12,30 @@ namespace TMS.Business.Services
     {
         private readonly IMapper _mapper;
         private readonly IRepository<Task> _repository;
+        private readonly UserService _userService;
 
-        public TaskService(IMapper mapper, IRepository<Task> repository)
+        public TaskService(IMapper mapper, IRepository<Task> repository, UserService userService)
         {
             _mapper = mapper;
             _repository = repository;
+            _userService = userService;
         }
-
         public IEnumerable<TaskDTO> GetAll()
         {
             return _mapper.Map<IEnumerable<Task>, IEnumerable<TaskDTO>>(
                 _repository.GetAll());
+        }
+
+        public IEnumerable<TaskDTO> GetAll(string userId) // where i`m moderator and viewer
+        {
+            return _mapper.Map<IEnumerable<Task>, IEnumerable<TaskDTO>>(
+                _repository.Filter(i => i.Moderators.Any(j => j.UserId == userId)
+                        || i.Viewers.Any(j => j.UserId == userId)));
+        }
+
+        public IEnumerable<string> GetAllTaskModerator()
+        {
+            return _repository.GetAll().Select(j => j.Moderators.Select(k => k.User.Email).ToString());
         }
 
         public TaskDTO GetById(int ItemId)

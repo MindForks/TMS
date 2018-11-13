@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
@@ -16,6 +17,7 @@ namespace TMS.Web.Controllers
         private readonly TaskService _taskService;
         private readonly UserService _userService;
         private readonly TaskStatusService _taskStatusService;
+        private string _userId { get { return User.Identity.GetUserId(); } }
 
         public TaskController(TaskService taskService, UserService userService, TaskStatusService taskStatusService)
         {
@@ -27,13 +29,15 @@ namespace TMS.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> List()
         {
-            var tasks = _taskService.GetAll();
-            ViewData["Users"] = (await _userService.GetAllAsync())
+            var tasks = _taskService.GetAll(_userId);
+  
+            ViewData["Moderators"] = (await _userService.GetAllAsync())
            .Select(user => new SelectListItem
            {
                Value = user.Id,
-               Text = user.UserName
-           });
+               Text = String.Format("{0} {1} ({2})", user.LastName, user.FirstName, user.Email)
+           }
+           );
             ViewData["Statuses"] = _taskStatusService.GetAll()
                 .Select(taskStatus => new SelectListItem
                 {
@@ -102,6 +106,27 @@ namespace TMS.Web.Controllers
             _taskService.Update(task);
             return RedirectToAction(nameof(List));
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Details(int id)
+        {
+            ViewData["Users"] = (await _userService.GetAllAsync())
+             .Select(user => new SelectListItem
+             {
+                 Value = user.Id,
+                 Text = String.Format("{0} {1} ({2})", user.LastName, user.FirstName, user.Email)
+             });
+            ViewData["Statuses"] = _taskStatusService.GetAll()
+                .Select(taskStatus => new SelectListItem
+                {
+                    Value = taskStatus.Id.ToString(),
+                    Text = taskStatus.Title
+                });
+
+            var task = _taskService.GetById(id);
+            return View(task);
+        }
+
 
         [HttpPost]
         [ValidateAntiForgeryToken]

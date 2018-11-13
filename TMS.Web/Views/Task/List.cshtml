@@ -1,12 +1,12 @@
 ﻿@model IEnumerable<TMS.EntitiesDTO.TaskDTO>
-
+@using Microsoft.AspNet.Identity
 @{
     ViewData["Title"] = "List task";
     Layout = "/Views/Shared/_LayoutPages.cshtml";
 
 }
 @{
-    var users = ((IEnumerable<SelectListItem>)ViewData["Users"]);
+    var moderators = ((IEnumerable<SelectListItem>)ViewData["Moderators"]);
     var statuses = ((IEnumerable<SelectListItem>)ViewData["Statuses"]);
 }
 <center><h3>Tasks</h3></center>
@@ -22,6 +22,9 @@
                 <tr>
                     <th>
                         @Html.DisplayNameFor(model => model.Title)
+                    </th>
+                    <th>
+                        Role in task
                     </th>
                     <th>
                         @Html.DisplayNameFor(model => model.Status)
@@ -45,16 +48,21 @@
                             <label>@item.Title</label>
                         </td>
                         <td>
-                            <label>@(statuses.FirstOrDefault (i => i.Value == item.StatusId.ToString()).Text)</label>
+                            <label>@(item.ModeratorIDs.Contains(User.Identity.GetUserId()) ? "moderator" : "viewer")</label>
+                        </td>
+                        <td>
+                            <label>@(statuses.FirstOrDefault(i => i.Value == item.StatusId.ToString()).Text)</label>
                         </td>
                         <td>
                             <label>@item.EndDate.LocalDateTime</label>
                         </td>
                         <td>
-                            <label>@( String.Join(", ",users.Where(i => i.Value.Equals(item.ModeratorIDs)).Select(i => i.Text)
-                                   ))</label>
+                            @{  var current = moderators.Where(i => item.ModeratorIDs.Any(j => j == i.Value)).Select(i => i.Text).ToList();
+                                <label>@(String.Join(", ", current))</label>
+                             }
                         </td>
                         <td>
+                            <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
                             <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
                             <a href="#" data-toggle="modal" data-target="#deleteModal" data-item-id="@item.Id">Delete</a>
                         </td>
@@ -66,7 +74,7 @@
 }
 else
 {
-    <center>No labels found</center>
+    <center>No tasks found</center>
 }
 
 <div id="deleteModal" class="modal" tabindex="-1" role="dialog">
