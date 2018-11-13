@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using TMS.EntitiesDTO;
 using TMS.Interfaces;
 using TMS.Entities;
+using System.Linq;
 
 namespace TMS.Business.Services
 {
@@ -10,17 +11,19 @@ namespace TMS.Business.Services
     {
         private readonly IMapper _mapper;
         private readonly IRepository<Label> _repository;
+        private readonly UserService _userService;
 
-        public LabelService(IMapper mapper, IRepository<Label> repository)
+        public LabelService(IMapper mapper, IRepository<Label> repository, UserService userService)
         {
             _mapper = mapper;
             _repository = repository;
+            _userService = userService;
         }
 
-        public IEnumerable<LabelDTO> GetAll()
+        public IEnumerable<LabelDTO> GetAll(string UserId)
         {
             return _mapper.Map<IEnumerable<Label>, IEnumerable<LabelDTO>>(
-                _repository.GetAll());
+                _repository.GetAll().Where(i =>i.UserId==UserId));
         }
 
         public LabelDTO GetById(int labelId)

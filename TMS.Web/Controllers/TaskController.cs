@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using TMS.Business.Services;
@@ -9,6 +10,7 @@ using TMS.EntitiesDTO;
 
 namespace TMS.Web.Controllers
 {
+    [Authorize]
     public class TaskController : Controller
     {
         private readonly TaskService _taskService;
@@ -53,7 +55,7 @@ namespace TMS.Web.Controllers
               .Select(user => new SelectListItem
               {
                   Value = user.Id,
-                  Text = user.UserName
+                  Text = String.Format("{0} {1} ({2})", user.LastName, user.FirstName, user.Email)
               });
             ViewData["Statuses"] = _taskStatusService.GetAll()
                 .Select(taskStatus => new SelectListItem
@@ -81,7 +83,7 @@ namespace TMS.Web.Controllers
               .Select(user => new SelectListItem
               {
                   Value = user.Id,
-                  Text = user.UserName
+                  Text = String.Format("{0} {1} ({2})", user.LastName, user.FirstName, user.Email)
               });
             ViewData["Statuses"] = _taskStatusService.GetAll()
                 .Select(taskStatus => new SelectListItem
@@ -106,8 +108,7 @@ namespace TMS.Web.Controllers
         public IActionResult Delete(int id)
         {
             _taskService.Delete(id);
-            var tasks = _taskService.GetAll();
-            return View("List", tasks);
+            return RedirectToAction(nameof(List));
         }
     }
 }

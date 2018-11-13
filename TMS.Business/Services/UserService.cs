@@ -21,5 +21,10 @@ namespace TMS.Business.Services
         {
             return await _repository.GetAllAsync();
         }
+
+        public async System.Threading.Tasks.Task<UserApp> GetItemAsync(string id)
+        {
+            return await _repository.GetItemAsync(id);
+        }
     }
 }
