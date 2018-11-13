@@ -51,7 +51,8 @@
                             <label>@item.EndDate.LocalDateTime</label>
                         </td>
                         <td>
-                            <label>@()</label>
+                            <label>@( String.Join(", ",users.Where(i => i.Value.Equals(item.ModeratorIDs)).Select(i => i.Text)
+                                   ))</label>
                         </td>
                         <td>
                             <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

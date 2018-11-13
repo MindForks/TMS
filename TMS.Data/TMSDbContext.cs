@@ -33,6 +33,13 @@ namespace TMS.Data
             modelBuilder.Entity<NotificationType>()
                 .Property(t => t.Title).IsRequired();
 
+            modelBuilder.Entity<Label>()
+                .HasKey(k => k.Id);
+            modelBuilder.Entity<Label>()
+                .HasOne(o => o.User)
+                .WithMany(m => m.Labels)
+                .HasForeignKey(k => k.UserId);
+
             modelBuilder.Entity<TaskStatus>()
                 .HasKey(k => k.Id);
             modelBuilder.Entity<TaskStatus>()

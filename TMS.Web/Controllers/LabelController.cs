@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using TMS.EntitiesDTO;
 using TMS.Business.Services;
+using Microsoft.AspNet.Identity;
 
 namespace TMS.Web.Controllers
 {
@@ -22,7 +23,11 @@ namespace TMS.Web.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            return View(new LabelDTO());
+            var label = new LabelDTO()
+            {
+               UserId= User.Identity.GetUserId()
+            };
+            return View(label);
         }
 
         [HttpPost]
