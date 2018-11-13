@@ -1,15 +1,17 @@
-﻿@model TMS.EntitiesDTO.LabelDTO
+﻿@model TMS.EntitiesDTO.TaskDTO
 
 @{
-    ViewData["Title"] = "Edit label";
+    ViewData["Title"] = "Create label";
     Layout = "/Views/Shared/_LayoutPages.cshtml";
 }
 
-<center><h3>Edit label</h3></center>
+
+<center><h3>Create new task</h3></center>
 <hr />
+
 <div class="container">
-    <div class="col-md-6">
-        <form asp-action="Edit">
+    <div class="col-md-12">
+        <form asp-action="Create">
             @await Html.PartialAsync("FormFields", Model)
         </form>
         <br />
@@ -17,6 +19,7 @@
     </div>
 </div>
 <br />
+
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
 }

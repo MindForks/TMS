@@ -8,8 +8,8 @@ namespace TMS.Entities
     {
         public Task()
         {
-            Moderators = new List<TaskUser>();
-            Viewers = new List<TaskUser>();
+            Moderators = new List<TaskModerator_User>();
+            Viewers = new List<TaskViewer_User>();
         }
 
         public int Id { get; set; }
@@ -20,8 +20,8 @@ namespace TMS.Entities
         public DateTime CreationTime { get; set; }
         public DateTime ClosingTime { get; set; }
 
-        public ICollection<TaskUser> Moderators { get; set; }
-        public ICollection<TaskUser> Viewers { get; set; }
+        public ICollection<TaskModerator_User> Moderators { get; set; }
+        public ICollection<TaskViewer_User> Viewers { get; set; }
 
         public TaskStatus Status { get; set; }
         public int StatusId { get; set; }

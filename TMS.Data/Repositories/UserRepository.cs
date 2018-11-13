@@ -47,14 +47,19 @@ namespace TMS.Data.Repositories
             return await _userManager.Users.ToListAsync();
         }
 
-        public Task<UserApp> GetItemAsync(int id)
+        public Task<UserApp> GetItemAsync(string id)
         {
-            return _userManager.FindByIdAsync(id.ToString());
+            return _userManager.FindByIdAsync(id);
         }
 
         public System.Threading.Tasks.Task SaveChangesAsync()
         {
-            throw new NotImplementedException();
+            throw new NotSupportedException();
+        }
+
+        public void Dispose()
+        {
+            GC.SuppressFinalize(this);
         }
     }
 }

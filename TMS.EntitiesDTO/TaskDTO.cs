@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Text;
 
 namespace TMS.EntitiesDTO
 {
@@ -9,14 +8,14 @@ namespace TMS.EntitiesDTO
     {
         public TaskDTO()
         {
-            Moderators = new List<UserAppDTO>();
-            Viewers = new List<UserAppDTO>();
+            ModeratorIDs = new List<string>();
+            ViewerIDs = new List<string>();
         }
 
         public int Id { get; set; }
 
         [Required(ErrorMessage = "Title must be defined")]
-        public int Title { get; set; }
+        public string Title { get; set; }
 
         [Required(ErrorMessage = "Description must be defined")]
         public string Description { get; set; }
@@ -24,21 +23,22 @@ namespace TMS.EntitiesDTO
         [Required(ErrorMessage = "Weight must be defined")]
         public string Weight { get; set; }
 
-        [Required(ErrorMessage = "EndDate must be defined")]
+        [Display(Name = "Task deadline")]
+        [Required(ErrorMessage = "Deadline must be defined")]
         public DateTimeOffset EndDate { get; set; }
 
-        public DateTime CreationTime { get; set; }
-
-        public DateTime ClosingTime { get; set; }
+        [Display(Name = "Task start")]
+        public DateTimeOffset CreationTime { get; set; }
 
         [Display(Name = "Task moderators")]
-        [Required(ErrorMessage = "Content must be defined")]
-        public ICollection<UserAppDTO> Moderators { get; set; }
+        public ICollection<string> ModeratorIDs { get; set; }
 
         [Display(Name = "Task viewers")]
-        [Required(ErrorMessage = "Content must be defined")]
-        public ICollection<UserAppDTO> Viewers { get; set; }
+        public ICollection<string> ViewerIDs { get; set; }
 
-        public string Status { get; set; }
+        public TaskStatusDTO Status { get; set; }
+
+        [Display(Name = "Status")]
+        public int StatusId { get; set; }
     }
 }
