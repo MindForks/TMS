@@ -83,7 +83,7 @@ a, a:hover, a:focus {
     height: -moz-calc(100% - 56px);
     height: -webkit-calc(100% - 56px);
     height: calc(100% - 56px);
-    transition: all 0.3s;
+    /*transition: all 0.3s;*/
 }
 .sidebar>a[data-toggle="collapse"] {
     position: relative;
@@ -110,7 +110,7 @@ a, a:hover, a:focus {
 }
 .sidebar ul p {
     color: #fff;
-    padding: 10px;
+    /*padding: 10px;*/
 }
 
 .sidebar ul li a {
@@ -131,10 +131,10 @@ a, a:hover, a:focus {
     background: #eeeeee;
 }
 ul.collapse{
-    padding-left:0;
+    /*padding-left:0;*/
 }
 ul.collapse li a {
-    padding-left: 40px;
+    /*padding-left: 40px;*/
 }
 .navbar-top-links li {
     display: inline-block;
