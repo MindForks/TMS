@@ -37,6 +37,9 @@ body {
 #register-form, #login-form, #forgot-password {
     padding-top: 70px;
 }
+#change-password-form {
+    padding-top: 50px;
+}
 
 footer {
     padding-top:10px;
@@ -70,11 +73,11 @@ a, a:hover, a:focus {
     transition: all 0.3s;
 }
 .navbar {
-    border-bottom: lightgray 1px solid;
+    border-bottom: #e7e7e7 1px solid;
 }
 .sidebar {
-    position:fixed;
-    border-right: lightgray 1px solid;
+    position: fixed;
+    border-right: #e7e7e7 1px solid;
     min-width: 250px;
     max-width: 250px;
     height: -moz-calc(100% - 56px);
@@ -193,7 +196,7 @@ ul.collapse li a {
 }
 
 #task-statistics-donut{
-    height:300px;
+    height:350px;
 }
 .list-group-item.header{
     margin: 0 auto;

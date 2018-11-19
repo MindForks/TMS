@@ -1,9 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
 using TMS.Business.Services;
 using TMS.EntitiesDTO;
 
@@ -47,8 +43,6 @@ namespace TMS.Web.Controllers
                     tasksDone.Add(task);
                 }
             }
-            /*var tasksInProgress = _taskService.GetAll().Select(task => task.StatusId == 2);
-            var tasksDone = _taskService.GetAll().Select(task => task.StatusId == 3);*/
 
             TasksDTO tasksModel = new TasksDTO
             {
