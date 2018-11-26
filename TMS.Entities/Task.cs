@@ -10,7 +10,7 @@ namespace TMS.Entities
         {
             Moderators = new List<TaskModerator_User>();
             Viewers = new List<TaskViewer_User>();
-            Labels = new List<Task_Label>();
+            Labels = new List<Task_Label_User>();
         }
 
         public int Id { get; set; }
@@ -23,7 +23,7 @@ namespace TMS.Entities
 
         public ICollection<TaskModerator_User> Moderators { get; set; }
         public ICollection<TaskViewer_User> Viewers { get; set; }
-        public ICollection<Task_Label> Labels { get; set; }
+        public ICollection<Task_Label_User> Labels { get; set; }
 
         public TaskStatus Status { get; set; }
         public int StatusId { get; set; }

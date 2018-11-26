@@ -6,7 +6,7 @@ namespace TMS.Entities
     {
         public Label()
         {
-            Tasks = new List<Task_Label>();
+            Tasks = new List<Task_Label_User>();
         }
 
         public int Id { get; set; }
@@ -17,6 +17,6 @@ namespace TMS.Entities
         public string Title { get; set; }
         public string Color { get; set; }
 
-        public ICollection<Task_Label> Tasks { get; set; }
+        public ICollection<Task_Label_User> Tasks { get; set; }
     }
 }

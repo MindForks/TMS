@@ -9,8 +9,8 @@ using TMS.Data;
 namespace TMS.Data.Migrations
 {
     [DbContext(typeof(TMSDbContext))]
-    [Migration("20181125121431_Task-Labels")]
-    partial class TaskLabels
+    [Migration("20181125204119_AddTask_Lael_User")]
+    partial class AddTask_Lael_User
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -183,17 +183,21 @@ namespace TMS.Data.Migrations
                     b.ToTable("Tasks");
                 });
 
-            modelBuilder.Entity("TMS.Entities.Task_Label", b =>
+            modelBuilder.Entity("TMS.Entities.Task_Label_User", b =>
                 {
                     b.Property<int>("LabelId");
 
                     b.Property<int>("TaskId");
 
-                    b.HasKey("LabelId", "TaskId");
+                    b.Property<string>("UserId");
+
+                    b.HasKey("LabelId", "TaskId", "UserId");
 
                     b.HasIndex("TaskId");
 
-                    b.ToTable("Task_Label");
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Task_Label_User");
                 });
 
             modelBuilder.Entity("TMS.Entities.TaskModerator_User", b =>
@@ -355,7 +359,7 @@ namespace TMS.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("TMS.Entities.Task_Label", b =>
+            modelBuilder.Entity("TMS.Entities.Task_Label_User", b =>
                 {
                     b.HasOne("TMS.Entities.Label", "Label")
                         .WithMany("Tasks")
@@ -365,6 +369,11 @@ namespace TMS.Data.Migrations
                     b.HasOne("TMS.Entities.Task", "Task")
                         .WithMany("Labels")
                         .HasForeignKey("TaskId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("TMS.Entities.UserApp", "User")
+                        .WithMany("Task_Label_Users")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

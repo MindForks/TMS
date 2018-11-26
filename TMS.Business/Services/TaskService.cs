@@ -72,5 +72,28 @@ namespace TMS.Business.Services
             _repository.Delete(itemId);
             _repository.SaveChanges();
         }
+       public TaskDetailsDTO GetWithLabelById(int itemId)
+        {
+            var tmp = new TaskDetailsDTO() {
+                LabelIDs = { 1 },
+                UserId = "ea182e92-b376-4ef8-9bc6-6f8ebf2d4237",
+                StatusId = 1,
+                CreationTime = DateTimeOffset.Now,
+                EndDate = DateTimeOffset.Now,
+                Title = "title",
+                Description = "desc",
+                Weight=2
+            };
+            var itementity = _mapper.Map<TaskDetailsDTO, Task>(tmp);
+            _repository.Create(itementity);
+            _repository.SaveChanges();
+
+
+            var item = _repository.GetItem(itemId);
+            if (item == null)
+                throw new Exception("Entity wasn`t found");
+
+            return _mapper.Map<Task, TaskDetailsDTO>(item);
+        }
     }
 }

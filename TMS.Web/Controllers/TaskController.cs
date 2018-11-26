@@ -110,6 +110,8 @@ namespace TMS.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Details(int id)
         {
+            var item = _taskService.GetWithLabelById(id);
+
             ViewData["Users"] = (await _userService.GetAllAsync())
              .Select(user => new SelectListItem
              {

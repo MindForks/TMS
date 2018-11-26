@@ -42,6 +42,35 @@ namespace TMS.Bootstrap.Automapper
                     UserId = id
                 })));
 
+            CreateMap<Task, TaskDetailsDTO>()
+            .ForMember(m => m.ModeratorIDs, m => m.ResolveUsing(e =>
+                   e.Moderators.Select(t => t.UserId).ToList()))
+            .ForMember(m => m.ViewerIDs, m => m.ResolveUsing(e =>
+                   e.Viewers.Select(t => t.UserId).ToList()))
+            .ForMember(m => m.LabelIDs, m => m.ResolveUsing(e =>
+                   e.Labels.Select(t => t.LabelId).ToList()));
+
+            CreateMap<TaskDetailsDTO, Task>()
+                .ForMember(m => m.Moderators, m => m.ResolveUsing(d =>
+                d.ModeratorIDs.Select(id => new TaskModerator_User
+                {
+                    TaskId = d.Id,
+                    UserId = id
+                })))
+                .ForMember(m => m.Viewers, m => m.ResolveUsing(d =>
+                d.ViewerIDs.Select(id => new TaskViewer_User
+                {
+                    TaskId = d.Id,
+                    UserId = id
+                })))
+                .ForMember(m => m.Labels, m => m.ResolveUsing(d =>
+                d.LabelIDs.Select(id => new Task_Label_User
+                {
+                    TaskId = d.Id,
+                    UserId =  d.UserId,
+                    LabelId = id
+                })));
+
             #endregion
         }
     }

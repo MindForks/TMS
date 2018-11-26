@@ -181,17 +181,21 @@ namespace TMS.Data.Migrations
                     b.ToTable("Tasks");
                 });
 
-            modelBuilder.Entity("TMS.Entities.Task_Label", b =>
+            modelBuilder.Entity("TMS.Entities.Task_Label_User", b =>
                 {
                     b.Property<int>("LabelId");
 
                     b.Property<int>("TaskId");
 
-                    b.HasKey("LabelId", "TaskId");
+                    b.Property<string>("UserId");
+
+                    b.HasKey("LabelId", "TaskId", "UserId");
 
                     b.HasIndex("TaskId");
 
-                    b.ToTable("Task_Label");
+                    b.HasIndex("UserId");
+
+                    b.ToTable("Task_Label_User");
                 });
 
             modelBuilder.Entity("TMS.Entities.TaskModerator_User", b =>
@@ -353,7 +357,7 @@ namespace TMS.Data.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("TMS.Entities.Task_Label", b =>
+            modelBuilder.Entity("TMS.Entities.Task_Label_User", b =>
                 {
                     b.HasOne("TMS.Entities.Label", "Label")
                         .WithMany("Tasks")
@@ -363,6 +367,11 @@ namespace TMS.Data.Migrations
                     b.HasOne("TMS.Entities.Task", "Task")
                         .WithMany("Labels")
                         .HasForeignKey("TaskId")
+                        .OnDelete(DeleteBehavior.Cascade);
+
+                    b.HasOne("TMS.Entities.UserApp", "User")
+                        .WithMany("Task_Label_Users")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 

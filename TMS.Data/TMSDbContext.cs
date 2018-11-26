@@ -77,19 +77,24 @@ namespace TMS.Data
                 .WithMany(c => c.Viewers)
                 .HasForeignKey(sc => sc.TaskId);
 
-            modelBuilder.Entity<Task_Label>()
-                .HasKey(k => new { k.LabelId, k.TaskId });
 
-            modelBuilder.Entity<Task_Label>()
+            modelBuilder.Entity<Task_Label_User>()
+                .HasKey(k => new { k.LabelId, k.TaskId, k.UserId });
+
+            modelBuilder.Entity<Task_Label_User>()
                 .HasOne(sc => sc.Label)
                 .WithMany(s => s.Tasks)
                 .HasForeignKey(sc => sc.LabelId);
 
-            modelBuilder.Entity<Task_Label>()
+            modelBuilder.Entity<Task_Label_User>()
                 .HasOne(sc => sc.Task)
                 .WithMany(s => s.Labels)
                 .HasForeignKey(sc => sc.TaskId);
 
+            modelBuilder.Entity<Task_Label_User>()
+                .HasOne(sc => sc.User)
+                .WithMany(s => s.Task_Label_Users)
+                .HasForeignKey(sc => sc.UserId);
         }
     }
 }
