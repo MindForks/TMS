@@ -1,4 +1,4 @@
-﻿@model TMS.EntitiesDTO.TaskDTO
+﻿@model TMS.EntitiesDTO.TaskDetailsDTO
 
 @{
     ViewData["Title"] = "Edit task";
@@ -11,7 +11,7 @@
 <div class="container">
     <div class="col-md-12">
         <form asp-action="Edit">
-            @await Html.PartialAsync("FormFields", Model)
+            @await Html.PartialAsync("FormFields_Edit", Model)
         </form>
         <br />
         <a asp-action="List" class="btn btn-dark">Back to List</a>

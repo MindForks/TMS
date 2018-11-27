@@ -11,12 +11,10 @@ namespace TMS.EntitiesDTO
         {
             ModeratorIDs = new List<string>();
             ViewerIDs = new List<string>();
-            LabelIDs = new List<int>();
+            Labels = new List<Task_Label_UserDTO>();
         }
 
         public int Id { get; set; }
-
-        public string UserId { get; set; }
 
         public string Title { get; set; }
 
@@ -37,7 +35,7 @@ namespace TMS.EntitiesDTO
         public ICollection<string> ViewerIDs { get; set; }
 
         [Display(Name = "Label")]
-        public ICollection<int> LabelIDs { get; set; }
+        public ICollection<Task_Label_UserDTO> Labels { get; set; }
 
         public TaskStatusDTO Status { get; set; }
 

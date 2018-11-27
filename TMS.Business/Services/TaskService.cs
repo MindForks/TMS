@@ -20,15 +20,15 @@ namespace TMS.Business.Services
             _repository = repository;
             _userService = userService;
         }
-        public IEnumerable<TaskDTO> GetAll()
+        public IEnumerable<TaskDetailsDTO> GetAll()
         {
-            return _mapper.Map<IEnumerable<Task>, IEnumerable<TaskDTO>>(
+            return _mapper.Map<IEnumerable<Task>, IEnumerable<TaskDetailsDTO>>(
                 _repository.GetAll());
         }
 
-        public IEnumerable<TaskDTO> GetAll(string userId) // where i`m moderator and viewer
+        public IEnumerable<TaskDetailsDTO> GetAll(string userId) // where i`m moderator and viewer
         {
-            return _mapper.Map<IEnumerable<Task>, IEnumerable<TaskDTO>>(
+            return _mapper.Map<IEnumerable<Task>, IEnumerable<TaskDetailsDTO>>(
                 _repository.Filter(i => i.Moderators.Any(j => j.UserId == userId)
                         || i.Viewers.Any(j => j.UserId == userId)));
         }
@@ -38,21 +38,21 @@ namespace TMS.Business.Services
             return _repository.GetAll().Select(j => j.Moderators.Select(k => k.User.Email).ToString());
         }
 
-        public TaskDTO GetById(int ItemId)
+        public TaskDetailsDTO GetById(int ItemId)
         {
             var item = _repository.GetItem(ItemId);
             if (item == null)
                 throw new Exception("Entity wasn`t found");
 
-            return _mapper.Map<Task, TaskDTO>(item);
+            return _mapper.Map<Task, TaskDetailsDTO>(item);
         }
 
-        public void Create(TaskDTO item)
+        public void Create(TaskDetailsDTO item)
         {
             if (item == null)
                 throw new ArgumentNullException(nameof(item));
 
-            var itemEntity = _mapper.Map<TaskDTO, Task>(item);
+            var itemEntity = _mapper.Map<TaskDetailsDTO, Task>(item);
             _repository.Create(itemEntity);
             _repository.SaveChanges();
         }
@@ -72,28 +72,42 @@ namespace TMS.Business.Services
             _repository.Delete(itemId);
             _repository.SaveChanges();
         }
-       public TaskDetailsDTO GetWithLabelById(int itemId)
+
+        public void AddOrUpdateLabel(TaskDetailsDTO item)
         {
-            var tmp = new TaskDetailsDTO() {
-                LabelIDs = { 1 },
-                UserId = "ea182e92-b376-4ef8-9bc6-6f8ebf2d4237",
-                StatusId = 1,
-                CreationTime = DateTimeOffset.Now,
-                EndDate = DateTimeOffset.Now,
-                Title = "title",
-                Description = "desc",
-                Weight=2
-            };
-            var itementity = _mapper.Map<TaskDetailsDTO, Task>(tmp);
-            _repository.Create(itementity);
+            var itementity = _mapper.Map<TaskDetailsDTO, Task>(item);
+            itementity.Labels.Add(new Task_Label_User
+            {
+                UserId = "5e55431f-5e94-4091-8dfe-6e78dbf687df",
+                LabelId = 2,
+            });
+
+            _repository.Update(itementity);
             _repository.SaveChanges();
-
-
-            var item = _repository.GetItem(itemId);
-            if (item == null)
-                throw new Exception("Entity wasn`t found");
-
-            return _mapper.Map<Task, TaskDetailsDTO>(item);
         }
+
+        //public TaskDetailsDTO GetWithLabelById(int itemId)
+        // {
+        //     var tmp = new TaskDetailsDTO() {
+        //         LabelIDs = { 1 },
+        //         UserId = "ea182e92-b376-4ef8-9bc6-6f8ebf2d4237",
+        //         StatusId = 1,
+        //         CreationTime = DateTimeOffset.Now,
+        //         EndDate = DateTimeOffset.Now,
+        //         Title = "title",
+        //         Description = "desc",
+        //         Weight=2
+        //     };
+        //     var itementity = _mapper.Map<TaskDetailsDTO, Task>(tmp);
+        //     _repository.Create(itementity);
+        //     _repository.SaveChanges();
+
+
+        //     var item = _repository.GetItem(itemId);
+        //     if (item == null)
+        //         throw new Exception("Entity wasn`t found");
+
+        //     return _mapper.Map<Task, TaskDetailsDTO>(item);
+        // }
     }
 }

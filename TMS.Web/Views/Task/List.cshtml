@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TMS.EntitiesDTO.TaskDTO>
+﻿@model IEnumerable<TMS.EntitiesDTO.TaskDetailsDTO>
 @using Microsoft.AspNet.Identity
 @{
     ViewData["Title"] = "List task";
@@ -8,6 +8,7 @@
 @{
     var moderators = ((IEnumerable<SelectListItem>)ViewData["Moderators"]);
     var statuses = ((IEnumerable<SelectListItem>)ViewData["Statuses"]);
+    var labels = ((IEnumerable<SelectListItem>)ViewData["Labels"]);
 }
 <center><h3>Tasks</h3></center>
 <hr />
@@ -34,6 +35,9 @@
             <th class="th-sm">
                 @Html.DisplayNameFor(model => model.ModeratorIDs)
             </th>
+            @*<th class="th-sm">
+                @Html.DisplayNameFor(model => model.LabelIDs)
+            </th>*@
             <th class="th-sm">
                 Actions
             </th>
@@ -42,30 +46,42 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    <label>@item.Title</label>
-                </td>
-                <td>
-                    <label>@(item.ModeratorIDs.Contains(User.Identity.GetUserId()) ? "moderator" : "viewer")</label>
-                </td>
-                <td>
-                    <label>@(statuses.FirstOrDefault(i => i.Value == item.StatusId.ToString()).Text)</label>
-                </td>
-                <td>
-                    <label>@item.EndDate.LocalDateTime</label>
-                </td>
-                <td>
-                    @{ var current = moderators.Where(i => item.ModeratorIDs.Any(j => j == i.Value)).Select(i => i.Text).ToList();
-                        <label>@(String.Join(", ", current))</label>
+        <tr>
+            <td>
+                <label>@item.Title</label>
+            </td>
+            <td>
+                <label>@(item.ModeratorIDs.Contains(User.Identity.GetUserId()) ? "moderator" : "viewer")</label>
+            </td>
+            <td>
+                <label>@(statuses.FirstOrDefault(i => i.Value == item.StatusId.ToString()).Text)</label>
+            </td>
+            <td>
+                <label>@item.EndDate.LocalDateTime</label>
+            </td>
+            <td>
+                @{ var current = moderators.Where(i => item.ModeratorIDs.Any(j => j == i.Value)).Select(i => i.Text).ToList();
+                    <label>@(String.Join(", ", current))</label>
+                }
+            </td>
+            <td>
+                @*@{
+                    if (item.LabelIDs.Any() && labels.FirstOrDefault(i => i.Value == item.LabelIDs?.FirstOrDefault().ToString()) !=null)
+                    {
+                        <label>@labels.FirstOrDefault(i => i.Value == item.LabelIDs?.FirstOrDefault().ToString()).Text</label>
                     }
-                </td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a href="#" data-toggle="modal" data-target="#deleteModal" data-item-id="@item.Id">Delete</a>
-                </td>
-            </tr>
+                    else
+                    { <label>@("-") </label> }
+
+                }*@
+
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a href="#" data-toggle="modal" data-target="#deleteModal" data-item-id="@item.Id">Delete</a>
+            </td>
+        </tr>
         }
     </tbody>
     <tfoot>
@@ -85,18 +101,21 @@
             <th class="th-sm">
                 @Html.DisplayNameFor(model => model.ModeratorIDs)
             </th>
+            @*<th class="th-sm">
+                @Html.DisplayNameFor(model => model.LabelIDs)
+            </th>*@
             <th class="no-sort">
                 Actions
             </th>
         </tr>
     </tfoot>
 </table>
-
 }
 else
 {
     <center>No tasks found</center>
 }
+  <a asp-action="Test" asp-route-id="@Model.FirstOrDefault()">Edit</a>
 
 <div id="deleteModal" class="modal" tabindex="-1" role="dialog">
     <div class="modal-dialog" role="document">
