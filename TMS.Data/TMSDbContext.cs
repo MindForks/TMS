@@ -22,6 +22,7 @@ namespace TMS.Data
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseMySql(ConnectionString);
+            optionsBuilder.EnableSensitiveDataLogging();
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -39,6 +40,11 @@ namespace TMS.Data
                 .HasOne(o => o.User)
                 .WithMany(m => m.Labels)
                 .HasForeignKey(k => k.UserId);
+
+            modelBuilder.Entity<Task>()
+               .HasKey(k => k.Id);
+            modelBuilder.Entity<Task>()
+               .Ignore(k => k.CurrentUserId);
 
             modelBuilder.Entity<TaskStatus>()
                 .HasKey(k => k.Id);
@@ -76,6 +82,25 @@ namespace TMS.Data
                 .HasOne(sc => sc.Task)
                 .WithMany(c => c.Viewers)
                 .HasForeignKey(sc => sc.TaskId);
+
+
+            modelBuilder.Entity<Task_Label_User>()
+                .HasKey(k => new { k.LabelId, k.TaskId, k.UserId });
+
+            modelBuilder.Entity<Task_Label_User>()
+                .HasOne(sc => sc.Label)
+                .WithMany(s => s.Tasks)
+                .HasForeignKey(sc => sc.LabelId);
+
+            modelBuilder.Entity<Task_Label_User>()
+                .HasOne(sc => sc.Task)
+                .WithMany(s => s.Labels)
+                .HasForeignKey(sc => sc.TaskId);
+
+            modelBuilder.Entity<Task_Label_User>()
+                .HasOne(sc => sc.User)
+                .WithMany(s => s.Task_Label_Users)
+                .HasForeignKey(sc => sc.UserId);
         }
     }
 }
