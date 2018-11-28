@@ -20,6 +20,7 @@ namespace TMS.Business.Services
             _repository = repository;
             _userService = userService;
         }
+
         public IEnumerable<TaskDTO> GetAll()
         {
             return _mapper.Map<IEnumerable<Task>, IEnumerable<TaskDTO>>(
@@ -76,7 +77,7 @@ namespace TMS.Business.Services
             var itemEntity = _mapper.Map<TaskDTO, Task>(item);
             CheckForAccessError(itemEntity, userId);
             MergeLabels(item, itemEntity, userId);
-
+            itemEntity.CurrentUserId = userId;
             _repository.Update(itemEntity);
             _repository.SaveChanges();
         }

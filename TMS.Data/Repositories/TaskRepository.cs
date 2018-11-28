@@ -83,9 +83,8 @@ namespace TMS.Data.Repositories
                 .Except(ViewersDbSet);
 
             var toRemoveLabels = LabelsDbSets
-                .Where( i => item.Labels.Any(j =>
-                j.TaskId == i.TaskId
-                && j.UserId == i.UserId));
+                .Where(i => i.TaskId == item.Id && i.UserId == item.CurrentUserId)
+                .Except(newLabels);
             var toAddLabels = newLabels
                 .Except(LabelsDbSets);
 

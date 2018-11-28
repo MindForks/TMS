@@ -52,6 +52,12 @@ namespace TMS.Web.Controllers
                  Value = label.Id.ToString(),
                  Text = label.Title,
              });
+            ViewData["LabelColors"] = (_labelService.GetAll(_userId))
+             .Select(label => new SelectListItem
+             {
+                 Value = label.Id.ToString(),
+                 Text = label.Color,
+             });
             return View(tasks);
         }
 
@@ -151,18 +157,18 @@ namespace TMS.Web.Controllers
                     Value = taskStatus.Id.ToString(),
                     Text = taskStatus.Title
                 });
-            ViewData["Labels"] = new[] { new SelectListItem{
-                Value = "-1",
-                Text = "-",
-            }}
-          .Concat((_labelService.GetAll(_userId))
-               .Select(label => new SelectListItem
-               {
-                   Value = label.Id.ToString(),
-                   Text = label.Title,
-               }));
 
             var task = _taskService.GetById(id, _userId);
+
+            var currentLabel = _labelService.GetAll(_userId)
+                .FirstOrDefault(i => i.Id == task.CurrentLabelID);
+
+            if (currentLabel != null)
+            {
+                ViewData["LabelColor"] = currentLabel.Color;
+                ViewData["LabelData"] = currentLabel.Title;
+            }
+
             return View(task);
         }
 
