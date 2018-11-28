@@ -75,9 +75,11 @@ namespace TMS.Business.Services
                 throw new ArgumentNullException(nameof(item));
             
             var itemEntity = _mapper.Map<TaskDTO, Task>(item);
-            CheckForAccessError(itemEntity, userId);
-            MergeLabels(item, itemEntity, userId);
             itemEntity.CurrentUserId = userId;
+            CheckForAccessError(itemEntity, userId);
+
+            MergeLabels(item, itemEntity, userId);
+         
             _repository.Update(itemEntity);
             _repository.SaveChanges();
         }
@@ -104,7 +106,10 @@ namespace TMS.Business.Services
         private void MergeLabels(TaskDTO item, Task itemEntity, string userId)
         {
             if (item.CurrentLabelID != -1)
+            {
                 itemEntity.Labels.Add(new Task_Label_User { LabelId = item.CurrentLabelID, UserId = userId });
+            }
+           
         }
 
         private void CheckForAccessError(Task item, string userId)

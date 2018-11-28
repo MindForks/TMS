@@ -42,6 +42,8 @@ namespace TMS.Data
                 .HasForeignKey(k => k.UserId);
 
             modelBuilder.Entity<Task>()
+               .HasKey(k => k.Id);
+            modelBuilder.Entity<Task>()
                .Ignore(k => k.CurrentUserId);
 
             modelBuilder.Entity<TaskStatus>()
