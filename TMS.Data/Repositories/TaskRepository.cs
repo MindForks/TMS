@@ -83,10 +83,8 @@ namespace TMS.Data.Repositories
                 .Except(ViewersDbSet);
 
             var toRemoveLabels = LabelsDbSets
-                .Where(i => i.TaskId == item.Id && i.UserId == item.CurrentUserId)
-                .Except(newLabels);
+                .Where(i => i.TaskId == item.Id && i.UserId == item.CurrentUserId);
            
-
             ModeratorsDbSet.RemoveRange(toRemoveModerators);
             ModeratorsDbSet.AddRange(toAddModerators);
 
@@ -94,7 +92,7 @@ namespace TMS.Data.Repositories
             ViewersDbSet.AddRange(toAddViewers);
 
             LabelsDbSets.RemoveRange(toRemoveLabels);
-           // LabelsDbSets.AddRange(newLabels);
+            LabelsDbSets.AddRange(newLabels);
 
         }
 
