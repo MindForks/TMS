@@ -53,5 +53,17 @@ namespace TMS.Web.Controllers
 
             return View(tasksModel);
         }
+
+        public JsonResult GetEvents()
+        {
+            var events = _taskService.GetAll();
+
+            return Json(events);
+        }
+
+        public IActionResult Calendar()
+        {
+            return View();
+        }
     }
 }
