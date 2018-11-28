@@ -5,9 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using TMS.Bootstrap;
-using TMS.Data;
-using TMS.Entities;
-using TMS.EntitiesDTO;
 
 namespace TMS.Web
 {

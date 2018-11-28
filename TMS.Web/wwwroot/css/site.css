@@ -29,9 +29,6 @@ body {
     width: 100%;
     opacity:0.8;
     filter:blur(1px);
-    /*for vertically align img
-    top: 50%;
-    transform: translateY(-50%);*/
 }
 
 #register-form, #login-form, #forgot-password {
@@ -83,17 +80,10 @@ a, a:hover, a:focus {
     height: -moz-calc(100% - 56px);
     height: -webkit-calc(100% - 56px);
     height: calc(100% - 56px);
-    /*transition: all 0.3s;*/
+    transition: all 0.3s;
 }
 .sidebar>a[data-toggle="collapse"] {
     position: relative;
-}
-.sidebar > .dropdown-toggle::after {
-    display: block;
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
 }
 .sidebar > a, a:hover, a:focus {
     color: inherit;
@@ -110,7 +100,7 @@ a, a:hover, a:focus {
 }
 .sidebar ul p {
     color: #fff;
-    /*padding: 10px;*/
+    padding: 10px;
 }
 
 .sidebar ul li a {
@@ -131,10 +121,7 @@ a, a:hover, a:focus {
     background: #eeeeee;
 }
 ul.collapse{
-    /*padding-left:0;*/
-}
-ul.collapse li a {
-    /*padding-left: 40px;*/
+    padding-left:0;
 }
 ul ul a{
     padding-left:30px !important;
@@ -167,4 +154,11 @@ ul ul a{
 
 #calendar{
     padding-top: 5px;
+}
+.dropdown-toggle::after {
+    display: block;
+    position: absolute;
+    padding-top:25px;
+    right: 20px;
+    transform: translateY(-50%);
 }
