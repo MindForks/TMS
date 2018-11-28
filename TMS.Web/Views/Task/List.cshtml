@@ -1,4 +1,4 @@
-﻿@model IEnumerable<TMS.EntitiesDTO.TaskDetailsDTO>
+﻿@model IEnumerable<TMS.EntitiesDTO.TaskDTO>
 @using Microsoft.AspNet.Identity
 @{
     ViewData["Title"] = "List task";
@@ -35,9 +35,9 @@
             <th class="th-sm">
                 @Html.DisplayNameFor(model => model.ModeratorIDs)
             </th>
-            @*<th class="th-sm">
-                @Html.DisplayNameFor(model => model.LabelIDs)
-            </th>*@
+            <th class="th-sm">
+                @Html.DisplayNameFor(model => model.Labels)
+            </th>
             <th class="th-sm">
                 Actions
             </th>
@@ -65,15 +65,15 @@
                 }
             </td>
             <td>
-                @*@{
-                    if (item.LabelIDs.Any() && labels.FirstOrDefault(i => i.Value == item.LabelIDs?.FirstOrDefault().ToString()) !=null)
+                @{
+                    if (item.Labels.Any() && item.CurrentLabelID != -1)
                     {
-                        <label>@labels.FirstOrDefault(i => i.Value == item.LabelIDs?.FirstOrDefault().ToString()).Text</label>
+                        <label>@(labels.FirstOrDefault(i => i.Value == item.CurrentLabelID.ToString()).Text)</label>
                     }
                     else
-                    { <label>@("-") </label> }
+                    {   <label>@("-") </label> }
 
-                }*@
+                }
 
             </td>
             <td>
@@ -101,9 +101,9 @@
             <th class="th-sm">
                 @Html.DisplayNameFor(model => model.ModeratorIDs)
             </th>
-            @*<th class="th-sm">
-                @Html.DisplayNameFor(model => model.LabelIDs)
-            </th>*@
+            <th class="th-sm">
+                @Html.DisplayNameFor(model => model.Labels)
+            </th>
             <th class="no-sort">
                 Actions
             </th>

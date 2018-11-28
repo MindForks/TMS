@@ -20,17 +20,24 @@ namespace TMS.Business.Services
             _repository = repository;
             _userService = userService;
         }
-        public IEnumerable<TaskDetailsDTO> GetAll()
+        public IEnumerable<TaskDTO> GetAll()
         {
-            return _mapper.Map<IEnumerable<Task>, IEnumerable<TaskDetailsDTO>>(
+            return _mapper.Map<IEnumerable<Task>, IEnumerable<TaskDTO>>(
                 _repository.GetAll());
         }
 
-        public IEnumerable<TaskDetailsDTO> GetAll(string userId) // where i`m moderator and viewer
+        public IEnumerable<TaskDTO> GetAll(string userId) // where i`m moderator and viewer
         {
-            return _mapper.Map<IEnumerable<Task>, IEnumerable<TaskDetailsDTO>>(
+            var result = _mapper.Map<IEnumerable<Task>, IEnumerable<TaskDTO>>(
                 _repository.Filter(i => i.Moderators.Any(j => j.UserId == userId)
                         || i.Viewers.Any(j => j.UserId == userId)));
+
+            foreach (var it in result)
+            {
+                FillLabelCurrentID(it, userId);
+            }
+            return result;
+                        
         }
 
         public IEnumerable<string> GetAllTaskModerator()
@@ -38,31 +45,38 @@ namespace TMS.Business.Services
             return _repository.GetAll().Select(j => j.Moderators.Select(k => k.User.Email).ToString());
         }
 
-        public TaskDetailsDTO GetById(int ItemId)
+        public TaskDTO GetById(int ItemId, string userId)
         {
             var item = _repository.GetItem(ItemId);
             if (item == null)
                 throw new Exception("Entity wasn`t found");
+            CheckForAccessError(item, userId);
 
-            return _mapper.Map<Task, TaskDetailsDTO>(item);
+            var DTOitem =  _mapper.Map<Task, TaskDTO>(item);
+            FillLabelCurrentID(DTOitem, userId);
+            return DTOitem;
         }
 
-        public void Create(TaskDetailsDTO item)
-        {
-            if (item == null)
-                throw new ArgumentNullException(nameof(item));
-
-            var itemEntity = _mapper.Map<TaskDetailsDTO, Task>(item);
-            _repository.Create(itemEntity);
-            _repository.SaveChanges();
-        }
-
-        public void Update(TaskDTO item)
+        public void Create(TaskDTO item, string userId)
         {
             if (item == null)
                 throw new ArgumentNullException(nameof(item));
 
             var itemEntity = _mapper.Map<TaskDTO, Task>(item);
+            MergeLabels(item, itemEntity, userId);
+            _repository.Create(itemEntity);
+            _repository.SaveChanges();
+        }
+
+        public void Update(TaskDTO item, string userId)
+        {
+            if (item == null)
+                throw new ArgumentNullException(nameof(item));
+            
+            var itemEntity = _mapper.Map<TaskDTO, Task>(item);
+            CheckForAccessError(itemEntity, userId);
+            MergeLabels(item, itemEntity, userId);
+
             _repository.Update(itemEntity);
             _repository.SaveChanges();
         }
@@ -73,41 +87,29 @@ namespace TMS.Business.Services
             _repository.SaveChanges();
         }
 
-        public void AddOrUpdateLabel(TaskDetailsDTO item)
+        private void FillLabelCurrentID(TaskDTO dTOitem, string userId)
         {
-            var itementity = _mapper.Map<TaskDetailsDTO, Task>(item);
-            itementity.Labels.Add(new Task_Label_User
+            var TaskLabels = dTOitem.Labels.FirstOrDefault(i => i.UserId == userId);
+            if (TaskLabels != null)
             {
-                UserId = "5e55431f-5e94-4091-8dfe-6e78dbf687df",
-                LabelId = 2,
-            });
-
-            _repository.Update(itementity);
-            _repository.SaveChanges();
+                dTOitem.CurrentLabelID = dTOitem.Labels.FirstOrDefault(i => i.UserId == userId).LabelId;
+            }
+            else
+            {
+                dTOitem.CurrentLabelID = -1;
+            }
         }
 
-        //public TaskDetailsDTO GetWithLabelById(int itemId)
-        // {
-        //     var tmp = new TaskDetailsDTO() {
-        //         LabelIDs = { 1 },
-        //         UserId = "ea182e92-b376-4ef8-9bc6-6f8ebf2d4237",
-        //         StatusId = 1,
-        //         CreationTime = DateTimeOffset.Now,
-        //         EndDate = DateTimeOffset.Now,
-        //         Title = "title",
-        //         Description = "desc",
-        //         Weight=2
-        //     };
-        //     var itementity = _mapper.Map<TaskDetailsDTO, Task>(tmp);
-        //     _repository.Create(itementity);
-        //     _repository.SaveChanges();
+        private void MergeLabels(TaskDTO item, Task itemEntity, string userId)
+        {
+            if (item.CurrentLabelID != -1)
+                itemEntity.Labels.Add(new Task_Label_User { LabelId = item.CurrentLabelID, UserId = userId });
+        }
 
-
-        //     var item = _repository.GetItem(itemId);
-        //     if (item == null)
-        //         throw new Exception("Entity wasn`t found");
-
-        //     return _mapper.Map<Task, TaskDetailsDTO>(item);
-        // }
+        private void CheckForAccessError(Task item, string userId)
+        {
+            if (!(item.Moderators.Any(j => j.UserId == userId) || item.Viewers.Any(j => j.UserId == userId)))
+                throw new Exception("Access error");
+        }
     }
 }

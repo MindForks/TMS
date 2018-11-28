@@ -58,7 +58,7 @@ namespace TMS.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Create()
         {
-            var task = new TaskDetailsDTO()
+            var task = new TaskDTO()
             {
                 CreationTime= DateTimeOffset.Now,
                 EndDate = DateTimeOffset.Now
@@ -75,22 +75,32 @@ namespace TMS.Web.Controllers
                     Value = taskStatus.Id.ToString(),
                     Text = taskStatus.Title
                 });
+            ViewData["Labels"] = new[] { new SelectListItem{
+                Value = "-1",
+                Text = "-",
+            }}
+          .Concat((_labelService.GetAll(_userId))
+               .Select(label => new SelectListItem
+               {
+                   Value = label.Id.ToString(),
+                   Text = label.Title,
+               }));
 
             return View(task);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([FromForm]TaskDetailsDTO task)
+        public IActionResult Create([FromForm]TaskDTO task)
         {
-            _taskService.Create(task);
+            _taskService.Create(task, _userId);
             return RedirectToAction(nameof(List));
         }
 
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            var task = _taskService.GetById(id);
+            var task = _taskService.GetById(id, _userId);
             ViewData["Users"] = (await _userService.GetAllAsync())
               .Select(user => new SelectListItem
               {
@@ -103,6 +113,17 @@ namespace TMS.Web.Controllers
                     Value = taskStatus.Id.ToString(),
                     Text = taskStatus.Title
                 });
+            ViewData["Labels"] = new[] { new SelectListItem{
+                Value = "-1",
+                Text = "-",
+            }}
+           .Concat((_labelService.GetAll(_userId))
+                .Select(label => new SelectListItem
+            {
+                    Value = label.Id.ToString(),
+                    Text = label.Title,
+            }));
+
 
             return View(task);
         }
@@ -111,7 +132,7 @@ namespace TMS.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit([FromForm]TaskDTO task)
         {
-            _taskService.Update(task);
+            _taskService.Update(task, _userId);
             return RedirectToAction(nameof(List));
         }
 
@@ -130,23 +151,20 @@ namespace TMS.Web.Controllers
                     Value = taskStatus.Id.ToString(),
                     Text = taskStatus.Title
                 });
-            ViewData["Labels"] = (_labelService.GetAll(_userId))
+            ViewData["Labels"] = new[] { new SelectListItem{
+                Value = "-1",
+                Text = "-",
+            }}
+          .Concat((_labelService.GetAll(_userId))
                .Select(label => new SelectListItem
                {
                    Value = label.Id.ToString(),
                    Text = label.Title,
-               });
+               }));
 
-            var task = _taskService.GetById(id);
-            //task.Labels.Add(
-            //    new Task_Label_UserDTO{
-            //        UserId = _userId,
-            //        LabelId = 2,
-            //        TaskId = id
-            //    }); 
+            var task = _taskService.GetById(id, _userId);
             return View(task);
         }
-
 
         [HttpPost]
         [ValidateAntiForgeryToken]
@@ -156,21 +174,6 @@ namespace TMS.Web.Controllers
             return RedirectToAction(nameof(List));
         }
 
-
-        [HttpGet]
-        public IActionResult AddOrUpdateLabel(int id)
-        {
-            var task = _taskService.GetById(id);
-            task.Labels.Add(
-                new Task_Label_UserDTO
-                {
-                    UserId = _userId,
-                    LabelId = 2,
-                });
-            _taskService.AddOrUpdateLabel(task);
-
-            return RedirectToAction(nameof(List));
-        }
 
     }
 
