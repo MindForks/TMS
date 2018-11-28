@@ -18,9 +18,9 @@ namespace TMS.Entities
         public string Title { get; set; }
         public string Description { get; set; }
         public string Weight { get; set; }
-        public DateTime EndDate { get; set; }
-        public DateTime CreationTime { get; set; }
-        public DateTime ClosingTime { get; set; }
+        public DateTimeOffset EndDate { get; set; }
+        public DateTimeOffset CreationTime { get; set; }
+        public DateTimeOffset ClosingTime { get; set; }
 
         public ICollection<TaskModerator_User> Moderators { get; set; }
         public ICollection<TaskViewer_User> Viewers { get; set; }

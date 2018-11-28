@@ -39,11 +39,6 @@ namespace TMS.Business.Services
                         
         }
 
-        public IEnumerable<string> GetAllTaskModerator()
-        {
-            return _repository.GetAll().Select(j => j.Moderators.Select(k => k.User.Email).ToString());
-        }
-
         public TaskDTO GetById(int ItemId, string userId)
         {
             var item = _repository.GetItem(ItemId);
@@ -56,7 +51,7 @@ namespace TMS.Business.Services
             return DTOitem;
         }
 
-        public object GetForEditById(int ItemId, string userId)
+        public TaskDTO GetForEditById(int ItemId, string userId)
         {
             var item = _repository.GetItem(ItemId);
             if (item == null)
