@@ -60,13 +60,15 @@ namespace TMS.Data.Repositories
 
         public void Update(Task item)
         {
-            db.Update(item); 
+             db.Update(item); 
 
             var ModeratorsDbSet = context.Set<TaskModerator_User>();
             var ViewersDbSet = context.Set<TaskViewer_User>();
+            var LabelsDbSets = context.Set<Task_Label_User>();
 
             var newModerators = item.Moderators.ToArray();
             var newViewers = item.Viewers.ToArray();
+            var newLabels = item.Labels.ToArray();
 
             var toRemoveModerators = ModeratorsDbSet
                 .Where(id => id.TaskId == item.Id)
@@ -80,11 +82,17 @@ namespace TMS.Data.Repositories
             var toAddViewers = newViewers
                 .Except(ViewersDbSet);
 
+            var toRemoveLabels = LabelsDbSets
+                .Where(i => i.TaskId == item.Id && i.UserId == item.CurrentUserId);
+           
             ModeratorsDbSet.RemoveRange(toRemoveModerators);
             ModeratorsDbSet.AddRange(toAddModerators);
 
             ViewersDbSet.RemoveRange(toRemoveViewers);
             ViewersDbSet.AddRange(toAddViewers);
+
+            LabelsDbSets.RemoveRange(toRemoveLabels);
+            LabelsDbSets.AddRange(newLabels);
 
         }
 
@@ -92,7 +100,8 @@ namespace TMS.Data.Repositories
         {
             return db
                 .Include(v => v.Moderators)
-                .Include(v => v.Viewers);
+                .Include(v => v.Viewers)
+                .Include(v => v.Labels);
 
         }
 

@@ -8,6 +8,8 @@
 @{
     var moderators = ((IEnumerable<SelectListItem>)ViewData["Moderators"]);
     var statuses = ((IEnumerable<SelectListItem>)ViewData["Statuses"]);
+    var labels = ((IEnumerable<SelectListItem>)ViewData["Labels"]);
+    var labelsColors = ((IEnumerable<SelectListItem>)ViewData["LabelColors"]);
 }
 <center><h3>Tasks</h3></center>
 <hr />
@@ -35,6 +37,9 @@
                 @Html.DisplayNameFor(model => model.ModeratorIDs)
             </th>
             <th class="th-sm">
+                @Html.DisplayNameFor(model => model.Labels)
+            </th>
+            <th class="th-sm">
                 Actions
             </th>
         </tr>
@@ -42,30 +47,42 @@
     <tbody>
         @foreach (var item in Model)
         {
-            <tr>
-                <td>
-                    <label>@item.Title</label>
-                </td>
-                <td>
-                    <label>@(item.ModeratorIDs.Contains(User.Identity.GetUserId()) ? "moderator" : "viewer")</label>
-                </td>
-                <td>
-                    <label>@(statuses.FirstOrDefault(i => i.Value == item.StatusId.ToString()).Text)</label>
-                </td>
-                <td>
-                    <label>@item.EndDate.LocalDateTime</label>
-                </td>
-                <td>
-                    @{ var current = moderators.Where(i => item.ModeratorIDs.Any(j => j == i.Value)).Select(i => i.Text).ToList();
-                        <label>@(String.Join(", ", current))</label>
+        <tr>
+            <td>
+                <label>@item.Title</label>
+            </td>
+            <td>
+                <label >@(item.ModeratorIDs.Contains(User.Identity.GetUserId()) ? "moderator" : "viewer")</label>
+            </td>
+            <td>
+                <label>@(statuses.FirstOrDefault(i => i.Value == item.StatusId.ToString()).Text)</label>
+            </td>
+            <td>
+                <label>@item.EndDate.LocalDateTime</label>
+            </td>
+            <td>
+                @{ var current = moderators.Where(i => item.ModeratorIDs.Any(j => j == i.Value)).Select(i => i.Text).ToList();
+                    <label>@(String.Join(", ", current))</label>
+                }
+            </td>
+            <td>
+                @{
+                    if (item.Labels.Any() && item.CurrentLabelID != -1)
+                    {
+                        <label style=" color:#ffffff; background: @(labelsColors.FirstOrDefault(i => i.Value == item.CurrentLabelID.ToString()).Text)">@(labels.FirstOrDefault(i => i.Value == item.CurrentLabelID.ToString()).Text)</label>
                     }
-                </td>
-                <td>
-                    <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                    <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                    <a href="#" data-toggle="modal" data-target="#deleteModal" data-item-id="@item.Id">Delete</a>
-                </td>
-            </tr>
+                    else
+                    {   <label>@("-") </label> }
+
+                }
+
+            </td>
+            <td>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
+                <a href="#" data-toggle="modal" data-target="#deleteModal" data-item-id="@item.Id">Delete</a>
+            </td>
+        </tr>
         }
     </tbody>
     <tfoot>
@@ -85,13 +102,15 @@
             <th class="th-sm">
                 @Html.DisplayNameFor(model => model.ModeratorIDs)
             </th>
+            <th class="th-sm">
+                @Html.DisplayNameFor(model => model.Labels)
+            </th>
             <th class="no-sort">
                 Actions
             </th>
         </tr>
     </tfoot>
 </table>
-
 }
 else
 {
