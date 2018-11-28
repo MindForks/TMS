@@ -49,9 +49,21 @@ namespace TMS.Business.Services
             var item = _repository.GetItem(ItemId);
             if (item == null)
                 throw new Exception("Entity wasn`t found");
-            CheckForAccessError(item, userId);
+            CheckAbilityForView(item, userId);
 
             var DTOitem =  _mapper.Map<Task, TaskDTO>(item);
+            FillLabelCurrentID(DTOitem, userId);
+            return DTOitem;
+        }
+
+        public object GetForEditById(int ItemId, string userId)
+        {
+            var item = _repository.GetItem(ItemId);
+            if (item == null)
+                throw new Exception("Entity wasn`t found");
+            CheckAbilityForEdit(item, userId);
+
+            var DTOitem = _mapper.Map<Task, TaskDTO>(item);
             FillLabelCurrentID(DTOitem, userId);
             return DTOitem;
         }
@@ -74,7 +86,7 @@ namespace TMS.Business.Services
             
             var itemEntity = _mapper.Map<TaskDTO, Task>(item);
             itemEntity.CurrentUserId = userId;
-            CheckForAccessError(itemEntity, userId);
+            CheckAbilityForEdit(itemEntity, userId);
 
             MergeLabels(item, itemEntity, userId);
          
@@ -82,8 +94,9 @@ namespace TMS.Business.Services
             _repository.SaveChanges();
         }
 
-        public void Delete(int itemId)
+        public void Delete(int itemId, string userId)
         {
+             GetForEditById(itemId, userId); // will check ability to edit
             _repository.Delete(itemId);
             _repository.SaveChanges();
         }
@@ -106,13 +119,18 @@ namespace TMS.Business.Services
             if (item.CurrentLabelID != -1)
             {
                 itemEntity.Labels.Add(new Task_Label_User { LabelId = item.CurrentLabelID, UserId = userId });
-            }
-           
+            } 
         }
 
-        private void CheckForAccessError(Task item, string userId)
+        private void CheckAbilityForView(Task item, string userId)
         {
             if (!(item.Moderators.Any(j => j.UserId == userId) || item.Viewers.Any(j => j.UserId == userId)))
+                throw new Exception("Access error");
+        }
+
+        private void CheckAbilityForEdit(Task item, string userId)
+        {
+            if (!(item.Moderators.Any(j => j.UserId == userId)))
                 throw new Exception("Access error");
         }
     }
