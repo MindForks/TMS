@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
+using System.Linq;
 using TMS.Business.Services;
 using TMS.EntitiesDTO;
 
@@ -10,6 +12,7 @@ namespace TMS.Web.Controllers
         private readonly TaskService _taskService;
         private readonly UserService _userService;
         private readonly TaskStatusService _taskStatusService;
+        private string _userId { get { return User.Identity.GetUserId(); } }
 
         public DashboardController(TaskService taskService, UserService userService, TaskStatusService taskStatusService)
         {
@@ -19,30 +22,13 @@ namespace TMS.Web.Controllers
         }
 
         public IActionResult Index()
-        {
-            var tasksTodo = new List<TaskDTO>();
-            var tasksInProgress = new List<TaskDTO>();
-            var tasksDone = new List<TaskDTO>();
-
+        {      
             var statuses = _taskStatusService.GetAll();
+            var tasks = _taskService.GetAll(_userId);
 
-            var tasks = _taskService.GetAll();
-
-            foreach (var task in tasks)
-            {
-                if (task.StatusId == 1)
-                {
-                    tasksTodo.Add(task);
-                }
-                else if(task.StatusId == 2)
-                {
-                    tasksInProgress.Add(task);
-                }
-                else
-                {
-                    tasksDone.Add(task);
-                }
-            }
+            var tasksTodo = tasks.Where( i=> i.StatusId == (int)TaskStatusesDTO.ToDo);
+            var tasksInProgress = tasks.Where(i => i.StatusId == (int)TaskStatusesDTO.InProgress);
+            var tasksDone = tasks.Where(i => i.StatusId == (int)TaskStatusesDTO.Done);
 
             TasksDTO tasksModel = new TasksDTO
             {
@@ -56,7 +42,7 @@ namespace TMS.Web.Controllers
 
         public JsonResult GetEvents()
         {
-            var events = _taskService.GetAll();
+            var events = _taskService.GetAll(_userId);
 
             return Json(events);
         }
