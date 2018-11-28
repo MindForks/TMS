@@ -12,13 +12,11 @@ namespace TMS.Business.Services
     {
         private readonly IMapper _mapper;
         private readonly IRepository<Task> _repository;
-        private readonly UserService _userService;
 
-        public TaskService(IMapper mapper, IRepository<Task> repository, UserService userService)
+        public TaskService(IMapper mapper, IRepository<Task> repository)
         {
             _mapper = mapper;
             _repository = repository;
-            _userService = userService;
         }
 
         public IEnumerable<TaskDTO> GetAll()

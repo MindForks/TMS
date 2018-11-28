@@ -11,13 +11,11 @@ namespace TMS.Business.Services
     {
         private readonly IMapper _mapper;
         private readonly IRepository<Label> _repository;
-        private readonly UserService _userService;
 
-        public LabelService(IMapper mapper, IRepository<Label> repository, UserService userService)
+        public LabelService(IMapper mapper, IRepository<Label> repository)
         {
             _mapper = mapper;
             _repository = repository;
-            _userService = userService;
         }
 
         public IEnumerable<LabelDTO> GetAll(string UserId)
