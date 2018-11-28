@@ -10,17 +10,13 @@ namespace TMS.Bootstrap.Automapper
         public AutomapperProfile()
         {
             #region MapSettings
-            CreateMap<NotificationType, NotificationTypeDTO>();
-            CreateMap<NotificationTypeDTO, NotificationType>();
+            CreateMap<NotificationType, NotificationTypeDTO>().ReverseMap();
 
-            CreateMap<Label, LabelDTO>();
-            CreateMap<LabelDTO, Label>();
+            CreateMap<Label, LabelDTO>().ReverseMap();
 
-            CreateMap<UserApp, UserAppDTO>();
-            CreateMap<UserAppDTO, UserApp>();
+            CreateMap<UserApp, UserAppDTO>().ReverseMap();
 
-            CreateMap<TaskStatus, TaskStatusDTO>();
-            CreateMap<TaskStatusDTO, TaskStatus>();
+            CreateMap<TaskStatus, TaskStatusDTO>().ReverseMap();
 
             CreateMap<Task, TaskDTO>()
              .ForMember(m => m.ModeratorIDs, m => m.ResolveUsing(e =>

@@ -37,6 +37,9 @@ body {
 #register-form, #login-form, #forgot-password {
     padding-top: 70px;
 }
+#change-password-form {
+    padding-top: 50px;
+}
 
 footer {
     padding-top:10px;
@@ -69,15 +72,18 @@ a, a:hover, a:focus {
     text-decoration: none;
     transition: all 0.3s;
 }
-
+.navbar {
+    border-bottom: #e7e7e7 1px solid;
+}
 .sidebar {
-    border-right: lightgray 1px solid;
+    position: fixed;
+    border-right: #e7e7e7 1px solid;
     min-width: 250px;
     max-width: 250px;
     height: -moz-calc(100% - 56px);
     height: -webkit-calc(100% - 56px);
     height: calc(100% - 56px);
-    transition: all 0.3s;
+    /*transition: all 0.3s;*/
 }
 .sidebar>a[data-toggle="collapse"] {
     position: relative;
@@ -96,7 +102,7 @@ a, a:hover, a:focus {
 }
 
 .sidebar ul.nav-components {
-    padding: 0 0 20px 0;
+    padding: 5px 0 20px 0;
     list-style-type: none;
 }
 .sidebar ul li {
@@ -104,7 +110,7 @@ a, a:hover, a:focus {
 }
 .sidebar ul p {
     color: #fff;
-    padding: 10px;
+    /*padding: 10px;*/
 }
 
 .sidebar ul li a {
@@ -125,58 +131,16 @@ a, a:hover, a:focus {
     background: #eeeeee;
 }
 ul.collapse{
-    padding-left:0;
+    /*padding-left:0;*/
 }
 ul.collapse li a {
-    padding-left: 40px;
+    /*padding-left: 40px;*/
 }
-.navbar-top-links li {
-    display: inline-block;
-}
-
-.navbar-top-links li:last-child {
-    margin-right: 15px;
-}
-
-.navbar-top-links li a {
-    padding: 15px;
-    min-height: 50px;
-}
-
-.navbar-top-links .dropdown-menu li {
-    display: block;
-}
-
-.navbar-top-links .dropdown-menu li:last-child {
-    margin-right: 0;
-}
-
-.navbar-top-links .dropdown-menu li a {
-    padding: 3px 20px;
-    min-height: 0;
-}
-
-.navbar-top-links .dropdown-menu li a div {
-    white-space: normal;
-}
-
-.navbar-top-links .dropdown-messages,
-.navbar-top-links .dropdown-tasks,
-.navbar-top-links .dropdown-alerts {
-    width: 300px;
-    min-width: 0;
-}
-
-.navbar-top-links .dropdown-messages {
-    margin-left: -115px;
-}
-
-.navbar-top-links .dropdown-tasks {
-    margin-left: -150px;
+ul ul a{
+    padding-left:30px !important;
 }
 
 .body-profile {
-    border-top: lightgray 1px solid;
     position: absolute;
     left: 250px;
     top: 56px;
@@ -188,4 +152,19 @@ ul.collapse li a {
 
 .create-label{
     margin-bottom: 15px;
+}
+
+#task-statistics-donut{
+    height:350px;
+}
+.list-group-item.header{
+    margin: 0 auto;
+}
+
+.card-deck{
+    padding-top: 20px;
+}
+
+#calendar{
+    padding-top: 5px;
 }

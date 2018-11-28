@@ -1,0 +1,63 @@
+﻿@model TMS.EntitiesDTO.TasksDTO
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_LayoutPages.cshtml";
+}
+<input type="hidden" value=@Model.TasksToDo.Count() id="todo-input" />
+<input type="hidden" value=@Model.TasksInProgress.Count() id="in-progress-input" />
+<input type="hidden" value=@Model.TasksDone.Count() id="done-input" />
+
+
+<div class="card-deck">
+    <div class="card col-md-4">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item header">To Do</li>
+            @foreach (var item in Model.TasksToDo)
+            {
+                <li class="list-group-item"><a href="/Task/Details/@item.Id">@item.Title</a></li>
+            }
+
+        </ul>
+    </div>
+    <div class="card col-md-4">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item header">In Progress</li>
+            @foreach (var item in Model.TasksInProgress)
+            {
+                <li class="list-group-item"><a href="/Task/Details/@item.Id">@item.Title</a></li>
+            }
+        </ul>
+    </div>
+    <div class="card col-md-4">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item header">Done</li>
+            @foreach (var item in Model.TasksDone)
+            {
+                <li class="list-group-item"><a href="/Task/Details/@item.Id">@item.Title</a></li>
+            }
+        </ul>
+    </div>
+</div>
+
+<div id="task-statistics-donut"></div>
+
+
+
+<script>
+    new Morris.Donut({
+        element: 'task-statistics-donut',
+        data: [{
+            label: "To Do",
+            value: $('#todo-input').val()
+        },
+        {
+            label: "In Progress",
+            value: $('#in-progress-input').val()
+        },
+        {
+            label: "Done",
+            value: $('#done-input').val()
+        }],
+        resize: true
+    });
+</script>

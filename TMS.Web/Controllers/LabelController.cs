@@ -51,7 +51,7 @@ namespace TMS.Web.Controllers
             var label = _labelService.GetById(id);
             if(label.UserId !=_userId) // when u try to get access to other people label
             {
-                return View(new ErrorViewModel { RequestId = "U can`t get access to this label" });
+                return View(new ErrorViewModel { RequestId = "You can`t get access to this label" });
             }
             return View(label);
         }
@@ -71,7 +71,7 @@ namespace TMS.Web.Controllers
             var label = _labelService.GetById(id);
             if (label.UserId != _userId) // when u try to delete other people label
             {
-                return View(new ErrorViewModel { RequestId = "U can`t get access to this label" });
+                return View(new ErrorViewModel { RequestId = "You can`t get access to this label" });
             }
             _labelService.Delete(id);
             return RedirectToAction(nameof(List));
