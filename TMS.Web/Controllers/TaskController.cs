@@ -125,7 +125,7 @@ namespace TMS.Web.Controllers
         [HttpGet]
         public async Task<IActionResult> Edit(int id)
         {
-            var task = _taskService.GetById(id, _userId);
+            var task = _taskService.GetForEditById(id, _userId);
             ViewData["Users"] = (await _userService.GetAllAsync())
               .Select(user => new SelectListItem
               {
@@ -195,10 +195,9 @@ namespace TMS.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Delete(int id)
         {
-            _taskService.Delete(id);
+            _taskService.Delete(id,_userId);
             return RedirectToAction(nameof(List));
         }
-
 
     }
 

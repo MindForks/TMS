@@ -12,7 +12,7 @@ namespace TMS.Business.Services
         private readonly IMapper _mapper;
         private readonly IRepository<TaskStatus> _repository;
 
-        public TaskStatusService(IRepository<TaskStatus> repository, IMapper mapper)
+        public TaskStatusService(IMapper mapper, IRepository<TaskStatus> repository)
         {
             _repository = repository;
             _mapper = mapper;
