@@ -41,11 +41,6 @@ namespace TMS.Web.Areas.Identity.Pages.Account
             if (ModelState.IsValid)
             {
                 var user = await _userManager.FindByEmailAsync(Input.Email);
-                /*if (user == null || !(await _userManager.IsEmailConfirmedAsync(user)))
-                {
-                    // Don't reveal that the user does not exist or is not confirmed
-                    return RedirectToPage("./ForgotPasswordConfirmation");
-                }*/
 
                 // For more information on how to enable account confirmation and password reset please 
                 // visit https://go.microsoft.com/fwlink/?LinkID=532713
@@ -59,16 +54,11 @@ namespace TMS.Web.Areas.Identity.Pages.Account
                 NotificationTypeDTO notification = new NotificationTypeDTO
                 {
                     Title = "Reset Password",
-                    Message = $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>."
+                    Message = $"Please reset your password by link: {HtmlEncoder.Default.Encode(callbackUrl)}"
                 };
 
                 _notificationService.SendMail(Input.Email, notification);
 
-                /*await _emailSender.SendEmailAsync(
-                    Input.Email,
-                    "Reset Password",
-                    $"Please reset your password by <a href='{HtmlEncoder.Default.Encode(callbackUrl)}'>clicking here</a>.");
-                */
                 return RedirectToPage("./ForgotPasswordConfirmation");
             }
 
