@@ -18,14 +18,16 @@ namespace TMS.Web.Controllers
         private readonly UserService _userService;
         private readonly TaskStatusService _taskStatusService;
         private readonly LabelService _labelService;
+        private readonly NotificationService _notificationService;
         private string _userId { get { return User.Identity.GetUserId(); } }
 
-        public TaskController(TaskService taskService, UserService userService, TaskStatusService taskStatusService, LabelService labelService)
+        public TaskController(TaskService taskService, UserService userService, TaskStatusService taskStatusService, LabelService labelService, NotificationService notificationService)
         {
             _taskService = taskService;
             _userService = userService;
             _taskStatusService = taskStatusService;
             _labelService = labelService;
+            _notificationService = notificationService;
         }
 
         [HttpGet]
@@ -100,6 +102,49 @@ namespace TMS.Web.Controllers
         public IActionResult Create([FromForm]TaskDTO task)
         {
             _taskService.Create(task, _userId);
+
+            NotificationTypeDTO notificationViewer = new NotificationTypeDTO
+            {
+                Title = task.Title,
+                Message =
+                $"You are viewer on a new task" + "\n" +
+                $"Title: {task.Title}" + "\n" +
+                $"Description: {task.Description}" + "\n" +
+                "\n" +
+                $"Start Date: {task.CreationTime}" + "\n" +
+                $"Deadline: {task.EndDate}" + "\n" +
+                "\n" +
+                $" Cheers," + "\n" +
+                $"Task Manager System",
+            };
+
+            foreach (var viewerId in task.ViewerIDs)
+            {
+                var user = _userService.GetItemAsync(viewerId).Result.Email;
+                _notificationService.SendMail(user, notificationViewer);
+            }
+
+            NotificationTypeDTO notificationModerator = new NotificationTypeDTO
+            {
+                Title = task.Title,
+                Message =
+                $"You are moderator on a new task" + "\n"+
+                $"Title: {task.Title}" + "\n" +
+                $"Description: {task.Description}" + "\n" +
+                "\n" +
+                $"Start Date: {task.CreationTime}" + "\n" +
+                $"Deadline: {task.EndDate}" + "\n" +
+                "\n" +
+                $"Cheers," + "\n" +
+                $"Task Manager System",
+            };
+
+            foreach (var moderatorId in task.ModeratorIDs)
+            {
+                var user = _userService.GetItemAsync(moderatorId).Result.Email;
+                _notificationService.SendMail(user, notificationModerator);
+            }
+
             return RedirectToAction(nameof(List));
         }
 
