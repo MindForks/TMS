@@ -1,0 +1,191 @@
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request finished in 89.3687ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.6408ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 592.4964ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 677.3207ms
+Request finished in 1846.6896ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/css/vendor.css  
+Sending file. Request path: '/css/vendor.css'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\css\vendor.css'
+Request finished in 109.0407ms 200 text/css
+Request starting HTTP/1.1 GET http://localhost:44317/css/site.css  
+Sending file. Request path: '/css/site.css'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\css\site.css'
+Request finished in 18.8107ms 200 text/css
+Request starting HTTP/1.1 GET http://localhost:44317/js/vendor.js?v=XetqQN5UCZaaRWSBm0WouAgElBFdmW6yb0aUG3NyPYY  
+Sending file. Request path: '/js/vendor.js'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\js\vendor.js'
+Request finished in 20.774ms 200 application/javascript
+Request starting HTTP/1.1 GET http://localhost:44317/js/site.min.js?v=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU  
+Sending file. Request path: '/js/site.min.js'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\js\site.min.js'
+Request finished in 56.1428ms 200 application/javascript
+Request starting HTTP/1.1 GET http://localhost:44317/images/banner1.jpg  
+Request starting HTTP/1.1 GET http://localhost:44317/images/banner2.jpg  
+Sending file. Request path: '/images/banner2.jpg'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\images\banner2.jpg'
+Sending file. Request path: '/images/banner1.jpg'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\images\banner1.jpg'
+Request finished in 83.8116ms 200 image/jpeg
+Request finished in 110.7192ms 200 image/jpeg
+Request starting HTTP/1.1 GET http://localhost:44317/images/banner3.png  
+Sending file. Request path: '/images/banner3.png'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\images\banner3.png'
+Request finished in 17.3303ms 200 image/png
+Request starting HTTP/1.1 GET http://localhost:44317/Identity/Account/Login  
+Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing action /Account/Login
+Executing handler method OnGetAsync with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executed action /Account/Login in 201.7784ms
+Request finished in 404.5994ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/css/vendor.css  
+Request starting HTTP/1.1 GET http://localhost:44317/Identity/lib/jquery-validation/dist/jquery.validate.js  
+Request starting HTTP/1.1 GET http://localhost:44317/js/vendor.js?v=XetqQN5UCZaaRWSBm0WouAgElBFdmW6yb0aUG3NyPYY  
+Request starting HTTP/1.1 GET http://localhost:44317/js/site.min.js?v=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU  
+Request starting HTTP/1.1 GET http://localhost:44317/css/site.css  
+Request starting HTTP/1.1 GET http://localhost:44317/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js  
+Sending file. Request path: '/Identity/lib/jquery-validation/dist/jquery.validate.js'. Physical path: 'N/A'
+Sending file. Request path: '/js/site.min.js'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\js\site.min.js'
+Sending file. Request path: '/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js'. Physical path: 'N/A'
+Request finished in 61.3877ms 200 application/javascript
+Request finished in 125.4675ms 200 application/javascript
+Request finished in 41.9693ms 200 application/javascript
+Sending file. Request path: '/css/site.css'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\css\site.css'
+Sending file. Request path: '/css/vendor.css'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\css\vendor.css'
+Request finished in 243.48ms 200 text/css
+Sending file. Request path: '/js/vendor.js'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\js\vendor.js'
+Request finished in 338.6026ms 200 text/css
+Request finished in 403.7155ms 200 application/javascript
+Request starting HTTP/1.1 POST http://localhost:44317/Identity/Account/Login application/x-www-form-urlencoded 266
+Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing action /Account/Login
+Executing handler method OnPostAsync with arguments () - ModelState is Valid
+Invalid password for user 94bd6f0e-604b-41be-b5b9-dbf5a845d9e2.
+User 94bd6f0e-604b-41be-b5b9-dbf5a845d9e2 failed to provide the correct password.
+Executed action /Account/Login in 3376.4529ms
+Request finished in 3420.6892ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/css/vendor.css  
+Request starting HTTP/1.1 GET http://localhost:44317/js/vendor.js?v=XetqQN5UCZaaRWSBm0WouAgElBFdmW6yb0aUG3NyPYY  
+Request starting HTTP/1.1 GET http://localhost:44317/css/site.css  
+Request starting HTTP/1.1 GET http://localhost:44317/js/site.min.js?v=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU  
+Request starting HTTP/1.1 GET http://localhost:44317/Identity/lib/jquery-validation/dist/jquery.validate.js  
+Sending file. Request path: '/css/site.css'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\css\site.css'
+Sending file. Request path: '/js/site.min.js'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\js\site.min.js'
+Request finished in 121.682ms 200 text/css
+Sending file. Request path: '/Identity/lib/jquery-validation/dist/jquery.validate.js'. Physical path: 'N/A'
+Request finished in 201.5594ms 200 application/javascript
+Request finished in 242.1685ms 200 application/javascript
+Request starting HTTP/1.1 GET http://localhost:44317/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js  
+Sending file. Request path: '/js/vendor.js'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\js\vendor.js'
+Sending file. Request path: '/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js'. Physical path: 'N/A'
+Request finished in 343.0243ms 200 application/javascript
+Request finished in 461.0095ms 200 application/javascript
+Sending file. Request path: '/css/vendor.css'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\css\vendor.css'
+Request finished in 695.9352ms 200 text/css
+Request starting HTTP/1.1 POST http://localhost:44317/Identity/Account/Login application/x-www-form-urlencoded 271
+Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing action /Account/Login
+Executing handler method OnPostAsync with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.Application signed in.
+User logged in.
+Executing RedirectResult, redirecting to /Dashboard.
+Executed action /Account/Login in 298.9194ms
+Request finished in 323.1714ms 302 
+Request starting HTTP/1.1 GET http://localhost:44317/Dashboard  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 397.4288ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 82.1507ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 1054.1504ms
+Request finished in 1112.9074ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/js/vendor.js?v=XetqQN5UCZaaRWSBm0WouAgElBFdmW6yb0aUG3NyPYY  
+Request starting HTTP/1.1 GET http://localhost:44317/css/site.css  
+Request starting HTTP/1.1 GET http://localhost:44317/css/vendor.css  
+Request starting HTTP/1.1 GET http://localhost:44317/js/site.min.js?v=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU  
+Sending file. Request path: '/css/site.css'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\css\site.css'
+Sending file. Request path: '/js/site.min.js'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\js\site.min.js'
+Request finished in 97.7238ms 200 text/css
+Request finished in 124.1598ms 200 application/javascript
+Sending file. Request path: '/css/vendor.css'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\css\vendor.css'
+Sending file. Request path: '/js/vendor.js'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\js\vendor.js'
+Request finished in 182.9458ms 200 text/css
+Request finished in 237.6026ms 200 application/javascript
+Request starting HTTP/1.1 GET http://localhost:44317/Identity/Account/Manage  
+Route matched with {page = "/Account/Manage/Index", area = "Identity", action = "", controller = ""}. Executing action /Account/Manage/Index
+Authorization was successful.
+Executing handler method OnGetAsync with arguments ((null)) - ModelState is Valid
+Executed action /Account/Manage/Index in 168.1184ms
+Request finished in 236.9513ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/css/vendor.css  
+Request starting HTTP/1.1 GET http://localhost:44317/Identity/lib/jquery-validation/dist/jquery.validate.js  
+Request starting HTTP/1.1 GET http://localhost:44317/css/site.css  
+Request starting HTTP/1.1 GET http://localhost:44317/js/vendor.js?v=XetqQN5UCZaaRWSBm0WouAgElBFdmW6yb0aUG3NyPYY  
+Request starting HTTP/1.1 GET http://localhost:44317/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js  
+Sending file. Request path: '/Identity/lib/jquery-validation/dist/jquery.validate.js'. Physical path: 'N/A'
+Sending file. Request path: '/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js'. Physical path: 'N/A'
+Request starting HTTP/1.1 GET http://localhost:44317/js/site.min.js?v=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU  
+Request finished in 125.4995ms 200 application/javascript
+Request finished in 149.3286ms 200 application/javascript
+Sending file. Request path: '/js/site.min.js'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\js\site.min.js'
+Sending file. Request path: '/css/vendor.css'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\css\vendor.css'
+Request finished in 200.4609ms 200 application/javascript
+Request finished in 220.3976ms 200 text/css
+Sending file. Request path: '/js/vendor.js'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\js\vendor.js'
+Request finished in 255.9049ms 200 application/javascript
+Sending file. Request path: '/css/site.css'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\css\site.css'
+Request finished in 367.2832ms 200 text/css
+Request starting HTTP/1.1 POST http://localhost:44317/Identity/Account/Manage application/x-www-form-urlencoded 304
+Route matched with {page = "/Account/Manage/Index", area = "Identity", action = "", controller = ""}. Executing action /Account/Manage/Index
+Authorization was successful.
+Executing handler method OnPostAsync with arguments ((null)) - ModelState is Valid
+AuthenticationScheme: Identity.Application signed in.
+Executing RedirectToPageResult, redirecting to (null).
+Executed action /Account/Manage/Index in 368.23ms
+Request finished in 410.8818ms 302 
+Request starting HTTP/1.1 GET http://localhost:44317/Identity/Account/Manage  
+Route matched with {page = "/Account/Manage/Index", area = "Identity", action = "", controller = ""}. Executing action /Account/Manage/Index
+Authorization was successful.
+Executing handler method OnGetAsync with arguments ((null)) - ModelState is Valid
+Executed action /Account/Manage/Index in 34.6302ms
+Request finished in 59.82ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/css/site.css  
+Request starting HTTP/1.1 GET http://localhost:44317/js/site.min.js?v=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU  
+Request starting HTTP/1.1 GET http://localhost:44317/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js  
+Request starting HTTP/1.1 GET http://localhost:44317/Identity/lib/jquery-validation/dist/jquery.validate.js  
+Request starting HTTP/1.1 GET http://localhost:44317/css/vendor.css  
+Sending file. Request path: '/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js'. Physical path: 'N/A'
+Sending file. Request path: '/js/site.min.js'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\js\site.min.js'
+Request finished in 107.349ms 200 application/javascript
+Sending file. Request path: '/Identity/lib/jquery-validation/dist/jquery.validate.js'. Physical path: 'N/A'
+Request finished in 135.1055ms 200 application/javascript
+Request starting HTTP/1.1 GET http://localhost:44317/js/vendor.js?v=XetqQN5UCZaaRWSBm0WouAgElBFdmW6yb0aUG3NyPYY  
+Request finished in 153.2723ms 200 application/javascript
+Sending file. Request path: '/css/vendor.css'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\css\vendor.css'
+Request finished in 184.9129ms 200 text/css
+Sending file. Request path: '/css/site.css'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\css\site.css'
+Sending file. Request path: '/js/vendor.js'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\js\vendor.js'
+Request finished in 222.2664ms 200 text/css
+Request finished in 228.8549ms 200 application/javascript
+Request starting HTTP/1.1 GET http://localhost:44317/Task/List  
+Route matched with {action = "List", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.List (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.List (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 147.0831ms.
+Executing ViewResult, running view List.
+Executed ViewResult - view List executed in 66.2072ms.
+Executed action TMS.Web.Controllers.TaskController.List (TMS.Web) in 272.6062ms
+Request finished in 346.1935ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/css/vendor.css  
+Request starting HTTP/1.1 GET http://localhost:44317/css/site.css  
+Request starting HTTP/1.1 GET http://localhost:44317/js/site.min.js?v=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU  
+Request starting HTTP/1.1 GET http://localhost:44317/js/vendor.js?v=XetqQN5UCZaaRWSBm0WouAgElBFdmW6yb0aUG3NyPYY  
+Sending file. Request path: '/js/site.min.js'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\js\site.min.js'
+Sending file. Request path: '/css/vendor.css'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\css\vendor.css'
+Request finished in 98.4055ms 200 application/javascript
+Sending file. Request path: '/css/site.css'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\css\site.css'
+Request finished in 167.7216ms 200 text/css
+Request finished in 195.0449ms 200 text/css
+Sending file. Request path: '/js/vendor.js'. Physical path: 'G:\Apriorit\Новая папка\TMS\TMS.Web\wwwroot\js\vendor.js'
+Request finished in 232.2692ms 200 application/javascript
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_both.png  
+Processing request /node_modules/datatables/media/images/sort_both.png
+Request finished in 17.9123ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_asc.png  
+Processing request /node_modules/datatables/media/images/sort_asc.png
+Request finished in 31.0915ms 200 
