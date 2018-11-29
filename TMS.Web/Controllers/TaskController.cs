@@ -103,20 +103,8 @@ namespace TMS.Web.Controllers
         {
             _taskService.Create(task, _userId);
 
-            NotificationTypeDTO notificationViewer = new NotificationTypeDTO
-            {
-                Title = task.Title,
-                Message =
-                $"You are viewer on a new task" + "\n" +
-                $"Title: {task.Title}" + "\n" +
-                $"Description: {task.Description}" + "\n" +
-                "\n" +
-                $"Start Date: {task.CreationTime}" + "\n" +
-                $"Deadline: {task.EndDate}" + "\n" +
-                "\n" +
-                $" Cheers," + "\n" +
-                $"Task Manager System",
-            };
+            var notificationViewer = _notificationService.CreateNotification(task, "viewer");
+            var notificationModerator = _notificationService.CreateNotification(task, "moderator");
 
             foreach (var viewerId in task.ViewerIDs)
             {
@@ -124,20 +112,6 @@ namespace TMS.Web.Controllers
                 _notificationService.SendMail(user, notificationViewer);
             }
 
-            NotificationTypeDTO notificationModerator = new NotificationTypeDTO
-            {
-                Title = task.Title,
-                Message =
-                $"You are moderator on a new task" + "\n"+
-                $"Title: {task.Title}" + "\n" +
-                $"Description: {task.Description}" + "\n" +
-                "\n" +
-                $"Start Date: {task.CreationTime}" + "\n" +
-                $"Deadline: {task.EndDate}" + "\n" +
-                "\n" +
-                $"Cheers," + "\n" +
-                $"Task Manager System",
-            };
 
             foreach (var moderatorId in task.ModeratorIDs)
             {

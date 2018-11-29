@@ -23,5 +23,26 @@ namespace TMS.Business.Services
                 }
             }
         }
+
+        public NotificationTypeDTO CreateNotification(TaskDTO task, string role)
+        {
+            NotificationTypeDTO notification = new NotificationTypeDTO
+            {
+                Title = task.Title,
+                Message =
+                $"You are {role} on a new task" + "\n" +
+                $"Title: {task.Title}" + "\n" +
+                $"Description: {task.Description}" + "\n" +
+                "\n" +
+                $"Start Date: {task.CreationTime}" + "\n" +
+                $"Deadline: {task.EndDate}" + "\n" +
+                "\n" +
+                $"Cheers," + "\n" +
+                $"Task Manager System",
+            };
+
+            return notification;
+        }
+
     }
 }
