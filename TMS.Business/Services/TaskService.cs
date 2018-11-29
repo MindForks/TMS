@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using TMS.Entities;
-using TMS.EntitiesDTO;
 using TMS.Interfaces;
+using TMS.EntitiesDTO;
+using System.Collections.Generic;
 
 namespace TMS.Business.Services
 {
@@ -96,7 +95,7 @@ namespace TMS.Business.Services
             _repository.SaveChanges();
         }
 
-        private void FillLabelCurrentID(TaskDTO dTOitem, string userId)
+        internal void FillLabelCurrentID(TaskDTO dTOitem, string userId)
         {
             var TaskLabels = dTOitem.Labels.FirstOrDefault(i => i.UserId == userId);
             if (TaskLabels != null)

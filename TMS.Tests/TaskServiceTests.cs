@@ -8,6 +8,7 @@ using Moq;
 using System.Linq.Expressions;
 using System;
 using System.Collections.Generic;
+using TMS.EntitiesDTO;
 
 namespace TMS.Tests
 {
@@ -46,11 +47,11 @@ namespace TMS.Tests
             {
                 UserId = "1"
             }};
-            var taskItem = new Task() { Id = 10, Title = "title", StatusId = 1, Moderators = moderators};
+            var taskItem = new Task() { Id = 10, Title = "title", StatusId = 1, Moderators = moderators };
             // Arrange
             var repository = new Mock<IRepository<Task>>();
-                 repository.Setup(m => m.Filter(It.IsAny<Expression<Func<Task, bool>>>()))
-                 .Returns(() => new[] { taskItem });
+            repository.Setup(m => m.Filter(It.IsAny<Expression<Func<Task, bool>>>()))
+            .Returns(() => new[] { taskItem });
             var service = new TaskService(_mapper, repository.Object);
 
             // Act
@@ -103,7 +104,7 @@ namespace TMS.Tests
                 Id = 10,
                 StatusId = 1,
                 Title = "testItem",
-                Weight="3",
+                Weight = "3",
                 Moderators = moderators
             };
 
@@ -157,11 +158,11 @@ namespace TMS.Tests
             var service = new TaskService(_mapper, repository.Object);
 
             //Assert
-            Assert.Throws<Exception>(() => service.GetById(10,"1"));
+            Assert.Throws<Exception>(() => service.GetById(10, "1"));
             repository.Verify(m => m.GetItem(10));
             repository.VerifyNoOtherCalls();
         }
-        
+
         [Fact]
         public void Should_GetForEdit_And_CheckForAccess()
         {
@@ -247,5 +248,172 @@ namespace TMS.Tests
             repository.Verify(m => m.GetItem(10));
             repository.VerifyNoOtherCalls();
         }
+
+        [Fact]
+        public void Should_Update_Item()
+        {
+            // Arrange
+            ICollection<TaskModerator_User> moderators = new List<TaskModerator_User> {
+            new TaskModerator_User() {
+                UserId = "10"
+            },
+             new TaskModerator_User()
+            {
+                UserId = "1"
+            }};
+            var TaskToGet = new Task()
+            {
+                Id = 10,
+                StatusId = 1,
+                Title = "testItem",
+                Weight = "3",
+                Moderators = moderators
+            };
+
+            var repository = new Mock<IRepository<Task>>();
+            repository.Setup(u => u.Update(TaskToGet));
+
+            // Act
+            var service = new TaskService(_mapper, repository.Object);
+            service.Update(_mapper.Map<Task, TaskDTO>(TaskToGet), "1");
+
+            // Assert
+            repository.Verify(t => t.Update(It.Is<Task>(dto =>
+                 dto.Id == TaskToGet.Id
+                && dto.StatusId == TaskToGet.StatusId
+                && dto.Title == TaskToGet.Title
+                && dto.Title == TaskToGet.Title
+                )));
+            repository.Verify(t => t.SaveChanges());
+            repository.VerifyNoOtherCalls();
+        }
+
+        [Fact]
+        public void Should_GenereateArgumentNullException_When_Update_Item()
+        {
+            // Arrange
+            var repository = new Mock<IRepository<Task>>();
+            repository.Setup(u => u.Update(null));
+
+            // Act
+            var service = new TaskService(_mapper, repository.Object);
+
+            //Assert
+            Assert.Throws<ArgumentNullException>(() => service.Update(null, "1"));
+            repository.VerifyNoOtherCalls();
+        }
+
+        [Fact]
+        public void Should_GenereateAccessException_When_Update_Item()
+        {
+            var TaskToGet = new Task()
+            {
+                Id = 10,
+                StatusId = 1,
+                Title = "testItem",
+                Weight = "3",
+            };
+
+            var repository = new Mock<IRepository<Task>>();
+            repository.Setup(u => u.Update(TaskToGet));
+
+            // Act
+            var service = new TaskService(_mapper, repository.Object);
+
+            //Assert
+            Assert.Throws<Exception>(() => service.Update(_mapper.Map<Task, TaskDTO>(TaskToGet), "1"));
+            repository.VerifyNoOtherCalls();
+        }
+
+        [Fact]
+        public void Should_Delete_Item()
+        {
+            // Arrange
+            ICollection<TaskModerator_User> moderators = new List<TaskModerator_User> {
+            new TaskModerator_User() {
+                UserId = "10"
+            },
+             new TaskModerator_User()
+            {
+                UserId = "1"
+            }};
+            var TaskToGet = new Task()
+            {
+                Id = 10,
+                StatusId = 1,
+                Title = "testItem",
+                Weight = "3",
+                Moderators = moderators
+            };
+
+            var repository = new Mock<IRepository<Task>>();
+            repository.Setup(u => u.Delete(TaskToGet.Id));
+            repository.Setup(u => u.GetItem(TaskToGet.Id)).Returns(TaskToGet);
+
+            // Act
+            var service = new TaskService(_mapper, repository.Object);
+            service.Delete(TaskToGet.Id, "1");
+
+            // Assert
+            repository.Verify(u => u.Delete(TaskToGet.Id));
+            repository.Verify(u => u.GetItem(TaskToGet.Id));
+            repository.Verify(u => u.SaveChanges());
+            repository.VerifyNoOtherCalls();
+        }
+
+        [Fact]
+        public void Should_GenerateAccessException_When_Delete_Item_WithoutAccess()
+        {
+            var TaskToGet = new Task()
+            {
+                Id = 10,
+                StatusId = 1,
+                Title = "testItem",
+                Weight = "3",
+            };
+
+            var repository = new Mock<IRepository<Task>>();
+            repository.Setup(u => u.Delete(TaskToGet.Id));
+            repository.Setup(u => u.GetItem(TaskToGet.Id)).Returns(TaskToGet);
+
+            // Act
+            var service = new TaskService(_mapper, repository.Object);
+
+            // Assert           
+            Assert.Throws<Exception>(() => service.Delete(TaskToGet.Id, "1"));
+            repository.Verify(i => i.GetItem(TaskToGet.Id));
+            repository.VerifyNoOtherCalls();
+        }
+
+        [Fact]
+        public void Should_Create_Item()
+        {
+            // Arrange
+            var TaskToGet = new Task()
+            {
+                Id = 10,
+                StatusId = 1,
+                Title = "testItem",
+                Weight = "3"
+            };
+
+            var repository = new Mock<IRepository<Task>>();
+            repository.Setup(u => u.Create(TaskToGet));
+
+            // Act
+            var service = new TaskService(_mapper, repository.Object);
+            service.Create(_mapper.Map<Task, TaskDTO>(TaskToGet), "1");
+
+            // Assert
+            repository.Verify(t => t.Create(It.Is<Task>(dto =>
+                 dto.Id == TaskToGet.Id
+                && dto.StatusId == TaskToGet.StatusId
+                && dto.Title == TaskToGet.Title
+                && dto.Title == TaskToGet.Title
+                )));
+            repository.Verify(t => t.SaveChanges());
+            repository.VerifyNoOtherCalls();
+        }
+
     }
 }
