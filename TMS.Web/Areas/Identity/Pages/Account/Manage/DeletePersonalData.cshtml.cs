@@ -5,6 +5,7 @@ using Microsoft.Extensions.Logging;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
+using TMS.Business.Services;
 using TMS.Entities;
 
 namespace TMS.Web.Areas.Identity.Pages.Account.Manage
@@ -14,15 +15,18 @@ namespace TMS.Web.Areas.Identity.Pages.Account.Manage
         private readonly UserManager<UserApp> _userManager;
         private readonly SignInManager<UserApp> _signInManager;
         private readonly ILogger<DeletePersonalDataModel> _logger;
+        private readonly LabelService _labelService;
 
         public DeletePersonalDataModel(
             UserManager<UserApp> userManager,
             SignInManager<UserApp> signInManager,
-            ILogger<DeletePersonalDataModel> logger)
+            ILogger<DeletePersonalDataModel> logger,
+            LabelService labelService)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
+            _labelService = labelService;
         }
 
         [BindProperty]
@@ -65,6 +69,12 @@ namespace TMS.Web.Areas.Identity.Pages.Account.Manage
                     ModelState.AddModelError(string.Empty, "Password not correct.");
                     return Page();
                 }
+            }
+
+            var labels = _labelService.GetAll(user.Id);
+            foreach (var label in labels)
+            {
+                _labelService.Delete(label.Id);
             }
 
             var result = await _userManager.DeleteAsync(user);
