@@ -34,7 +34,7 @@ body {
 #register-form, #login-form, #forgot-password {
     padding-top: 70px;
 }
-#change-password-form {
+#change-password-form, #edit-form {
     padding-top: 50px;
 }
 
