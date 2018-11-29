@@ -1,10 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using TMS.Entities;
-using TMS.EntitiesDTO;
 using TMS.Interfaces;
+using TMS.EntitiesDTO;
+using System.Collections.Generic;
 
 namespace TMS.Business.Services
 {
@@ -12,13 +11,11 @@ namespace TMS.Business.Services
     {
         private readonly IMapper _mapper;
         private readonly IRepository<Task> _repository;
-        private readonly UserService _userService;
 
-        public TaskService(IMapper mapper, IRepository<Task> repository, UserService userService)
+        public TaskService(IMapper mapper, IRepository<Task> repository)
         {
             _mapper = mapper;
             _repository = repository;
-            _userService = userService;
         }
 
         public IEnumerable<TaskDTO> GetAll()
@@ -41,19 +38,26 @@ namespace TMS.Business.Services
                         
         }
 
-        public IEnumerable<string> GetAllTaskModerator()
-        {
-            return _repository.GetAll().Select(j => j.Moderators.Select(k => k.User.Email).ToString());
-        }
-
         public TaskDTO GetById(int ItemId, string userId)
         {
             var item = _repository.GetItem(ItemId);
             if (item == null)
                 throw new Exception("Entity wasn`t found");
-            CheckForAccessError(item, userId);
+            CheckAbilityForView(item, userId);
 
             var DTOitem =  _mapper.Map<Task, TaskDTO>(item);
+            FillLabelCurrentID(DTOitem, userId);
+            return DTOitem;
+        }
+
+        public TaskDTO GetForEditById(int ItemId, string userId)
+        {
+            var item = _repository.GetItem(ItemId);
+            if (item == null)
+                throw new Exception("Entity wasn`t found");
+            CheckAbilityForEdit(item, userId);
+
+            var DTOitem = _mapper.Map<Task, TaskDTO>(item);
             FillLabelCurrentID(DTOitem, userId);
             return DTOitem;
         }
@@ -76,7 +80,7 @@ namespace TMS.Business.Services
             
             var itemEntity = _mapper.Map<TaskDTO, Task>(item);
             itemEntity.CurrentUserId = userId;
-            CheckForAccessError(itemEntity, userId);
+            CheckAbilityForEdit(itemEntity, userId);
 
             MergeLabels(item, itemEntity, userId);
          
@@ -84,13 +88,14 @@ namespace TMS.Business.Services
             _repository.SaveChanges();
         }
 
-        public void Delete(int itemId)
+        public void Delete(int itemId, string userId)
         {
+             GetForEditById(itemId, userId); // will check ability to edit
             _repository.Delete(itemId);
             _repository.SaveChanges();
         }
 
-        private void FillLabelCurrentID(TaskDTO dTOitem, string userId)
+        internal void FillLabelCurrentID(TaskDTO dTOitem, string userId)
         {
             var TaskLabels = dTOitem.Labels.FirstOrDefault(i => i.UserId == userId);
             if (TaskLabels != null)
@@ -108,13 +113,18 @@ namespace TMS.Business.Services
             if (item.CurrentLabelID != -1)
             {
                 itemEntity.Labels.Add(new Task_Label_User { LabelId = item.CurrentLabelID, UserId = userId });
-            }
-           
+            } 
         }
 
-        private void CheckForAccessError(Task item, string userId)
+        private void CheckAbilityForView(Task item, string userId)
         {
             if (!(item.Moderators.Any(j => j.UserId == userId) || item.Viewers.Any(j => j.UserId == userId)))
+                throw new Exception("Access error");
+        }
+
+        private void CheckAbilityForEdit(Task item, string userId)
+        {
+            if (!(item.Moderators.Any(j => j.UserId == userId)))
                 throw new Exception("Access error");
         }
     }
