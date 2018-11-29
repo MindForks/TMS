@@ -5,46 +5,67 @@
     Layout = "/Views/Shared/_LayoutPages.cshtml";
 }
 
-<!--<div class="row">
-    <div class="col-md-6">
-        <form id="profile-form" method="post">
-            <div asp-validation-summary="All" class="text-danger"></div>
-            <div class="form-group">
-                <label asp-for="Username"></label>
-                <input asp-for="Username" class="form-control" disabled />
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.Email"></label>
-                @if (Model.IsEmailConfirmed)
-                {
+<div class="container-fluid justify-content-center align-items-center h-100 " id="edit-form">
+    <center><h4>@ViewData["Title"]</h4></center>
+    <div class="row justify-content-center align-items-center h-100">
+        <div class="col col-sm-7 col-md-7 col-lg-5 col-xl-4">
+            <form id="profile-form" method="post">
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="Username"></label>
+                    <input asp-for="Username" class="form-control" disabled />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.Email"></label>
                     <div class="input-group">
                         <input asp-for="Input.Email" class="form-control" />
                         <span class="input-group-addon" aria-hidden="true"><span class="glyphicon glyphicon-ok text-success"></span></span>
                     </div>
-                }
-                else
-                {
-                    <input asp-for="Input.Email" class="form-control" />
-                    <button id="email-verification" type="submit" asp-page-handler="SendVerificationEmail" class="btn btn-link">Send verification email</button>
-                }
-                <span asp-validation-for="Input.Email" class="text-danger"></span>
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.FirstName"></label>
-                <input asp-for="Input.FirstName" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.LastName"></label>
-                <input asp-for="Input.LastName" class="form-control" />
-            </div>
-            <div class="form-group">
-                <label asp-for="Input.PhoneNumber"></label>
-                <input asp-for="Input.PhoneNumber" class="form-control" />
-                <span asp-validation-for="Input.PhoneNumber" class="text-danger"></span>
-            </div>
-            <button type="submit" class="btn btn-default">Save</button>
-        </form>
+                    <span asp-validation-for="Input.Email" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.FirstName"></label>
+                    <input asp-for="Input.FirstName" class="form-control" />
+                </div>
+                <div class="form-group">
+                    <label asp-for="Input.LastName"></label>
+                    <input asp-for="Input.LastName" class="form-control" />
+                </div>
+                <button type="submit" class="btn btn-primary float-right">Save</button>
+                <a href="#" data-toggle="modal" data-target="#deleteModal" class="btn btn-danger float-left">Delete Account</a>
+            </form>
+        </div>
     </div>
-</div>-->
+</div>
+    <div id="deleteModal" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
 
-@{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }
+                <div class="modal-header">
+                    <h5 class="modal-title">Confirmation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+
+                <div class="modal-body">
+                    <p>Your account contains personal data that you have given us. This page allows you to download or delete that data.</p>
+                    <p>
+                        <strong>Deleting this data will permanently remove your account, and this cannot be recovered.</strong>
+                    </p>
+
+                </div>
+
+                <div class="modal-footer">
+                    <form asp-page="DownloadPersonalData" method="post" class="form-group">
+                        <button class="btn btn-default" type="submit">Download</button>
+                    </form>
+                    <p>
+                        <a asp-page="DeletePersonalData" class="btn btn-danger">Delete</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial"); }

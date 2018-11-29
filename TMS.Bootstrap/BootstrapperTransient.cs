@@ -38,6 +38,7 @@ namespace TMS.Bootstrap
             services.AddTransient<TaskService>();
             services.AddTransient<UserService>();
             services.AddTransient<TaskStatusService>();
+            services.AddTransient<NotificationService>();
             #endregion Services
         }
         public static void AddIdentity(this IServiceCollection services)
