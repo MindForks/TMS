@@ -31,7 +31,7 @@ namespace TMS.Tests
 
             // Act
             var service = new LabelService(_mapper, repository.Object);
-            var result = service.GetById(10);
+            var result = service.GetById(10, "testID");
 
             // Assert
             Assert.NotNull(result);
@@ -52,7 +52,7 @@ namespace TMS.Tests
             var service = new LabelService(_mapper, repository.Object);
 
             //Assert
-            Assert.Throws<Exception>(() => service.GetById(10));
+            Assert.Throws<Exception>(() => service.GetById(10, "testID"));
             repository.Verify(m => m.GetItem(10));
             repository.VerifyNoOtherCalls();
         }
@@ -110,10 +110,10 @@ namespace TMS.Tests
 
             var repository = new Mock<IRepository<Label>>();
             repository.Setup(u => u.Update(newLabel));
-
+            repository.Setup(u => u.GetItem(10)).Returns(newLabel);
             // Act
             var service = new LabelService(_mapper, repository.Object);
-            service.Update(_mapper.Map<Label, LabelDTO>(newLabel));
+            service.Update(_mapper.Map<Label, LabelDTO>(newLabel), "testID");
 
             // Assert
             repository.Verify(t => t.Update(It.Is<Label>(dto =>
@@ -123,11 +123,12 @@ namespace TMS.Tests
                 && dto.UserId == newLabel.UserId
                 )));
             repository.Verify(t => t.SaveChanges());
+            repository.Verify(t => t.GetItem(10));
             repository.VerifyNoOtherCalls();
         }
 
         [Fact]
-        public void Should_GenereateEcxeption_When_Update_Item()
+        public void Should_ArgumentNullException_When_Update_Item()
         {
             // Arrange
             var repository = new Mock<IRepository<Label>>();
@@ -137,7 +138,31 @@ namespace TMS.Tests
             var service = new LabelService(_mapper, repository.Object);
 
             //Assert
-            Assert.Throws<ArgumentNullException>(() => service.Update(null));
+            Assert.Throws<ArgumentNullException>(() => service.Update(null, "testID"));
+            repository.VerifyNoOtherCalls();
+        }
+
+        [Fact]
+        public void Should_UnauthorizedAccessException_When_Update_Item()
+        {
+            // Arrange
+            var newLabel = new Label()
+            {
+                Id = 10,
+                Color = "#ffffff",
+                Title = "testItem",
+                UserId = "testID"
+            };
+
+            var repository = new Mock<IRepository<Label>>();
+            repository.Setup(u => u.Update(newLabel));
+            repository.Setup(u => u.GetItem(10)).Returns(newLabel);
+            // Act
+            var service = new LabelService(_mapper, repository.Object);
+
+            //Assert
+            Assert.Throws<UnauthorizedAccessException>(() => service.Update(_mapper.Map<Label,LabelDTO>(newLabel), "none"));
+            repository.Verify(u => u.GetItem(newLabel.Id));
             repository.VerifyNoOtherCalls();
         }
 
@@ -155,15 +180,41 @@ namespace TMS.Tests
 
             var repository = new Mock<IRepository<Label>>();
             repository.Setup(u => u.Delete(10));
+            repository.Setup(u => u.GetItem(10)).Returns(LabelToGet);
             repository.Setup(u => u.SaveChanges());
            
             // Act
             var service = new LabelService(_mapper, repository.Object);
-            service.Delete(10);
+            service.Delete(10, "testID");
 
             // Assert
             repository.Verify(u => u.Delete(10));
+            repository.Verify(u => u.GetItem(10));
             repository.Verify(u => u.SaveChanges());
+            repository.VerifyNoOtherCalls();
+        }
+
+        [Fact]
+        public void Should_UnauthorizedAccessException_When_Delete_Item()
+        {
+            // Arrange
+            var newLabel = new Label()
+            {
+                Id = 10,
+                Color = "#ffffff",
+                Title = "testItem",
+                UserId = "testID"
+            };
+
+            var repository = new Mock<IRepository<Label>>();
+            repository.Setup(u => u.Delete(newLabel.Id));
+            repository.Setup(u => u.GetItem(10)).Returns(newLabel);
+            // Act
+            var service = new LabelService(_mapper, repository.Object);
+
+            //Assert
+            Assert.Throws<UnauthorizedAccessException>(() => service.Delete(newLabel.Id, "none"));
+            repository.Verify(u => u.GetItem(newLabel.Id));
             repository.VerifyNoOtherCalls();
         }
 
@@ -198,7 +249,7 @@ namespace TMS.Tests
         }
 
         [Fact]
-        public void Should_GenereateEcxeption_When_Create_Item()
+        public void Should_ArgumentNullException_When_Create_Item()
         {
             // Arrange
             var repository = new Mock<IRepository<Label>>();

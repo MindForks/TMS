@@ -124,7 +124,7 @@ namespace TMS.Tests
         }
 
         [Fact]
-        public void Should_Generate_AccessException_When_GetById()
+        public void Should_Generate_UnauthorizedAccessException_When_GetById()
         {
             // Arrange
             var TaskToGet = new Task()
@@ -142,7 +142,7 @@ namespace TMS.Tests
             var service = new TaskService(_mapper, repository.Object);
 
             //Assert
-            Assert.Throws<Exception>(() => service.GetById(10, "1"));
+            Assert.Throws<UnauthorizedAccessException>(() => service.GetById(10, "1"));
             repository.Verify(m => m.GetItem(10));
             repository.VerifyNoOtherCalls();
         }
@@ -201,7 +201,7 @@ namespace TMS.Tests
         }
 
         [Fact]
-        public void Should_Generate_AccessException_When_GetForEdit_And_CheckForAccess()
+        public void Should_Generate_UnauthorizedAccessException_When_GetForEdit_And_CheckForAccess()
         {
             // Arrange
             ICollection<TaskViewer_User> viwers = new List<TaskViewer_User> {
@@ -228,13 +228,13 @@ namespace TMS.Tests
             var service = new TaskService(_mapper, repository.Object);
 
             //Assert
-            Assert.Throws<Exception>(() => service.GetForEditById(10, "1"));
+            Assert.Throws<UnauthorizedAccessException>(() => service.GetForEditById(10, "1"));
             repository.Verify(m => m.GetItem(10));
             repository.VerifyNoOtherCalls();
         }
 
         [Fact]
-        public void Should_GenereateEcxeption_When_GetForEditById()
+        public void Should_Exception_When_GetForEditById()
         {
             // Arrange
             var repository = new Mock<IRepository<Task>>();
@@ -304,7 +304,7 @@ namespace TMS.Tests
         }
 
         [Fact]
-        public void Should_GenereateAccessException_When_Update_Item()
+        public void Should_UnauthorizedAccessException_When_Update_Item()
         {
             var TaskToGet = new Task()
             {
@@ -321,7 +321,7 @@ namespace TMS.Tests
             var service = new TaskService(_mapper, repository.Object);
 
             //Assert
-            Assert.Throws<Exception>(() => service.Update(_mapper.Map<Task, TaskDTO>(TaskToGet), "1"));
+            Assert.Throws<UnauthorizedAccessException>(() => service.Update(_mapper.Map<Task, TaskDTO>(TaskToGet), "1"));
             repository.VerifyNoOtherCalls();
         }
 
@@ -362,7 +362,7 @@ namespace TMS.Tests
         }
 
         [Fact]
-        public void Should_GenerateAccessException_When_Delete_Item_WithoutAccess()
+        public void Should_UnauthorizedAccessException_When_Delete_Item_WithoutAccess()
         {
             var TaskToGet = new Task()
             {
@@ -380,7 +380,7 @@ namespace TMS.Tests
             var service = new TaskService(_mapper, repository.Object);
 
             // Assert           
-            Assert.Throws<Exception>(() => service.Delete(TaskToGet.Id, "1"));
+            Assert.Throws<UnauthorizedAccessException>(() => service.Delete(TaskToGet.Id, "1"));
             repository.Verify(i => i.GetItem(TaskToGet.Id));
             repository.VerifyNoOtherCalls();
         }

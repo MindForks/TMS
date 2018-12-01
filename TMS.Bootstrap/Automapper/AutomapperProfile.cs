@@ -24,12 +24,7 @@ namespace TMS.Bootstrap.Automapper
              .ForMember(m => m.ViewerIDs, m => m.ResolveUsing(e =>
                     e.Viewers.Select(t => t.UserId).ToList()))
              .ForMember(m => m.Labels, m => m.ResolveUsing(e =>
-                    e.Labels.Select(id => new Task_Label_User
-                    {
-                        TaskId = id.TaskId,
-                        UserId = id.UserId,
-                        LabelId = id.LabelId
-                    })));
+                    e.Labels));
 
             CreateMap<TaskDTO, Task>()
                 .ForMember(m => m.Moderators, m => m.ResolveUsing(d => 
@@ -45,14 +40,9 @@ namespace TMS.Bootstrap.Automapper
                         UserId = id
                     })))
                 .ForMember(m => m.Labels, m => m.ResolveUsing(d =>
-                    d.Labels.Select(id => new Task_Label_User
-                    {
-                        TaskId = id.TaskId,
-                        UserId = id.UserId,
-                        LabelId = id.LabelId
-                    })));
+                    d.Labels));
 
-
+            CreateMap<Task_Label_User, Task_Label_UserDTO>();
 
             #endregion
         }

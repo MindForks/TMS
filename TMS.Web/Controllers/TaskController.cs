@@ -60,6 +60,7 @@ namespace TMS.Web.Controllers
                  Value = label.Id.ToString(),
                  Text = label.Color,
              });
+            ViewData["CurrentUserID"] = _userId;
             return View(tasks);
         }
 
@@ -103,21 +104,20 @@ namespace TMS.Web.Controllers
         {
             _taskService.Create(task, _userId);
 
-            var notificationViewer = _notificationService.CreateNotification(task, "viewer");
-            var notificationModerator = _notificationService.CreateNotification(task, "moderator");
+            //var notificationViewer = _notificationService.CreateNotification(task, "viewer");
+            //var notificationModerator = _notificationService.CreateNotification(task, "moderator");
 
-            foreach (var viewerId in task.ViewerIDs)
-            {
-                var user = _userService.GetItemAsync(viewerId).Result.Email;
-                _notificationService.SendMail(user, notificationViewer);
-            }
+            //foreach (var viewerId in task.ViewerIDs)
+            //{
+            //    var user = _userService.GetItemAsync(viewerId).Result.Email;
+            //    _notificationService.SendMail(user, notificationViewer);
+            //}
 
-
-            foreach (var moderatorId in task.ModeratorIDs)
-            {
-                var user = _userService.GetItemAsync(moderatorId).Result.Email;
-                _notificationService.SendMail(user, notificationModerator);
-            }
+            //foreach (var moderatorId in task.ModeratorIDs)
+            //{
+            //    var user = _userService.GetItemAsync(moderatorId).Result.Email;
+            //    _notificationService.SendMail(user, notificationModerator);
+            //}
 
             return RedirectToAction(nameof(List));
         }

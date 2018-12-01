@@ -119,13 +119,13 @@ namespace TMS.Business.Services
         private void CheckAbilityForView(Task item, string userId)
         {
             if (!(item.Moderators.Any(j => j.UserId == userId) || item.Viewers.Any(j => j.UserId == userId)))
-                throw new Exception("Access error");
+                throw new UnauthorizedAccessException("You don`t have access to this task");
         }
 
         private void CheckAbilityForEdit(Task item, string userId)
         {
             if (!(item.Moderators.Any(j => j.UserId == userId)))
-                throw new Exception("Access error");
+                throw new UnauthorizedAccessException("You don`t have access to edit this task");
         }
     }
 }

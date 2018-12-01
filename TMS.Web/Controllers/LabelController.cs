@@ -28,9 +28,7 @@ namespace TMS.Web.Controllers
         [HttpGet]
         public IActionResult Create()
         {
-            if(_userId==null)
-                return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-            var label = new LabelDTO()
+             var label = new LabelDTO()
             {
                UserId= _userId
             };
@@ -48,11 +46,7 @@ namespace TMS.Web.Controllers
         [HttpGet]
         public IActionResult Edit(int id)
         {
-            var label = _labelService.GetById(id);
-            if(label.UserId !=_userId) // when u try to get access to other people label
-            {
-                return View(new ErrorViewModel { RequestId = "You can`t get access to this label" });
-            }
+            var label = _labelService.GetById(id,_userId);
             return View(label);
         }
 
@@ -60,7 +54,7 @@ namespace TMS.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit([FromForm]LabelDTO label)
         {
-            _labelService.Update(label);
+            _labelService.Update(label,_userId);
             return RedirectToAction(nameof(List));
         }
 
@@ -68,12 +62,7 @@ namespace TMS.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Delete(int id)
         {
-            var label = _labelService.GetById(id);
-            if (label.UserId != _userId) // when u try to delete other people label
-            {
-                return View(new ErrorViewModel { RequestId = "You can`t get access to this label" });
-            }
-            _labelService.Delete(id);
+            _labelService.Delete(id, _userId);
             return RedirectToAction(nameof(List));
         }
     }

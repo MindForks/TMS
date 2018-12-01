@@ -37,7 +37,7 @@ namespace TMS.Business.Services
                 $"Start Date: {task.CreationTime}" + "\n" +
                 $"Deadline: {task.EndDate}" + "\n" +
                 "\n" +
-                $"Cheers," + "\n" +
+                $"Best wishes," + "\n" +
                 $"Task Manager System",
             };
 

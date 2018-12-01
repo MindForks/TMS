@@ -74,7 +74,7 @@ namespace TMS.Web.Areas.Identity.Pages.Account.Manage
             var labels = _labelService.GetAll(user.Id);
             foreach (var label in labels)
             {
-                _labelService.Delete(label.Id);
+                _labelService.Delete(label.Id, user.Id);
             }
 
             var result = await _userManager.DeleteAsync(user);
