@@ -1759,3 +1759,1284 @@ Executing ViewResult, running view Index.
 Executed ViewResult - view Index executed in 4.7578ms.
 Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 24.3716ms
 Request finished in 39.8065ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request finished in 64.3408ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.8202ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 188.4161ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 226.1941ms
+Request finished in 738.3732ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/js/vendor.js?v=XetqQN5UCZaaRWSBm0WouAgElBFdmW6yb0aUG3NyPYY  
+The file /js/vendor.js was not modified
+Request finished in 15.2115ms 304 application/javascript
+Request starting HTTP/1.1 GET http://localhost:44317/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 719.6913ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 37.7649ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 1651.6711ms
+Request finished in 1672.6349ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/List  
+Route matched with {action = "List", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.List (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.LabelController.List (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 23.2455ms.
+Executing ViewResult, running view List.
+Executed ViewResult - view List executed in 26.6251ms.
+Executed action TMS.Web.Controllers.LabelController.List (TMS.Web) in 85.7044ms
+Request finished in 119.0477ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_both.png  
+Processing request /node_modules/datatables/media/images/sort_both.png
+Request finished in 10.4098ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_asc.png  
+Processing request /node_modules/datatables/media/images/sort_asc.png
+Request finished in 9.1034ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/Identity/Account/Manage  
+Route matched with {page = "/Account/Manage/Index", area = "Identity", action = "", controller = ""}. Executing action /Account/Manage/Index
+Authorization was successful.
+Executing handler method OnGetAsync with arguments ((null)) - ModelState is Valid
+Executed action /Account/Manage/Index in 237.2017ms
+Request finished in 296.5191ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Identity/Account/Manage/ChangePassword  
+Route matched with {page = "/Account/Manage/ChangePassword", area = "Identity", action = "", controller = ""}. Executing action /Account/Manage/ChangePassword
+Authorization was successful.
+Executing handler method OnGetAsync with arguments ((null)) - ModelState is Valid
+Executed action /Account/Manage/ChangePassword in 123.3506ms
+Request finished in 158.3817ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/List  
+Route matched with {action = "List", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.List (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.LabelController.List (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2.3585ms.
+Executing ViewResult, running view List.
+Executed ViewResult - view List executed in 7.4834ms.
+Executed action TMS.Web.Controllers.LabelController.List (TMS.Web) in 34.3992ms
+Request finished in 53.3673ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_both.png  
+Processing request /node_modules/datatables/media/images/sort_both.png
+Request finished in 9.5493ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_asc.png  
+Processing request /node_modules/datatables/media/images/sort_asc.png
+Request finished in 9.0923ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/Label/Edit/7  
+Route matched with {action = "Edit", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.Edit (TMS.Web) with arguments (7) - Validation state: Valid
+Executed action method TMS.Web.Controllers.LabelController.Edit (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 26.9215ms.
+Executing ViewResult, running view Edit.
+Executed ViewResult - view Edit executed in 71.9954ms.
+Executed action TMS.Web.Controllers.LabelController.Edit (TMS.Web) in 140.1091ms
+Request finished in 159.3018ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/js/metisMenu.min.js.map  
+Processing request /js/metisMenu.min.js.map
+Request finished in 9.151ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/css/metisMenu.min.css.map  
+Processing request /css/metisMenu.min.css.map
+Request finished in 9.7726ms 200 
+Request starting HTTP/1.1 POST http://localhost:44317/Label/Edit/7 application/x-www-form-urlencoded 311
+Route matched with {action = "Edit", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.Edit (TMS.Web) with arguments (TMS.EntitiesDTO.LabelDTO) - Validation state: Valid
+Executed action TMS.Web.Controllers.LabelController.Edit (TMS.Web) in 7346.3183ms
+An unhandled exception has occurred while executing the request.
+Request finished in 7496.687ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request finished in 119.3934ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.8091ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 168.9122ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 200.2156ms
+Request finished in 714.1965ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 653.1265ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 36.33ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 1594.5305ms
+Request finished in 1623.0043ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/List  
+Route matched with {action = "List", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.List (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.LabelController.List (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 57.1238ms.
+Executing ViewResult, running view List.
+Executed ViewResult - view List executed in 23.2422ms.
+Executed action TMS.Web.Controllers.LabelController.List (TMS.Web) in 121.7548ms
+Request finished in 141.9069ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_both.png  
+Processing request /node_modules/datatables/media/images/sort_both.png
+Request finished in 12.559ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_asc.png  
+Processing request /node_modules/datatables/media/images/sort_asc.png
+Request finished in 11.4903ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/Label/Edit/7  
+Route matched with {action = "Edit", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.Edit (TMS.Web) with arguments (7) - Validation state: Valid
+Executed action method TMS.Web.Controllers.LabelController.Edit (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 19.9792ms.
+Executing ViewResult, running view Edit.
+Executed ViewResult - view Edit executed in 76.3587ms.
+Executed action TMS.Web.Controllers.LabelController.Edit (TMS.Web) in 139.9942ms
+Request finished in 176.6601ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/js/metisMenu.min.js.map  
+Processing request /js/metisMenu.min.js.map
+Request finished in 9.7923ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/css/metisMenu.min.css.map  
+Processing request /css/metisMenu.min.css.map
+Request finished in 10.4406ms 200 
+Request starting HTTP/1.1 POST http://localhost:44317/Label/Edit/7 application/x-www-form-urlencoded 308
+Route matched with {action = "Edit", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.Edit (TMS.Web) with arguments (TMS.EntitiesDTO.LabelDTO) - Validation state: Valid
+Executing ViewResult, running view Error.
+Executed action TMS.Web.Controllers.LabelController.Edit (TMS.Web) in 4058.6485ms
+An unhandled exception has occurred while executing the request.
+Request finished in 4192.7198ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request finished in 147.3044ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.4245ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 254.3654ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 307.33ms
+Request finished in 848.4501ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 605.6066ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 39.0971ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 1656.8087ms
+Request finished in 1705.3439ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/List  
+Route matched with {action = "List", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.List (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.List (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 217.229ms.
+Executing ViewResult, running view List.
+Executed ViewResult - view List executed in 40.5956ms.
+Executed action TMS.Web.Controllers.TaskController.List (TMS.Web) in 283.8324ms
+Request finished in 328.6952ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_both.png  
+Processing request /node_modules/datatables/media/images/sort_both.png
+Request finished in 10.5379ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_asc.png  
+Processing request /node_modules/datatables/media/images/sort_asc.png
+Request finished in 8.1206ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Details/29  
+Route matched with {action = "Details", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Details (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Details (TMS.Web) with arguments (29) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.Details (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 130.722ms.
+Executing ViewResult, running view Details.
+Executed ViewResult - view Details executed in 85.5931ms.
+Executed action TMS.Web.Controllers.TaskController.Details (TMS.Web) in 278.0289ms
+Request finished in 331.5317ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Details/26  
+Route matched with {action = "Details", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Details (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Details (TMS.Web) with arguments (26) - Validation state: Valid
+Executed action TMS.Web.Controllers.TaskController.Details (TMS.Web) in 91.8794ms
+An unhandled exception has occurred while executing the request.
+Request finished in 204.1141ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Details/28  
+Route matched with {action = "Details", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Details (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Details (TMS.Web) with arguments (28) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.Details (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 10.6068ms.
+Executing ViewResult, running view Details.
+Executed ViewResult - view Details executed in 8.8912ms.
+Executed action TMS.Web.Controllers.TaskController.Details (TMS.Web) in 41.5554ms
+Request finished in 56.8261ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Details/27  
+Route matched with {action = "Details", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Details (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Details (TMS.Web) with arguments (27) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.Details (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 10.9172ms.
+Executing ViewResult, running view Details.
+Executed ViewResult - view Details executed in 17.2491ms.
+Executed action TMS.Web.Controllers.TaskController.Details (TMS.Web) in 49.2158ms
+Request finished in 64.4713ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Details/26  
+Route matched with {action = "Details", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Details (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Details (TMS.Web) with arguments (26) - Validation state: Valid
+Executed action TMS.Web.Controllers.TaskController.Details (TMS.Web) in 80.9207ms
+An unhandled exception has occurred while executing the request.
+Request finished in 111.7589ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Details/1  
+Route matched with {action = "Details", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Details (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Details (TMS.Web) with arguments (1) - Validation state: Valid
+Executed action TMS.Web.Controllers.TaskController.Details (TMS.Web) in 112.0508ms
+An unhandled exception has occurred while executing the request.
+Request finished in 142.1894ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Details/27  
+Route matched with {action = "Details", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Details (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Details (TMS.Web) with arguments (27) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.Details (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 6.8856ms.
+Executing ViewResult, running view Details.
+Executed ViewResult - view Details executed in 7.5721ms.
+Executed action TMS.Web.Controllers.TaskController.Details (TMS.Web) in 45.0484ms
+Request finished in 74.1327ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/List  
+Route matched with {action = "List", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.List (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.LabelController.List (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2.3007ms.
+Executing ViewResult, running view List.
+Executed ViewResult - view List executed in 31.4601ms.
+Executed action TMS.Web.Controllers.LabelController.List (TMS.Web) in 59.4286ms
+Request finished in 82.9455ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_both.png  
+Processing request /node_modules/datatables/media/images/sort_both.png
+Request finished in 7.8755ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_asc.png  
+Processing request /node_modules/datatables/media/images/sort_asc.png
+Request finished in 8.4925ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/Label/Edit/8  
+Route matched with {action = "Edit", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.Edit (TMS.Web) with arguments (8) - Validation state: Valid
+Executed action method TMS.Web.Controllers.LabelController.Edit (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 14.9791ms.
+Executing ViewResult, running view Edit.
+Executed ViewResult - view Edit executed in 59.7755ms.
+Executed action TMS.Web.Controllers.LabelController.Edit (TMS.Web) in 92.2883ms
+Request finished in 108.0808ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/Edit/1  
+Route matched with {action = "Edit", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.Edit (TMS.Web) with arguments (1) - Validation state: Valid
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request finished in 69.2862ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.1675ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 318.5075ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 372.3387ms
+Request finished in 1115.6295ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 265.2929ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 44.8837ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 711.5563ms
+Request finished in 2208.6983ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/List  
+Route matched with {action = "List", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.List (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.LabelController.List (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 34.7589ms.
+Executing ViewResult, running view List.
+Executed ViewResult - view List executed in 29.8331ms.
+Executed action TMS.Web.Controllers.LabelController.List (TMS.Web) in 102.2067ms
+Request finished in 132.4237ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_both.png  
+Processing request /node_modules/datatables/media/images/sort_both.png
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_asc.png  
+Request finished in 14.9204ms 200 
+Processing request /node_modules/datatables/media/images/sort_asc.png
+Request finished in 14.8006ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/Label/Edit/7  
+Route matched with {action = "Edit", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.Edit (TMS.Web) with arguments (7) - Validation state: Valid
+Executed action method TMS.Web.Controllers.LabelController.Edit (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 16.3959ms.
+Executing ViewResult, running view Edit.
+Executed ViewResult - view Edit executed in 77.867ms.
+Executed action TMS.Web.Controllers.LabelController.Edit (TMS.Web) in 132.1203ms
+Request finished in 163.1757ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/Edit/1  
+Route matched with {action = "Edit", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.Edit (TMS.Web) with arguments (1) - Validation state: Valid
+Executed action TMS.Web.Controllers.LabelController.Edit (TMS.Web) in 4744.547ms
+An unhandled exception has occurred while executing the request.
+Request finished in 4882.9068ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/Edit/7  
+Route matched with {action = "Edit", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.Edit (TMS.Web) with arguments (7) - Validation state: Valid
+Executed action method TMS.Web.Controllers.LabelController.Edit (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 3.5487ms.
+Executing ViewResult, running view Edit.
+Executed ViewResult - view Edit executed in 8.054ms.
+Executed action TMS.Web.Controllers.LabelController.Edit (TMS.Web) in 34.6086ms
+Request finished in 49.9216ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/List  
+Route matched with {action = "List", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.List (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.List (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 55.2554ms.
+Executing ViewResult, running view List.
+Executed ViewResult - view List executed in 48.951ms.
+Executed action TMS.Web.Controllers.TaskController.List (TMS.Web) in 143.6903ms
+Request finished in 169.5096ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_both.png  
+Processing request /node_modules/datatables/media/images/sort_both.png
+Request finished in 7.9009ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_asc.png  
+Processing request /node_modules/datatables/media/images/sort_asc.png
+Request finished in 10.9652ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Details/29  
+Route matched with {action = "Details", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Details (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Details (TMS.Web) with arguments (29) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.Details (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 75.8771ms.
+Executing ViewResult, running view Details.
+Executed ViewResult - view Details executed in 63.1526ms.
+Executed action TMS.Web.Controllers.TaskController.Details (TMS.Web) in 157.3697ms
+Request finished in 178.4817ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Edit/29  
+Route matched with {action = "Edit", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Edit (TMS.Web) with arguments (29) - Validation state: Valid
+Executed action TMS.Web.Controllers.TaskController.Edit (TMS.Web) in 83.4829ms
+An unhandled exception has occurred while executing the request.
+Request finished in 118.4762ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request finished in 224.3089ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.0559ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 207.5044ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 277.5793ms
+Request finished in 950.4269ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 670.9475ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 41.3021ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 1627.8024ms
+Request finished in 1658.0761ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/List  
+Route matched with {action = "List", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.List (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.LabelController.List (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 33.8819ms.
+Executing ViewResult, running view List.
+Executed ViewResult - view List executed in 29.43ms.
+Executed action TMS.Web.Controllers.LabelController.List (TMS.Web) in 106.2444ms
+Request finished in 130.8062ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_both.png  
+Processing request /node_modules/datatables/media/images/sort_both.png
+Request finished in 10.4943ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_asc.png  
+Processing request /node_modules/datatables/media/images/sort_asc.png
+Request finished in 9.4749ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/Label/Edit/7  
+Route matched with {action = "Edit", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.Edit (TMS.Web) with arguments (7) - Validation state: Valid
+Executed action method TMS.Web.Controllers.LabelController.Edit (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 28.1651ms.
+Executing ViewResult, running view Edit.
+Executed ViewResult - view Edit executed in 98.318ms.
+Executed action TMS.Web.Controllers.LabelController.Edit (TMS.Web) in 170.6546ms
+Request finished in 206.0601ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/Edit/5  
+Route matched with {action = "Edit", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.Edit (TMS.Web) with arguments (5) - Validation state: Valid
+Executed action TMS.Web.Controllers.LabelController.Edit (TMS.Web) in 6205.0218ms
+An unhandled exception has occurred while executing the request.
+Request finished in 6341.4665ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/Edit/7  
+Route matched with {action = "Edit", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.Edit (TMS.Web) with arguments (7) - Validation state: Valid
+Executed action method TMS.Web.Controllers.LabelController.Edit (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2.9752ms.
+Executing ViewResult, running view Edit.
+Executed ViewResult - view Edit executed in 7.0195ms.
+Executed action TMS.Web.Controllers.LabelController.Edit (TMS.Web) in 35.0056ms
+Request finished in 49.94ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/List  
+Route matched with {action = "List", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.List (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.List (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 149.5981ms.
+Executing ViewResult, running view List.
+Executed ViewResult - view List executed in 36.3206ms.
+Executed action TMS.Web.Controllers.TaskController.List (TMS.Web) in 206.7162ms
+Request finished in 230.9039ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_both.png  
+Processing request /node_modules/datatables/media/images/sort_both.png
+Request finished in 9.9216ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_asc.png  
+Processing request /node_modules/datatables/media/images/sort_asc.png
+Request finished in 10.2078ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Details/29  
+Route matched with {action = "Details", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Details (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Details (TMS.Web) with arguments (29) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.Details (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 154.9077ms.
+Executing ViewResult, running view Details.
+Executed ViewResult - view Details executed in 72.7221ms.
+Executed action TMS.Web.Controllers.TaskController.Details (TMS.Web) in 263.8125ms
+Request finished in 297.1981ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Edit/29  
+Route matched with {action = "Edit", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Edit (TMS.Web) with arguments (29) - Validation state: Valid
+Executed action TMS.Web.Controllers.TaskController.Edit (TMS.Web) in 88.2013ms
+An unhandled exception has occurred while executing the request.
+Request finished in 126.5242ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Edit/1  
+Route matched with {action = "Edit", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Edit (TMS.Web) with arguments (1) - Validation state: Valid
+Executed action TMS.Web.Controllers.TaskController.Edit (TMS.Web) in 75.5401ms
+An unhandled exception has occurred while executing the request.
+Request finished in 133.4878ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Edit/111111111  
+Route matched with {action = "Edit", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Edit (TMS.Web) with arguments (111111111) - Validation state: Valid
+Executed action TMS.Web.Controllers.TaskController.Edit (TMS.Web) in 68.2656ms
+An unhandled exception has occurred while executing the request.
+Request finished in 119.1458ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Edit/111111111  
+Route matched with {action = "Edit", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Edit (TMS.Web) with arguments (111111111) - Validation state: Valid
+Executed action TMS.Web.Controllers.TaskController.Edit (TMS.Web) in 82.7ms
+An unhandled exception has occurred while executing the request.
+Request finished in 134.7823ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/favicon.ico  
+Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Михаил\Desktop\TMS\TMS.Web\wwwroot\favicon.ico'
+Request finished in 23.5284ms 200 image/x-icon
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Edit/111111111  
+Route matched with {action = "Edit", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Edit (TMS.Web) with arguments (111111111) - Validation state: Valid
+Executed action TMS.Web.Controllers.TaskController.Edit (TMS.Web) in 69.3445ms
+An unhandled exception has occurred while executing the request.
+Request finished in 113.8366ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/favicon.ico  
+Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Михаил\Desktop\TMS\TMS.Web\wwwroot\favicon.ico'
+Request finished in 8.7269ms 200 image/x-icon
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Edit/111111111  
+Route matched with {action = "Edit", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Edit (TMS.Web) with arguments (111111111) - Validation state: Valid
+Executed action TMS.Web.Controllers.TaskController.Edit (TMS.Web) in 58.7319ms
+An unhandled exception has occurred while executing the request.
+Request finished in 94.5282ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/favicon.ico  
+Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Михаил\Desktop\TMS\TMS.Web\wwwroot\favicon.ico'
+Request finished in 9.1781ms 200 image/x-icon
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Edit/111111111  
+Route matched with {action = "Edit", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Edit (TMS.Web) with arguments (111111111) - Validation state: Valid
+Executed action TMS.Web.Controllers.TaskController.Edit (TMS.Web) in 3482.8344ms
+An unhandled exception has occurred while executing the request.
+Request starting HTTP/1.1 GET http://localhost:44317/favicon.ico  
+Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Михаил\Desktop\TMS\TMS.Web\wwwroot\favicon.ico'
+Request finished in 2885.8783ms 200 image/x-icon
+Request finished in 33728.5816ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/Edit/111111111  
+Route matched with {action = "Edit", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.Edit (TMS.Web) with arguments (111111111) - Validation state: Valid
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request finished in 75.8299ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.743ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 178.3035ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 218.1027ms
+Request finished in 736.2392ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 690.8722ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 36.6761ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 1615.3936ms
+Request finished in 1638.5025ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/List  
+Route matched with {action = "List", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.List (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.List (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 165.8147ms.
+Executing ViewResult, running view List.
+Executed ViewResult - view List executed in 40.5168ms.
+Executed action TMS.Web.Controllers.TaskController.List (TMS.Web) in 255.088ms
+Request finished in 305.1319ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_both.png  
+Processing request /node_modules/datatables/media/images/sort_both.png
+Request finished in 11.4304ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_asc.png  
+Processing request /node_modules/datatables/media/images/sort_asc.png
+Request finished in 9.6076ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Edit/17  
+Route matched with {action = "Edit", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Edit (TMS.Web) with arguments (17) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.Edit (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 73.4401ms.
+Executing ViewResult, running view Edit.
+Executed ViewResult - view Edit executed in 220.24ms.
+Executed action TMS.Web.Controllers.TaskController.Edit (TMS.Web) in 340.4241ms
+Request finished in 379.3952ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Edit/19  
+Route matched with {action = "Edit", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Edit (TMS.Web) with arguments (19) - Validation state: Valid
+Executed action TMS.Web.Controllers.TaskController.Edit (TMS.Web) in 3757.7785ms
+An unhandled exception has occurred while executing the request.
+Request finished in 3896.2742ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Edit/19  
+Route matched with {action = "Edit", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Edit (TMS.Web) with arguments (19) - Validation state: Valid
+Executed action TMS.Web.Controllers.TaskController.Edit (TMS.Web) in 60.0419ms
+An unhandled exception has occurred while executing the request.
+Request finished in 96.2308ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/favicon.ico  
+Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Михаил\Desktop\TMS\TMS.Web\wwwroot\favicon.ico'
+Request finished in 28.5009ms 200 image/x-icon
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Edit/19  
+Route matched with {action = "Edit", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Edit (TMS.Web) with arguments (19) - Validation state: Valid
+Executed action TMS.Web.Controllers.TaskController.Edit (TMS.Web) in 53.8468ms
+An unhandled exception has occurred while executing the request.
+Request finished in 95.2315ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/favicon.ico  
+Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Михаил\Desktop\TMS\TMS.Web\wwwroot\favicon.ico'
+Request finished in 11.4242ms 200 image/x-icon
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request finished in 149.8744ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.945ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 171.7709ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 213.4224ms
+Request finished in 803.6065ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 625.0341ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 47.278ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 1725.3786ms
+Request finished in 1752.2689ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/List  
+Route matched with {action = "List", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.List (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.LabelController.List (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 30.5101ms.
+Executing ViewResult, running view List.
+Executed ViewResult - view List executed in 25.0716ms.
+Executed action TMS.Web.Controllers.LabelController.List (TMS.Web) in 96.3531ms
+Request finished in 119.3634ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_both.png  
+Processing request /node_modules/datatables/media/images/sort_both.png
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_asc.png  
+Request finished in 16.9223ms 200 
+Processing request /node_modules/datatables/media/images/sort_asc.png
+Request finished in 14.4848ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/Label/Edit/7  
+Route matched with {action = "Edit", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.Edit (TMS.Web) with arguments (7) - Validation state: Valid
+Executed action method TMS.Web.Controllers.LabelController.Edit (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 19.4812ms.
+Executing ViewResult, running view Edit.
+Executed ViewResult - view Edit executed in 79.8873ms.
+Executed action TMS.Web.Controllers.LabelController.Edit (TMS.Web) in 138.0465ms
+Request finished in 166.7117ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/Edit/4  
+Route matched with {action = "Edit", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.Edit (TMS.Web) with arguments (4) - Validation state: Valid
+Executed action TMS.Web.Controllers.LabelController.Edit (TMS.Web) in 2126.7286ms
+An unhandled exception has occurred while executing the request.
+Route matched with {action = "Error", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Error (TMS.Web)
+Executing action method TMS.Web.Controllers.HomeController.Error (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Error (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.721ms.
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 13.068ms.
+Executed action TMS.Web.Controllers.HomeController.Error (TMS.Web) in 28.7263ms
+Request finished in 2259.5231ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request finished in 64.2045ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.0415ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 326.968ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 397.0713ms
+Request finished in 888.5329ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/task/create  
+Route matched with {action = "Create", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Create (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Create (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.Create (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 567.1273ms.
+Executing ViewResult, running view Create.
+Executed ViewResult - view Create executed in 205.0317ms.
+Executed action TMS.Web.Controllers.TaskController.Create (TMS.Web) in 1637.1218ms
+Request finished in 1694.7194ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/task/edit/19  
+Route matched with {action = "Edit", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Edit (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Edit (TMS.Web) with arguments (19) - Validation state: Valid
+Executed action TMS.Web.Controllers.TaskController.Edit (TMS.Web) in 270.4276ms
+An unhandled exception has occurred while executing the request.
+Route matched with {action = "Error", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Error (TMS.Web)
+Executing action method TMS.Web.Controllers.HomeController.Error (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Error (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 2.0744ms.
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 18.2434ms.
+Executed action TMS.Web.Controllers.HomeController.Error (TMS.Web) in 39.1394ms
+Request finished in 530.9434ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request finished in 70.5039ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request finished in 149.5788ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request finished in 98.8706ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request finished in 109.0915ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request finished in 70.0014ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 4232.2218ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 20498.695ms
+Request finished in 22060.7871ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/css/site.css  
+Request starting HTTP/1.1 GET http://localhost:44317/js/vendor.js?v=XetqQN5UCZaaRWSBm0WouAgElBFdmW6yb0aUG3NyPYY  
+Request starting HTTP/1.1 GET http://localhost:44317/css/vendor.css  
+The file /css/site.css was not modified
+The file /js/vendor.js was not modified
+The file /css/vendor.css was not modified
+Request finished in 33.2575ms 304 application/javascript
+Request finished in 33.2591ms 304 text/css
+Request finished in 33.2172ms 304 text/css
+Request starting HTTP/1.1 GET http://localhost:44317/js/metisMenu.min.js.map  
+Request starting HTTP/1.1 GET http://localhost:44317/css/metisMenu.min.css.map  
+Processing request /js/metisMenu.min.js.map
+Request finished in 29.7087ms 200 
+Processing request /css/metisMenu.min.css.map
+Request finished in 20.3076ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 1543.7106ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 3894.9054ms
+Request finished in 3907.1976ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/css/metisMenu.min.css.map  
+Processing request /css/metisMenu.min.css.map
+Request finished in 7.182ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/js/metisMenu.min.js.map  
+Processing request /js/metisMenu.min.js.map
+Request finished in 8.9232ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/favicon.ico  
+Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Михаил\Desktop\TMS\TMS.Web\wwwroot\favicon.ico'
+Request finished in 11.696ms 200 image/x-icon
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request finished in 62.0372ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 212.4712ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 8884.7629ms
+Request finished in 9277.4997ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request finished in 62.584ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 169.9657ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 49979.2452ms
+Request finished in 50382.4743ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 15.1676ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 2326.1519ms
+Request finished in 2342.4875ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/favicon.ico  
+Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\Михаил\Desktop\TMS\TMS.Web\wwwroot\favicon.ico'
+Request finished in 26.8041ms 200 image/x-icon
+Request starting HTTP/1.1 GET http://localhost:44317/Task/List  
+Route matched with {action = "List", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.List (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.List (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 728.0303ms.
+Executing ViewResult, running view List.
+Executed ViewResult - view List executed in 37.9878ms.
+Executed action TMS.Web.Controllers.TaskController.List (TMS.Web) in 1709.7807ms
+Request finished in 1744.3918ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_both.png  
+Processing request /node_modules/datatables/media/images/sort_both.png
+Request finished in 9.4807ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_asc.png  
+Processing request /node_modules/datatables/media/images/sort_asc.png
+Request finished in 9.0496ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Details/29  
+Route matched with {action = "Details", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Details (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Details (TMS.Web) with arguments (29) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.Details (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 116.6624ms.
+Executing ViewResult, running view Details.
+Executed ViewResult - view Details executed in 62.5799ms.
+Executed action TMS.Web.Controllers.TaskController.Details (TMS.Web) in 246.4172ms
+Request finished in 277.6101ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Details/4543  
+Route matched with {action = "Details", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Details (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Details (TMS.Web) with arguments (4543) - Validation state: Valid
+Executed action TMS.Web.Controllers.TaskController.Details (TMS.Web) in 118.794ms
+Connection id "0HLINMTF99J7H", Request id "0HLINMTF99J7H:00000005": An unhandled exception was thrown by the application.
+Request finished in 153.364ms 500 
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Details/4543  
+Route matched with {action = "Details", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Details (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Details (TMS.Web) with arguments (4543) - Validation state: Valid
+Executed action TMS.Web.Controllers.TaskController.Details (TMS.Web) in 74.2731ms
+Connection id "0HLINMTF99J7G", Request id "0HLINMTF99J7G:00000005": An unhandled exception was thrown by the application.
+Request finished in 92.8725ms 500 
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Details/29  
+Route matched with {action = "Details", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Details (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Details (TMS.Web) with arguments (29) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.Details (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 9.9307ms.
+Executing ViewResult, running view Details.
+Executed ViewResult - view Details executed in 6.8626ms.
+Executed action TMS.Web.Controllers.TaskController.Details (TMS.Web) in 41.7517ms
+Request finished in 58.3599ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Details/24  
+Route matched with {action = "Details", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Details (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Details (TMS.Web) with arguments (24) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.Details (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 9.0968ms.
+Executing ViewResult, running view Details.
+Executed ViewResult - view Details executed in 4.7849ms.
+Executed action TMS.Web.Controllers.TaskController.Details (TMS.Web) in 32.3095ms
+Request finished in 47.1483ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Details/24  
+Route matched with {action = "Details", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Details (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Details (TMS.Web) with arguments (24) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.Details (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 9.2668ms.
+Executing ViewResult, running view Details.
+Executed ViewResult - view Details executed in 5.9278ms.
+Executed action TMS.Web.Controllers.TaskController.Details (TMS.Web) in 34.9834ms
+Request finished in 48.7519ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Details/2  
+Route matched with {action = "Details", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Details (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Details (TMS.Web) with arguments (2) - Validation state: Valid
+Executed action TMS.Web.Controllers.TaskController.Details (TMS.Web) in 93.0671ms
+Connection id "0HLINMTF99J7G", Request id "0HLINMTF99J7G:00000007": An unhandled exception was thrown by the application.
+Request finished in 113.835ms 500 
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Details/2  
+Route matched with {action = "Details", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Details (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Details (TMS.Web) with arguments (2) - Validation state: Valid
+Executed action TMS.Web.Controllers.TaskController.Details (TMS.Web) in 3321.5ms
+Connection id "0HLINMTF99J7H", Request id "0HLINMTF99J7H:00000008": An unhandled exception was thrown by the application.
+Request finished in 3384.5467ms 500 
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Details/2  
+Route matched with {action = "Details", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Details (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Details (TMS.Web) with arguments (2) - Validation state: Valid
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request finished in 68.8161ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 183.7789ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 4002.9288ms
+Request finished in 4396.4555ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/List  
+Route matched with {action = "List", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.List (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.List (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 749.1369ms.
+Executing ViewResult, running view List.
+Executed ViewResult - view List executed in 38.6274ms.
+Executed action TMS.Web.Controllers.TaskController.List (TMS.Web) in 1711.0891ms
+Request finished in 1747.5982ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_both.png  
+Processing request /node_modules/datatables/media/images/sort_both.png
+Request finished in 10.7074ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_asc.png  
+Processing request /node_modules/datatables/media/images/sort_asc.png
+Request finished in 7.5466ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Details/29  
+Route matched with {action = "Details", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Details (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Details (TMS.Web) with arguments (29) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.Details (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 100.9176ms.
+Executing ViewResult, running view Details.
+Executed ViewResult - view Details executed in 64.8769ms.
+Executed action TMS.Web.Controllers.TaskController.Details (TMS.Web) in 213.537ms
+Request finished in 248.332ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Details/244  
+Route matched with {action = "Details", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Details (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Details (TMS.Web) with arguments (244) - Validation state: Valid
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 6.6492ms.
+Executed action TMS.Web.Controllers.TaskController.Details (TMS.Web) in 1770.7887ms
+Request finished in 1785.6086ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request finished in 62.4613ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 199.9779ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 7715.9849ms
+Request finished in 8120.8397ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/List  
+Route matched with {action = "List", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.List (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.List (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 716.4229ms.
+Executing ViewResult, running view List.
+Executed ViewResult - view List executed in 39.7482ms.
+Executed action TMS.Web.Controllers.TaskController.List (TMS.Web) in 1690.2703ms
+Request finished in 1720.5226ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_both.png  
+Processing request /node_modules/datatables/media/images/sort_both.png
+Request finished in 10.5428ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/node_modules/datatables/media/images/sort_asc.png  
+Processing request /node_modules/datatables/media/images/sort_asc.png
+Request finished in 13.9474ms 200 
+Request starting HTTP/1.1 GET http://localhost:44317/Task/Details/29  
+Route matched with {action = "Details", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Details (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Details (TMS.Web) with arguments (29) - Validation state: Valid
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 5.9385ms.
+Executed action TMS.Web.Controllers.TaskController.Details (TMS.Web) in 1866.2497ms
+Request finished in 1891.3563ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request finished in 62.4621ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.9224ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 165.0942ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 209.3864ms
+Request finished in 595.5733ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 579.4811ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 40.3562ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 1499.6927ms
+Request finished in 1529.9725ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/List  
+Route matched with {action = "List", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.List (TMS.Web)
+Authorization was successful.
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 60.7095ms.
+Executed action TMS.Web.Controllers.LabelController.List (TMS.Web) in 3256.3672ms
+Request finished in 3279.3455ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/List  
+Route matched with {action = "List", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.List (TMS.Web)
+Authorization was successful.
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 5.5596ms.
+Executed action TMS.Web.Controllers.TaskController.List (TMS.Web) in 2696.0828ms
+Request finished in 2717.866ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request finished in 61.019ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.6359ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 167.7377ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 216.1788ms
+Request finished in 610.8477ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 597.22ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 35.0093ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 1501.426ms
+Request finished in 1519.6173ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/List  
+Route matched with {action = "List", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.List (TMS.Web) - Validation state: Valid
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 57.0975ms.
+Executed action TMS.Web.Controllers.TaskController.List (TMS.Web) in 147.074ms
+Request finished in 174.6726ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/List  
+Route matched with {action = "List", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.List (TMS.Web) - Validation state: Valid
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 6.6615ms.
+Executed action TMS.Web.Controllers.LabelController.List (TMS.Web) in 2579.5049ms
+Request finished in 2594.2673ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request finished in 64.9205ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.7981ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 163.8929ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 207.0692ms
+Request finished in 594.7945ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Request starting HTTP/1.1 GET http://localhost:44317/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 593.3009ms.
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 187.9074ms.
+Executing ViewResult, running view Index.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 38.9419ms.
+Executed ViewResult - view Index executed in 38.6529ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 1544.4299ms
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 253.2573ms
+Request finished in 268.2283ms 200 text/html; charset=utf-8
+Request finished in 1569.6333ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/List  
+Route matched with {action = "List", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.List (TMS.Web) - Validation state: Valid
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 60.769ms.
+Executed action TMS.Web.Controllers.LabelController.List (TMS.Web) in 144.2273ms
+Request finished in 172.4832ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request finished in 59.3719ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.8937ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 168.4631ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 214.2735ms
+Request finished in 592.5463ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 577.157ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 38.3856ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 1496.6407ms
+Request finished in 1533.4823ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/List  
+Route matched with {action = "List", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.List (TMS.Web) - Validation state: Valid
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request finished in 47.6787ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.6962ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 167.5287ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 213.9377ms
+Request finished in 648.7682ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 592.7495ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 37.9389ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 1506.0179ms
+Request finished in 1536.9957ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/List  
+Route matched with {action = "List", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.List (TMS.Web) - Validation state: Valid
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request finished in 52.9243ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.9015ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 165.0408ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 209.693ms
+Request finished in 664.4436ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 581.2978ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 40.1563ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 1489.2307ms
+Request finished in 1508.691ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/List  
+Route matched with {action = "List", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.List (TMS.Web) - Validation state: Valid
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 70.7104ms.
+Executed action TMS.Web.Controllers.LabelController.List (TMS.Web) in 2954.7688ms
+Request finished in 2973.9988ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request finished in 56.1422ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.8206ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 158.2881ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 207.5791ms
+Request finished in 603.4939ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 582.8488ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 44.917ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 1533.2072ms
+Request finished in 1567.4673ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/List  
+Route matched with {action = "List", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.List (TMS.Web) - Validation state: Valid
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request finished in 60.7526ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.9939ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 167.5587ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 213.7927ms
+Request finished in 1791.5135ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 227.053ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 50.112ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 601.8711ms
+Request finished in 629.0817ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/List  
+Route matched with {action = "List", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.List (TMS.Web) - Validation state: Valid
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 73.4216ms.
+Executed action TMS.Web.Controllers.LabelController.List (TMS.Web) in 2145.3292ms
+Request finished in 2174.2567ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request finished in 63.1436ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.7081ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 172.2951ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 235.1448ms
+Request finished in 638.1034ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 594.1314ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 45.8925ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 1539.5785ms
+Request finished in 1558.4394ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/List  
+Route matched with {action = "List", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.List (TMS.Web) - Validation state: Valid
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 62.2338ms.
+Executed action TMS.Web.Controllers.LabelController.List (TMS.Web) in 1659.5762ms
+Request finished in 1676.129ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request finished in 66.7301ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.8592ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 162.0635ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 206.5548ms
+Request finished in 607.2426ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 587.318ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 36.3604ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 1504.6738ms
+Request finished in 1526.9616ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/List  
+Route matched with {action = "List", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.List (TMS.Web) - Validation state: Valid
+Executed action TMS.Web.Controllers.LabelController.List (TMS.Web) in 1693.4446ms
+Request finished in 3173.8659ms 500 application/json
+Request starting HTTP/1.1 GET http://localhost:44317/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 11.5691ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 5.9964ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 38.1676ms
+Request finished in 56.8376ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request finished in 59.6913ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.7788ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 170.0634ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 227.8084ms
+Request finished in 632.538ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 588.7364ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 41.5444ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 1485.491ms
+Request finished in 1526.1569ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/List  
+Route matched with {action = "List", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.List (TMS.Web) - Validation state: Valid
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 70.6024ms.
+Executed action TMS.Web.Controllers.LabelController.List (TMS.Web) in 1613.6ms
+Request finished in 1631.6209ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/List  
+Route matched with {action = "List", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.List (TMS.Web) - Validation state: Valid
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request finished in 62.4063ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.8937ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 164.2238ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 216.084ms
+Request finished in 656.9475ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 578.3ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 37.3038ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 1490.1253ms
+Request finished in 1505.6965ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Task/List  
+Route matched with {action = "List", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.List (TMS.Web) - Validation state: Valid
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 4372.5186ms.
+Executed action TMS.Web.Controllers.TaskController.List (TMS.Web) in 14080.1029ms
+Request finished in 14108.1461ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request finished in 68.5275ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.7274ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 168.204ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 213.9377ms
+Request finished in 624.7393ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 588.367ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 43.338ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 1498.4085ms
+Request finished in 1522.8089ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Label/List  
+Route matched with {action = "List", controller = "Label", page = "", area = ""}. Executing action TMS.Web.Controllers.LabelController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.LabelController.List (TMS.Web) - Validation state: Valid
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 61.5901ms.
+Executed action TMS.Web.Controllers.LabelController.List (TMS.Web) in 159.9057ms
+Request finished in 190.3444ms 200 text/html; charset=utf-8

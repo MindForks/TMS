@@ -1,12 +1,14 @@
 ﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
-using System.Collections.Generic;
 using System.Linq;
 using TMS.Business.Services;
 using TMS.EntitiesDTO;
 
 namespace TMS.Web.Controllers
 {
+    [Authorize]
+    [HandleException]
     public class DashboardController : Controller
     {
         private readonly TaskService _taskService;

@@ -28,14 +28,17 @@ namespace TMS.Web
             {
                 options.Password.RequireNonAlphanumeric = false;
             });
-            
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+
+            services.AddMvc()
+                .SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            ;
             services.RegisterDomainModels(Configuration);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -43,7 +46,7 @@ namespace TMS.Web
             }
             else
             {
-              //  app.UseExceptionHandler("/Home/Error");
+                app.UseExceptionHandler("/Home/Error");
                 app.UseHsts();
             }
 

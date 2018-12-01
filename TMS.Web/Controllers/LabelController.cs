@@ -1,18 +1,20 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using System;
 using TMS.EntitiesDTO;
 using TMS.Business.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNetCore.Authorization;
-using TMS.Web.Models;
-using System.Diagnostics;
+using System.Threading.Tasks;
 
 namespace TMS.Web.Controllers
 {
     [Authorize]
+    [HandleException]
     public class LabelController : Controller
     {
         private string _userId { get { return User.Identity.GetUserId(); } }
         private readonly LabelService _labelService;
+
         public LabelController(LabelService labelService)
         {
             _labelService = labelService;
@@ -39,7 +41,11 @@ namespace TMS.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create([FromForm]LabelDTO label)
         {
-            _labelService.Create(label);
+            if (ModelState.IsValid)
+            {
+                _labelService.Create(label);
+            }
+                
             return RedirectToAction(nameof(List));
         }
 
@@ -54,7 +60,10 @@ namespace TMS.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit([FromForm]LabelDTO label)
         {
-            _labelService.Update(label,_userId);
+            if (ModelState.IsValid)
+            {
+                _labelService.Update(label, _userId);
+            }
             return RedirectToAction(nameof(List));
         }
 

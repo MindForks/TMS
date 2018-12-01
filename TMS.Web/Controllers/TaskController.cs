@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
@@ -12,6 +11,7 @@ using TMS.EntitiesDTO;
 namespace TMS.Web.Controllers
 {
     [Authorize]
+    [HandleException]
     public class TaskController : Controller
     {
         private readonly TaskService _taskService;
@@ -102,8 +102,10 @@ namespace TMS.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Create([FromForm]TaskDTO task)
         {
-            _taskService.Create(task, _userId);
-
+            if (ModelState.IsValid)
+            {
+                _taskService.Create(task, _userId);
+            }
             //var notificationViewer = _notificationService.CreateNotification(task, "viewer");
             //var notificationModerator = _notificationService.CreateNotification(task, "moderator");
 
@@ -157,7 +159,10 @@ namespace TMS.Web.Controllers
         [ValidateAntiForgeryToken]
         public IActionResult Edit([FromForm]TaskDTO task)
         {
-            _taskService.Update(task, _userId);
+            if (ModelState.IsValid)
+            {
+                _taskService.Update(task, _userId);
+            }
             return RedirectToAction(nameof(List));
         }
 
@@ -193,7 +198,7 @@ namespace TMS.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Delete(int id)
+        public async Task<IActionResult> Delete(int id)
         {
             _taskService.Delete(id,_userId);
             return RedirectToAction(nameof(List));
