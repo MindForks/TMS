@@ -105,21 +105,9 @@ namespace TMS.Web.Controllers
             if (ModelState.IsValid)
             {
                 _taskService.Create(task, _userId);
+                _notificationService.CreateMailsAndSend(task);
             }
-            //var notificationViewer = _notificationService.CreateNotification(task, "viewer");
-            //var notificationModerator = _notificationService.CreateNotification(task, "moderator");
-
-            //foreach (var viewerId in task.ViewerIDs)
-            //{
-            //    var user = _userService.GetItemAsync(viewerId).Result.Email;
-            //    _notificationService.SendMail(user, notificationViewer);
-            //}
-
-            //foreach (var moderatorId in task.ModeratorIDs)
-            //{
-            //    var user = _userService.GetItemAsync(moderatorId).Result.Email;
-            //    _notificationService.SendMail(user, notificationModerator);
-            //}
+           
 
             return RedirectToAction(nameof(List));
         }
