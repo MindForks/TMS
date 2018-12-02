@@ -10,6 +10,7 @@
     var statuses = ((IEnumerable<SelectListItem>)ViewData["Statuses"]);
     var labels = ((IEnumerable<SelectListItem>)ViewData["Labels"]);
     var labelsColors = ((IEnumerable<SelectListItem>)ViewData["LabelColors"]);
+    var CurrentUser = ViewData["CurrentUserID"];
 }
 <center><h3>Tasks</h3></center>
 <hr />
@@ -78,9 +79,15 @@
 
             </td>
             <td>
-                <a asp-action="Details" asp-route-id="@item.Id">Details</a> |
-                <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |
-                <a href="#" data-toggle="modal" data-target="#deleteModal" data-item-id="@item.Id">Delete</a>
+                <a asp-action="Details" asp-route-id="@item.Id">Details</a>
+                @{
+                    var TaskModerators = moderators.Where(i => item.ModeratorIDs.Any(j => j == i.Value));
+                    if (TaskModerators.Any(i => i.Value == CurrentUser.ToString()))
+                    {
+                        <a asp-action="Edit" asp-route-id="@item.Id">| Edit</a>
+                        <a href="#" data-toggle="modal" data-target="#deleteModal" data-item-id="@item.Id">| Delete</a>
+                    }
+                }
             </td>
         </tr>
         }
