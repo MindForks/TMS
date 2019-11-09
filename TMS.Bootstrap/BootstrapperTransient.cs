@@ -16,12 +16,16 @@ namespace TMS.Bootstrap
         public static void RegisterDomainModels(this IServiceCollection services, IConfiguration configuration)
         {
             var connection = configuration.GetConnectionString("DefaultConnection");
+            var mailLogin = configuration.GetSection("MailSettings:login").Value;
+            var mailPass = configuration.GetSection("MailSettings:password").Value;
+            MailCredentionals mailCred = new MailCredentionals(mailLogin, mailPass);
 
             services.AddDbContext<TMSDbContext>(options =>
              {
                  options.UseMySql(connection);
              });
             services.AddSingleton(typeof(string), connection);
+            services.AddSingleton(typeof(MailCredentionals), mailCred);
             services.AddSingleton<Interfaces.IMapper, TMSAutoMapper>();
 
 

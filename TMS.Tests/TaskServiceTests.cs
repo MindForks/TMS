@@ -104,7 +104,7 @@ namespace TMS.Tests
                 Id = 10,
                 StatusId = 1,
                 Title = "testItem",
-                Weight = "3",
+                Weight = 3,
                 Moderators = moderators
             };
 
@@ -132,7 +132,7 @@ namespace TMS.Tests
                 Id = 10,
                 StatusId = 1,
                 Title = "testItem",
-                Weight = "3"
+                Weight = 3
             };
 
             var repository = new Mock<IRepository<Task>>();
@@ -181,7 +181,7 @@ namespace TMS.Tests
                 Id = 10,
                 StatusId = 1,
                 Title = "testItem",
-                Weight = "3",
+                Weight = 3,
                 Moderators = moderators
             };
 
@@ -217,7 +217,7 @@ namespace TMS.Tests
                 Id = 10,
                 StatusId = 1,
                 Title = "testItem",
-                Weight = "3",
+                Weight = 3,
                 Viewers = viwers
             };
 
@@ -266,7 +266,7 @@ namespace TMS.Tests
                 Id = 10,
                 StatusId = 1,
                 Title = "testItem",
-                Weight = "3",
+                Weight = 3,
                 Moderators = moderators
             };
 
@@ -311,7 +311,7 @@ namespace TMS.Tests
                 Id = 10,
                 StatusId = 1,
                 Title = "testItem",
-                Weight = "3",
+                Weight = 3,
             };
 
             var repository = new Mock<IRepository<Task>>();
@@ -342,7 +342,7 @@ namespace TMS.Tests
                 Id = 10,
                 StatusId = 1,
                 Title = "testItem",
-                Weight = "3",
+                Weight = 3,
                 Moderators = moderators
             };
 
@@ -369,7 +369,7 @@ namespace TMS.Tests
                 Id = 10,
                 StatusId = 1,
                 Title = "testItem",
-                Weight = "3",
+                Weight = 3,
             };
 
             var repository = new Mock<IRepository<Task>>();
@@ -394,7 +394,7 @@ namespace TMS.Tests
                 Id = 10,
                 StatusId = 1,
                 Title = "testItem",
-                Weight = "3"
+                Weight = 3
             };
 
             var repository = new Mock<IRepository<Task>>();

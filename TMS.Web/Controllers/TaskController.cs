@@ -100,12 +100,12 @@ namespace TMS.Web.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public IActionResult Create([FromForm]TaskDTO task)
+        public async Task<IActionResult> Create([FromForm]TaskDTO task)
         {
             if (ModelState.IsValid)
             {
                 _taskService.Create(task, _userId);
-                _notificationService.CreateMailsAndSend(task);
+                await _notificationService.CreateMailsAndSend(task);
             }
            
 

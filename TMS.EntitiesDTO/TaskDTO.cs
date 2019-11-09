@@ -22,7 +22,7 @@ namespace TMS.EntitiesDTO
         public string Description { get; set; }
 
         [Required(ErrorMessage = "Weight must be defined")]
-        public string Weight { get; set; }
+        public int Weight { get; set; }
 
         [Display(Name = "Task deadline")]
         [Required(ErrorMessage = "Deadline must be defined")]

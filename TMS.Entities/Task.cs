@@ -17,7 +17,7 @@ namespace TMS.Entities
         public string CurrentUserId { get; set; }
         public string Title { get; set; }
         public string Description { get; set; }
-        public string Weight { get; set; }
+        public int Weight { get; set; }
         public DateTimeOffset EndDate { get; set; }
         public DateTimeOffset CreationTime { get; set; }
         public DateTimeOffset ClosingTime { get; set; }

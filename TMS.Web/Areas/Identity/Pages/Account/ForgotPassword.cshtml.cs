@@ -57,7 +57,7 @@ namespace TMS.Web.Areas.Identity.Pages.Account
                     Message = $"Please reset your password by link: {HtmlEncoder.Default.Encode(callbackUrl)}"
                 };
 
-                _notificationService.SendMail(Input.Email, notification);
+                await _notificationService.SendMail(Input.Email, notification);
 
                 return RedirectToPage("./ForgotPasswordConfirmation");
             }

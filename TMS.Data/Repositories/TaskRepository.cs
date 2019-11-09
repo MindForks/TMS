@@ -60,39 +60,41 @@ namespace TMS.Data.Repositories
 
         public void Update(Task item)
         {
-             db.Update(item); 
+                var ModeratorsDbSet = context.Set<TaskModerator_User>();
+                var ViewersDbSet = context.Set<TaskViewer_User>();
+                var LabelsDbSets = context.Set<Task_Label_User>();
 
-            var ModeratorsDbSet = context.Set<TaskModerator_User>();
-            var ViewersDbSet = context.Set<TaskViewer_User>();
-            var LabelsDbSets = context.Set<Task_Label_User>();
+                db.Update(item);
 
-            var newModerators = item.Moderators.ToArray();
-            var newViewers = item.Viewers.ToArray();
-            var newLabels = item.Labels.ToArray();
+                var newModerators = item.Moderators.ToArray();
+                var newViewers = item.Viewers.ToArray();
+                var newLabels = item.Labels.ToArray();
 
-            var toRemoveModerators = ModeratorsDbSet
-                .Where(id => id.TaskId == item.Id)
-                .Except(newModerators);
-            var toAddModerators = newModerators
-                .Except(ModeratorsDbSet);
+                var toRemoveModerators = ModeratorsDbSet
+                    .Where(id => id.TaskId == item.Id)
+                    .Except(newModerators);
+                var toAddModerators = newModerators
+                    .Except(ModeratorsDbSet);
 
-            var toRemoveViewers = ViewersDbSet
-                .Where(id => id.TaskId == item.Id)
-                .Except(newViewers);
-            var toAddViewers = newViewers
-                .Except(ViewersDbSet);
+                var toRemoveViewers = ViewersDbSet
+                    .Where(id => id.TaskId == item.Id)
+                    .Except(newViewers);
+                var toAddViewers = newViewers
+                    .Except(ViewersDbSet);
 
-            var toRemoveLabels = LabelsDbSets
-                .Where(i => i.TaskId == item.Id && i.UserId == item.CurrentUserId);
-           
-            ModeratorsDbSet.RemoveRange(toRemoveModerators);
-            ModeratorsDbSet.AddRange(toAddModerators);
+                var toRemoveLabels = LabelsDbSets
+                    .Where(i => i.TaskId == item.Id && i.UserId == item.CurrentUserId);
+                var toAddLabels = newLabels
+                    .Except(LabelsDbSets);
 
-            ViewersDbSet.RemoveRange(toRemoveViewers);
-            ViewersDbSet.AddRange(toAddViewers);
+                ModeratorsDbSet.RemoveRange(toRemoveModerators);
+                ModeratorsDbSet.AddRange(toAddModerators);
 
-            LabelsDbSets.RemoveRange(toRemoveLabels);
-            LabelsDbSets.AddRange(newLabels);
+                ViewersDbSet.RemoveRange(toRemoveViewers);
+                ViewersDbSet.AddRange(toAddViewers);
+
+                LabelsDbSets.RemoveRange(toRemoveLabels);
+                LabelsDbSets.AddRange(toAddLabels);
 
         }
 

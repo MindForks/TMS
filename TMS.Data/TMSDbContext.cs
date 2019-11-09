@@ -21,7 +21,7 @@ namespace TMS.Data
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
-            optionsBuilder.UseMySql(ConnectionString);
+            optionsBuilder.UseSqlServer(ConnectionString, options => options.EnableRetryOnFailure());
             optionsBuilder.EnableSensitiveDataLogging();
         }
 

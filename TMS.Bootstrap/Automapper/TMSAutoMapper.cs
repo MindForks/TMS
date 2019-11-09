@@ -18,5 +18,10 @@ namespace TMS.Bootstrap.Automapper
         {
             return mapper.Map<TSource, TDestination>(source);
         }
+
+        public TDestination Map<TSource, TDestination>(TSource source, TDestination destination)
+        {
+            return mapper.Map<TSource, TDestination>(source, destination);
+        }
     }
 }

@@ -5295,3 +5295,485 @@ Request starting HTTP/1.1 POST http://localhost:44317/Task/Create application/x-
 Route matched with {action = "Create", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Create (TMS.Web)
 Authorization was successful.
 Executing action method TMS.Web.Controllers.TaskController.Create (TMS.Web) with arguments (TMS.EntitiesDTO.TaskDTO) - Validation state: Valid
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request finished in 304.792ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization failed.
+Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+Executing ChallengeResult with authentication schemes ().
+AuthenticationScheme: Identity.Application was challenged.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 226.7112ms
+Request finished in 1161.3134ms 302 
+Request starting HTTP/1.1 GET http://localhost:44317/Identity/Account/Login?ReturnUrl=%2F  
+Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing action /Account/Login
+Executing handler method OnGetAsync with arguments (/) - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executed action /Account/Login in 851.5926ms
+Request finished in 985.6376ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/Identity/lib/jquery-validation/dist/jquery.validate.js  
+Request starting HTTP/1.1 GET http://localhost:44317/css/site.css  
+Request starting HTTP/1.1 GET http://localhost:44317/css/vendor.css  
+Request starting HTTP/1.1 GET http://localhost:44317/js/vendor.js?v=O2LqcAggyd9l3RgMbzPaY2aYM8cIDvfr4Dk3seJKh4Q  
+Request starting HTTP/1.1 GET http://localhost:44317/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js  
+Sending file. Request path: '/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js'. Physical path: 'N/A'
+Sending file. Request path: '/Identity/lib/jquery-validation/dist/jquery.validate.js'. Physical path: 'N/A'
+Request finished in 34.2732ms 200 application/javascript
+Request finished in 37.7743ms 200 application/javascript
+Request starting HTTP/1.1 GET http://localhost:44317/js/site.min.js?v=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU  
+Sending file. Request path: '/js/site.min.js'. Physical path: 'C:\WORK\Git projects\TMS\TMS.Web\wwwroot\js\site.min.js'
+Sending file. Request path: '/css/site.css'. Physical path: 'C:\WORK\Git projects\TMS\TMS.Web\wwwroot\css\site.css'
+Sending file. Request path: '/css/vendor.css'. Physical path: 'C:\WORK\Git projects\TMS\TMS.Web\wwwroot\css\vendor.css'
+Request finished in 47.1922ms 200 application/javascript
+Request finished in 105.3468ms 200 text/css
+Request finished in 105.96ms 200 text/css
+Sending file. Request path: '/js/vendor.js'. Physical path: 'C:\WORK\Git projects\TMS\TMS.Web\wwwroot\js\vendor.js'
+Request finished in 150.6223ms 200 application/javascript
+Request starting HTTP/1.1 GET http://localhost:44317/favicon.ico  
+Sending file. Request path: '/favicon.ico'. Physical path: 'C:\WORK\Git projects\TMS\TMS.Web\wwwroot\favicon.ico'
+Request finished in 24.2003ms 200 image/x-icon
+Request starting HTTP/1.1 POST http://localhost:44317/Identity/Account/Login?ReturnUrl=%2F application/x-www-form-urlencoded 245
+Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing action /Account/Login
+Executing handler method OnPostAsync with arguments (/) - ModelState is Valid
+Executed action /Account/Login in 949.8603ms
+An exception occurred while calculating the database error page content. Skipping display of the database error page.
+An unhandled exception has occurred while executing the request.
+Request finished in 1171.7366ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request starting HTTP/1.1 GET http://localhost:44317/  
+Request finished in 45.7077ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization failed.
+Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+Executing ChallengeResult with authentication schemes ().
+AuthenticationScheme: Identity.Application was challenged.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 28.5502ms
+Request finished in 277.1221ms 302 
+Request starting HTTP/1.1 GET http://localhost:44317/Identity/Account/Login?ReturnUrl=%2F  
+Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing action /Account/Login
+Executing handler method OnGetAsync with arguments (/) - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executed action /Account/Login in 259.8367ms
+Request finished in 322.8763ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44317/css/site.css  
+Request starting HTTP/1.1 GET http://localhost:44317/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js  
+Request starting HTTP/1.1 GET http://localhost:44317/Identity/lib/jquery-validation/dist/jquery.validate.js  
+Request starting HTTP/1.1 GET http://localhost:44317/js/vendor.js?v=O2LqcAggyd9l3RgMbzPaY2aYM8cIDvfr4Dk3seJKh4Q  
+Request starting HTTP/1.1 GET http://localhost:44317/css/vendor.css  
+Sending file. Request path: '/Identity/lib/jquery-validation/dist/jquery.validate.js'. Physical path: 'N/A'
+Sending file. Request path: '/Identity/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js'. Physical path: 'N/A'
+Request finished in 36.6365ms 200 application/javascript
+Request finished in 37.9294ms 200 application/javascript
+Request starting HTTP/1.1 GET http://localhost:44317/js/site.min.js?v=47DEQpj8HBSa-_TImW-5JCeuQeRkm5NMpJWZG3hSuFU  
+Sending file. Request path: '/js/site.min.js'. Physical path: 'C:\WORK\Git projects\TMS\TMS.Web\wwwroot\js\site.min.js'
+Sending file. Request path: '/css/vendor.css'. Physical path: 'C:\WORK\Git projects\TMS\TMS.Web\wwwroot\css\vendor.css'
+Request finished in 32.3043ms 200 application/javascript
+Sending file. Request path: '/css/site.css'. Physical path: 'C:\WORK\Git projects\TMS\TMS.Web\wwwroot\css\site.css'
+Request finished in 113.3845ms 200 text/css
+Request finished in 121.1673ms 200 text/css
+Request starting HTTP/1.1 GET http://localhost:44318/  
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request finished in 74532.0365ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 1.1441ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 168.2051ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 7522.0861ms
+Request finished in 84035.4484ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 409.8076ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 34.2686ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 1037.7853ms
+Request finished in 1080.8824ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/Task/Create  
+Route matched with {action = "Create", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Create (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Create (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.Create (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 138.0225ms.
+Executing ViewResult, running view Create.
+Executed ViewResult - view Create executed in 121.0345ms.
+Executed action TMS.Web.Controllers.TaskController.Create (TMS.Web) in 294.9316ms
+Request finished in 323.7212ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44318/Task/Create application/x-www-form-urlencoded 465
+Route matched with {action = "Create", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Create (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Create (TMS.Web) with arguments (TMS.EntitiesDTO.TaskDTO) - Validation state: Valid
+Request starting HTTP/1.1 GET http://localhost:44318/  
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request finished in 35.4139ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.8382ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 155.1131ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 194.3521ms
+Request finished in 1105.6493ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 262.0652ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 34.8108ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 585.8665ms
+Request finished in 602.5316ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/Task/Create  
+Route matched with {action = "Create", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Create (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Create (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.Create (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 44.8572ms.
+Executing ViewResult, running view Create.
+Executed ViewResult - view Create executed in 115.3677ms.
+Executed action TMS.Web.Controllers.TaskController.Create (TMS.Web) in 184.9283ms
+Request finished in 206.9179ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44318/Task/Create application/x-www-form-urlencoded 452
+Route matched with {action = "Create", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Create (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Create (TMS.Web) with arguments (TMS.EntitiesDTO.TaskDTO) - Validation state: Valid
+Request starting HTTP/1.1 GET http://localhost:44318/  
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.7498ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 193.3438ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 246.2506ms
+Request finished in 559.7088ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request starting HTTP/1.1 GET http://localhost:44318/  
+Request finished in 36.8851ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.7152ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 162.2783ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 210.3326ms
+Request finished in 563.2001ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 430.6006ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 30.5028ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 1101.9742ms
+Request finished in 1117.6994ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/Task/Create  
+Route matched with {action = "Create", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Create (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Create (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.Create (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 122.3633ms.
+Executing ViewResult, running view Create.
+Executed ViewResult - view Create executed in 113.0545ms.
+Executed action TMS.Web.Controllers.TaskController.Create (TMS.Web) in 262.6742ms
+Request finished in 296.6042ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44318/Task/Create application/x-www-form-urlencoded 551
+Route matched with {action = "Create", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Create (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Create (TMS.Web) with arguments (TMS.EntitiesDTO.TaskDTO) - Validation state: Valid
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 50.2308ms.
+Executed action TMS.Web.Controllers.TaskController.Create (TMS.Web) in 59212.1286ms
+Request finished in 59241.4537ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/  
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request finished in 34.6166ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.HomeController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.HomeController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 0.8475ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 148.3042ms.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 185.0179ms
+Request finished in 514.9045ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/Dashboard/Index  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 395.6669ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 31.6692ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 974.1275ms
+Request finished in 993.17ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/Task/Create  
+Route matched with {action = "Create", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Create (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Create (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.Create (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 125.9056ms.
+Executing ViewResult, running view Create.
+Executed ViewResult - view Create executed in 111.8272ms.
+Executed action TMS.Web.Controllers.TaskController.Create (TMS.Web) in 263.3287ms
+Request finished in 293.5346ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44318/Task/Create application/x-www-form-urlencoded 454
+Route matched with {action = "Create", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Create (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Create (TMS.Web) with arguments (TMS.EntitiesDTO.TaskDTO) - Validation state: Valid
+Executing ViewResult, running view Error.
+Executed ViewResult - view Error executed in 52.3035ms.
+Executed action TMS.Web.Controllers.TaskController.Create (TMS.Web) in 28327.6396ms
+Request finished in 28363.5018ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44318/Identity/Account/Logout?returnUrl=%2F application/x-www-form-urlencoded 225
+Route matched with {page = "/Account/Logout", area = "Identity", action = "", controller = ""}. Executing action /Account/Logout
+Executing handler method OnPost with arguments (/) - ModelState is Valid
+AuthenticationScheme: Identity.Application signed out.
+AuthenticationScheme: Identity.External signed out.
+AuthenticationScheme: Identity.TwoFactorUserId signed out.
+User logged out.
+Executing LocalRedirectResult, redirecting to /.
+Executed action /Account/Logout in 41.039ms
+Request finished in 91.8135ms 302 
+Request starting HTTP/1.1 GET http://localhost:44318/  
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization failed.
+Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+Executing ChallengeResult with authentication schemes ().
+AuthenticationScheme: Identity.Application was challenged.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 14.5268ms
+Request finished in 21.9552ms 302 
+Request starting HTTP/1.1 GET http://localhost:44318/Identity/Account/Login?ReturnUrl=%2F  
+Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing action /Account/Login
+Executing handler method OnGetAsync with arguments (/) - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executed action /Account/Login in 60.6025ms
+Request finished in 79.957ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/Identity/Account/ForgotPassword  
+Route matched with {page = "/Account/ForgotPassword", area = "Identity", action = "", controller = ""}. Executing action /Account/ForgotPassword
+Executed action /Account/ForgotPassword in 17.5757ms
+Request finished in 34.2405ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44318/Identity/Account/ForgotPassword application/x-www-form-urlencoded 217
+Route matched with {page = "/Account/ForgotPassword", area = "Identity", action = "", controller = ""}. Executing action /Account/ForgotPassword
+Executing handler method OnPostAsync with arguments ((null)) - ModelState is Valid
+Executed action /Account/ForgotPassword in 39333.1351ms
+An unhandled exception has occurred while executing the request.
+Request finished in 39426.2191ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/Identity/Account/ForgotPassword  
+Route matched with {page = "/Account/ForgotPassword", area = "Identity", action = "", controller = ""}. Executing action /Account/ForgotPassword
+Executed action /Account/ForgotPassword in 10.5807ms
+Request finished in 42.4409ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44318/Identity/Account/ForgotPassword application/x-www-form-urlencoded 217
+Route matched with {page = "/Account/ForgotPassword", area = "Identity", action = "", controller = ""}. Executing action /Account/ForgotPassword
+Executing handler method OnPostAsync with arguments ((null)) - ModelState is Valid
+Executed action /Account/ForgotPassword in 27819.0516ms
+An unhandled exception has occurred while executing the request.
+Request finished in 40349.1595ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/  
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request finished in 59.2522ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization failed.
+Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+Executing ChallengeResult with authentication schemes ().
+AuthenticationScheme: Identity.Application was challenged.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 29.4738ms
+Request finished in 345.0011ms 302 
+Request starting HTTP/1.1 GET http://localhost:44318/Identity/Account/Login?ReturnUrl=%2F  
+Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing action /Account/Login
+Executing handler method OnGetAsync with arguments (/) - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executed action /Account/Login in 327.1668ms
+Request finished in 399.6992ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/Identity/Account/ForgotPassword  
+Route matched with {page = "/Account/ForgotPassword", area = "Identity", action = "", controller = ""}. Executing action /Account/ForgotPassword
+Executed action /Account/ForgotPassword in 338.9349ms
+Request finished in 364.0912ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44318/Identity/Account/ForgotPassword application/x-www-form-urlencoded 217
+Route matched with {page = "/Account/ForgotPassword", area = "Identity", action = "", controller = ""}. Executing action /Account/ForgotPassword
+Executing handler method OnPostAsync with arguments ((null)) - ModelState is Valid
+Executed action /Account/ForgotPassword in 28674.7572ms
+An unhandled exception has occurred while executing the request.
+Request finished in 31032.0732ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/Identity/Account/ForgotPassword  
+Route matched with {page = "/Account/ForgotPassword", area = "Identity", action = "", controller = ""}. Executing action /Account/ForgotPassword
+Executed action /Account/ForgotPassword in 3.7139ms
+Request finished in 16.0359ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44318/Identity/Account/ForgotPassword application/x-www-form-urlencoded 217
+Route matched with {page = "/Account/ForgotPassword", area = "Identity", action = "", controller = ""}. Executing action /Account/ForgotPassword
+Executing handler method OnPostAsync with arguments ((null)) - ModelState is Valid
+Executed action /Account/ForgotPassword in 30502.375ms
+An unhandled exception has occurred while executing the request.
+Request finished in 30538.0333ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/Identity/Account/ForgotPassword  
+Route matched with {page = "/Account/ForgotPassword", area = "Identity", action = "", controller = ""}. Executing action /Account/ForgotPassword
+Executed action /Account/ForgotPassword in 14.0767ms
+Request finished in 35.5399ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44318/Identity/Account/ForgotPassword application/x-www-form-urlencoded 217
+Route matched with {page = "/Account/ForgotPassword", area = "Identity", action = "", controller = ""}. Executing action /Account/ForgotPassword
+Executing handler method OnPostAsync with arguments ((null)) - ModelState is Valid
+Executed action /Account/ForgotPassword in 22930.1835ms
+An unhandled exception has occurred while executing the request.
+Request finished in 22987.0464ms 500 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/  
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization failed.
+Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+Executing ChallengeResult with authentication schemes ().
+AuthenticationScheme: Identity.Application was challenged.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 20.1624ms
+Request finished in 170.4474ms 302 
+Request starting HTTP/1.1 DEBUG http://localhost:53918/  0
+Request starting HTTP/1.1 GET http://localhost:44318/  
+Request finished in 40.5998ms 200 
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization failed.
+Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+Executing ChallengeResult with authentication schemes ().
+AuthenticationScheme: Identity.Application was challenged.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 27.5613ms
+Request finished in 282.9496ms 302 
+Request starting HTTP/1.1 GET http://localhost:44318/Identity/Account/Login?ReturnUrl=%2F  
+Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing action /Account/Login
+Executing handler method OnGetAsync with arguments (/) - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executed action /Account/Login in 295.7356ms
+Request finished in 356.3506ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44318/Identity/Account/Login?ReturnUrl=%2F application/x-www-form-urlencoded 265
+Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing action /Account/Login
+Executing handler method OnPostAsync with arguments (/) - ModelState is Valid
+AuthenticationScheme: Identity.Application signed in.
+User logged in.
+Executing RedirectResult, redirecting to /Dashboard.
+Executed action /Account/Login in 684.1283ms
+Request finished in 705.0796ms 302 
+Request starting HTTP/1.1 GET http://localhost:44318/Dashboard  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 255.9607ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 40.0114ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 571.936ms
+Request finished in 586.2476ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44318/Identity/Account/Logout?returnUrl=%2F application/x-www-form-urlencoded 225
+Route matched with {page = "/Account/Logout", area = "Identity", action = "", controller = ""}. Executing action /Account/Logout
+Executing handler method OnPost with arguments (/) - ModelState is Valid
+AuthenticationScheme: Identity.Application signed out.
+AuthenticationScheme: Identity.External signed out.
+AuthenticationScheme: Identity.TwoFactorUserId signed out.
+User logged out.
+Executing LocalRedirectResult, redirecting to /.
+Executed action /Account/Logout in 18.1482ms
+Request finished in 37.4171ms 302 
+Request starting HTTP/1.1 GET http://localhost:44318/  
+Route matched with {action = "Index", controller = "Home", page = "", area = ""}. Executing action TMS.Web.Controllers.HomeController.Index (TMS.Web)
+Authorization failed.
+Authorization failed for the request at filter 'Microsoft.AspNetCore.Mvc.Authorization.AuthorizeFilter'.
+Executing ChallengeResult with authentication schemes ().
+AuthenticationScheme: Identity.Application was challenged.
+Executed action TMS.Web.Controllers.HomeController.Index (TMS.Web) in 8.8851ms
+Request finished in 15.6262ms 302 
+Request starting HTTP/1.1 GET http://localhost:44318/Identity/Account/Login?ReturnUrl=%2F  
+Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing action /Account/Login
+Executing handler method OnGetAsync with arguments (/) - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executed action /Account/Login in 7.889ms
+Request finished in 15.215ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/Identity/Account/ForgotPassword  
+Route matched with {page = "/Account/ForgotPassword", area = "Identity", action = "", controller = ""}. Executing action /Account/ForgotPassword
+Executed action /Account/ForgotPassword in 12.2166ms
+Request finished in 34.6698ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44318/Identity/Account/ForgotPassword application/x-www-form-urlencoded 217
+Route matched with {page = "/Account/ForgotPassword", area = "Identity", action = "", controller = ""}. Executing action /Account/ForgotPassword
+Executing handler method OnPostAsync with arguments ((null)) - ModelState is Valid
+Executing RedirectToPageResult, redirecting to ./ForgotPasswordConfirmation.
+Executed action /Account/ForgotPassword in 3136.628ms
+Request finished in 3151.3131ms 302 
+Request starting HTTP/1.1 GET http://localhost:44318/Identity/Account/ForgotPasswordConfirmation  
+Route matched with {page = "/Account/ForgotPasswordConfirmation", area = "Identity", action = "", controller = ""}. Executing action /Account/ForgotPasswordConfirmation
+Executing handler method OnGet with arguments ((null)) - ModelState is Valid
+Executed action /Account/ForgotPasswordConfirmation in 8.9216ms
+Request finished in 30.3505ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/Identity/Account/Register  
+Route matched with {page = "/Account/Register", area = "Identity", action = "", controller = ""}. Executing action /Account/Register
+Executing handler method OnGet with arguments () - ModelState is Valid
+Executed action /Account/Register in 38.9251ms
+Request finished in 63.7356ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/Identity/Account/Login  
+Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing action /Account/Login
+Executing handler method OnGetAsync with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executed action /Account/Login in 11.619ms
+Request finished in 25.1139ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/Identity/Account/ForgotPassword  
+Route matched with {page = "/Account/ForgotPassword", area = "Identity", action = "", controller = ""}. Executing action /Account/ForgotPassword
+Executed action /Account/ForgotPassword in 4.9408ms
+Request finished in 16.2724ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44318/Identity/Account/ForgotPassword application/x-www-form-urlencoded 217
+Route matched with {page = "/Account/ForgotPassword", area = "Identity", action = "", controller = ""}. Executing action /Account/ForgotPassword
+Executing handler method OnPostAsync with arguments ((null)) - ModelState is Valid
+Executing RedirectToPageResult, redirecting to ./ForgotPasswordConfirmation.
+Executed action /Account/ForgotPassword in 3184.8081ms
+Request finished in 3193.7947ms 302 
+Request starting HTTP/1.1 GET http://localhost:44318/Identity/Account/ForgotPasswordConfirmation  
+Route matched with {page = "/Account/ForgotPasswordConfirmation", area = "Identity", action = "", controller = ""}. Executing action /Account/ForgotPasswordConfirmation
+Executing handler method OnGet with arguments ((null)) - ModelState is Valid
+Executed action /Account/ForgotPasswordConfirmation in 3.1028ms
+Request finished in 11.9948ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/Identity/Account/Login  
+Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing action /Account/Login
+Executing handler method OnGetAsync with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executed action /Account/Login in 8.3981ms
+Request finished in 17.574ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/Identity/Account/Login  
+Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing action /Account/Login
+Executing handler method OnGetAsync with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.External signed out.
+Executed action /Account/Login in 9.1704ms
+Request finished in 21.9784ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44318/Identity/Account/Login application/x-www-form-urlencoded 265
+Route matched with {page = "/Account/Login", area = "Identity", action = "", controller = ""}. Executing action /Account/Login
+Executing handler method OnPostAsync with arguments () - ModelState is Valid
+AuthenticationScheme: Identity.Application signed in.
+User logged in.
+Executing RedirectResult, redirecting to /Dashboard.
+Executed action /Account/Login in 26.243ms
+Request finished in 34.6993ms 302 
+Request starting HTTP/1.1 GET http://localhost:44318/Dashboard  
+Route matched with {action = "Index", controller = "Dashboard", page = "", area = ""}. Executing action TMS.Web.Controllers.DashboardController.Index (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.DashboardController.Index (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.DashboardController.Index (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 100.1203ms.
+Executing ViewResult, running view Index.
+Executed ViewResult - view Index executed in 3.3132ms.
+Executed action TMS.Web.Controllers.DashboardController.Index (TMS.Web) in 119.397ms
+Request finished in 127.4039ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/Task/Create  
+Route matched with {action = "Create", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Create (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Create (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.Create (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 44.8462ms.
+Executing ViewResult, running view Create.
+Executed ViewResult - view Create executed in 117.3687ms.
+Executed action TMS.Web.Controllers.TaskController.Create (TMS.Web) in 184.2823ms
+Request finished in 215.3668ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 POST http://localhost:44318/Task/Create application/x-www-form-urlencoded 560
+Route matched with {action = "Create", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.Create (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.Create (TMS.Web) with arguments (TMS.EntitiesDTO.TaskDTO) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.Create (TMS.Web), returned result Microsoft.AspNetCore.Mvc.RedirectToActionResult in 4824.4439ms.
+Executing RedirectResult, redirecting to /Task/List.
+Executed action TMS.Web.Controllers.TaskController.Create (TMS.Web) in 4845.137ms
+Request finished in 4863.3323ms 302 
+Request starting HTTP/1.1 GET http://localhost:44318/Task/List  
+Route matched with {action = "List", controller = "Task", page = "", area = ""}. Executing action TMS.Web.Controllers.TaskController.List (TMS.Web)
+Authorization was successful.
+Executing action method TMS.Web.Controllers.TaskController.List (TMS.Web) - Validation state: Valid
+Executed action method TMS.Web.Controllers.TaskController.List (TMS.Web), returned result Microsoft.AspNetCore.Mvc.ViewResult in 13.7566ms.
+Executing ViewResult, running view List.
+Executed ViewResult - view List executed in 36.0434ms.
+Executed action TMS.Web.Controllers.TaskController.List (TMS.Web) in 59.6755ms
+Request finished in 71.6412ms 200 text/html; charset=utf-8
+Request starting HTTP/1.1 GET http://localhost:44318/node_modules/datatables/media/images/sort_both.png  
+Processing request /node_modules/datatables/media/images/sort_both.png
+Request finished in 7.9826ms 200 
+Request starting HTTP/1.1 GET http://localhost:44318/node_modules/datatables/media/images/sort_asc.png  
+Processing request /node_modules/datatables/media/images/sort_asc.png
+Request finished in 5.9044ms 200 

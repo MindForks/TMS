@@ -1,18 +1,21 @@
 ﻿using System;
 using System.Net.Mail;
+using TMS.Entities;
 using TMS.EntitiesDTO;
-
+using System.Threading.Tasks;
 namespace TMS.Business.Services
 {
     public class NotificationService
     {
         private readonly UserService _userService;
-        public NotificationService(UserService userService)
+        private readonly MailCredentionals _mailCred;
+        public NotificationService(UserService userService, MailCredentionals mailCred)
         {
             _userService = userService;
+            _mailCred = mailCred;
         }
 
-        public void CreateMailsAndSend(TaskDTO task)
+        public async System.Threading.Tasks.Task CreateMailsAndSend(TaskDTO task)
         {
             var notificationViewer = CreateNotification(task, "viewer");
             var notificationModerator = CreateNotification(task, "moderator");
@@ -20,31 +23,33 @@ namespace TMS.Business.Services
             foreach (var viewerId in task.ViewerIDs)
             {
                 var user = _userService.GetItemAsync(viewerId).Result.Email;
-                SendMail(user, notificationViewer);
+                await SendMail(user, notificationViewer);
             }
 
             foreach (var moderatorId in task.ModeratorIDs)
             {
                 var user = _userService.GetItemAsync(moderatorId).Result.Email;
-                SendMail(user, notificationModerator);
+                await SendMail(user, notificationModerator);
             }
         }
-        public void SendMail(string email, NotificationTypeDTO notification)
+        public async System.Threading.Tasks.Task SendMail(string email, NotificationTypeDTO notification)
         {
-            using (var message = new MailMessage("TMSnewtask@gmail.com", email))
+            var login = "TimeManagmentSystem@gmail.com";
+            var pass = "Time1234";
+            using (var message = new MailMessage(_mailCred.Login, email))
             {
                 message.To.Add(new MailAddress(email));
-                message.From = new MailAddress("TMSnewtask@gmail.com");
+                message.From = new MailAddress(login);
 
                 message.Subject = notification.Title;
                 message.Body = notification.Message;
 
-                using (var smtpClient = new SmtpClient("smtp.gmail.com"))
+                using (var smtpClient = new SmtpClient("smtp.gmail.com", 587))
                 {
-                    smtpClient.Credentials = new System.Net.NetworkCredential("tmsnewtask@gmail.com", "Kakoka911");
+                    smtpClient.Credentials = new System.Net.NetworkCredential(login, pass);
                     smtpClient.EnableSsl = true;
-                    smtpClient.Port = 2525;
-                    smtpClient.Send(message);
+                    smtpClient.Port = 587;
+                    await smtpClient.SendMailAsync(message);
                 }
             }
         }
