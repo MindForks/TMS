@@ -34,19 +34,18 @@ namespace TMS.Business.Services
         }
         public async System.Threading.Tasks.Task SendMail(string email, NotificationTypeDTO notification)
         {
-            var login = "TimeManagmentSystem@gmail.com";
-            var pass = "Time1234";
+
             using (var message = new MailMessage(_mailCred.Login, email))
             {
-                message.To.Add(new MailAddress(email));
-                message.From = new MailAddress(login);
+                message.To.Add(new MailAddress(_mailCred.Login));
+                message.From = new MailAddress(_mailCred.Login);
 
                 message.Subject = notification.Title;
                 message.Body = notification.Message;
 
                 using (var smtpClient = new SmtpClient("smtp.gmail.com", 587))
                 {
-                    smtpClient.Credentials = new System.Net.NetworkCredential(login, pass);
+                    smtpClient.Credentials = new System.Net.NetworkCredential(_mailCred.Login, _mailCred.Password);
                     smtpClient.EnableSsl = true;
                     smtpClient.Port = 587;
                     await smtpClient.SendMailAsync(message);
